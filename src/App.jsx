@@ -2,6 +2,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import Puzzle from './components/puzzle/Puzzle'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      {/* <Puzzle /> */}
     </div>
   )
 }
