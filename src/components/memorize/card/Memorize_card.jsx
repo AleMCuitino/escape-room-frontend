@@ -12,10 +12,10 @@ Cartas del juego de memorize
 const Memorize_card = () => {
   return (
     <div className='card'>
-            <div class="card__front">
+            <div className="card__front">
                 front
             </div>
-            <div class="card__back">
+            <div className="card__back">
                 back
             </div>
     </div>

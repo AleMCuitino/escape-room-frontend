@@ -12,14 +12,16 @@ Tablero de juego
     tiene que poder perder
 */
 
+
+
 const Memorize_board = (props) => {
   return (
     <section>
-            <div class="container">
-                <div class="board">
+            <div className="container">
+                <div className="board">
                     {props.cards}
                 </div>
-                <div class="finish-display hide">
+                <div className="finish-display hide">
                     <p>🎉</p>
                     <h2>Has terminado el juego!</h2>
                 </div>
