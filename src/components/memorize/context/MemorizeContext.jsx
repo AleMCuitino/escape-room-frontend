@@ -1,6 +1,7 @@
-import { createContext } from "react";
+import { createContext,useState } from "react";
 import { EmojiFoods } from '@/utilities/memorize_db';
 import { ShuffleArray } from '@/utilities/memorize_shuffleArray';
+import Memorize_card from '@/components/memorize/card/Memorize_card'
 
 const MemorizeContext = createContext();
 
@@ -10,8 +11,8 @@ const board = document.querySelector('.board');
 const timer = document.querySelector('.score-board__item-time');
 const scoreItem = document.querySelector('.score-board__item-score');
 const finishDisplay = document.querySelector('.finish-display');
-const flippedCards = [];
-let scoreCounter = 0;
+const initflippedCards = [];
+let initscoreCounter = 0;
 let totalTime = 0;
 let timeInterval = null;
 
@@ -19,36 +20,51 @@ let timeInterval = null;
 
 const MemorizeProvider = ({children}) =>{
 
+    //* tabla de puntos
+    const [ scoreCounter, setScoreCounter ] = useState(0);
+    const [ scoreItem, setScoreItem ] = useState(initscoreCounter);
+
+    //*tiempo
+    const [totalTime , setTotalTime] = useState(0);
+    const [timer , setTimer] = useState(totalTime);
+
+    //* cartas
+    const [ flippedCards, setflippedCards ] = useState(initflippedCards);
+    const [ shuffledArray , setShuffledArray  ] = useState([]);
+
+    //*board
+    const [ boardfill, setBoardfill ] = useState('');
+   
+    //* juego
+    const [finishDisplay, setFinishDisplay] = useState('hide');
+
 
     //! logica
     const handleClick_InitGame = () =>{
+        console.log("initGame","funciona");
         resetGame();
         createBoard();
         timeInterval = setInterval(updateTime, 1000);
     }
     
     function resetGame() {
-        board.innerHTML = '';
+        setBoardfill('') /* board.innerHTML = '';  */
         clearInterval(timeInterval);
         totalTime = 0;
-        timer.textContent = totalTime;
-        scoreCounter = 0;
-        scoreItem.textContent = scoreCounter;
-        finishDisplay.classList.add('hide');
+       /*  timer.textContent = totalTime; */
+        setScoreCounter(0);
+        setScoreItem(scoreCounter)  /* scoreItem.textContent = scoreCounter; */
+        setFinishDisplay('hide');
       }
 
       function createBoard() {
-        const randomArray = createRandomArrayFromOther(EmojiFoods);
-        const arrayRandomWithMatches = [...randomArray, ...randomArray];
+        const randomArray = createRandomArrayFromOther(EmojiFoods, 8); //! selecciona un array y limite de parejas
+        const arrayRandomWithMatches = [...randomArray, ...randomArray]; //! obtener las parejas de randomArray duplicandolos dos veces ORdenado
       
-        const shuffledArray = ShuffleArray(arrayRandomWithMatches);
-      
-        shuffledArray.forEach((emoji) => {
-          const card = createCard(emoji);
-          fragment.append(card);
-        });
-      
-        board.append(fragment);
+        setShuffledArray(ShuffleArray(arrayRandomWithMatches)); // ! baraja todo
+        
+        setBoardfill(true)
+   
       }
 
       function createRandomArrayFromOther(arrayToCopy, maxLength = 8) {
@@ -72,19 +88,24 @@ const MemorizeProvider = ({children}) =>{
         return card;
       }
 
+
       function flipCard(event) {
-        const card = event.target.closest('.card');
+        console.log("flipCard","funciona");
+        const card = event.target.closest('.card'); //* selecionar la card
       
         if (card && flippedCards.length < 2 && !card.classList.contains('flipped')) {
+            //! si la card existe dale la vuelta y si no hay dos cartas en el array y no tienen clase flipped
           card.classList.add('flipped');
           flippedCards.push(card);
       
           if (flippedCards.length === 2) {
+            	//! si ya hay dos cartas para de dar vuelta
             checkIdentityMatch();
             finishGameIfNoMoreMatches();
           }
         }
       }
+
 
       function checkIdentityMatch() {
         const [identity1, identity2] = flippedCards.map(
@@ -127,7 +148,12 @@ const MemorizeProvider = ({children}) =>{
 
     // objeto que envia las props a los hijos
     const data = {
-        handleClick_InitGame
+        boardfill,
+        handleClick_InitGame,
+        flipCard,
+        shuffledArray,
+        finishDisplay,
+        scoreItem
     }
 
     return(

@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import Memorize_card from '../Card/Memorize_card';
+import MemorizeContext from '../context/memorizeContext';
 
 /*
 Tablero de juego
@@ -14,14 +16,25 @@ Tablero de juego
 
 
 
-const Memorize_board = (props) => {
+const Memorize_board = () => {
+
+const {flipCard, boardfill, shuffledArray, finishDisplay } = useContext(MemorizeContext); 
+
+
   return (
     <section>
             <div className="container">
-                <div className="board">
-                    {props.cards}
+                <div className="board" onClick={flipCard}>
+                    { boardfill ? 
+                    
+                    shuffledArray.map((emoji) => {
+
+                      <Memorize_card id={emoji.id} emoji={emoji.emoji}/>
+                    })
+              
+                    : "no hay nada" }
                 </div>
-                <div className="finish-display hide">
+                <div className={`finish-display ${finishDisplay}`}>
                     <p>🎉</p>
                     <h2>Has terminado el juego!</h2>
                 </div>
