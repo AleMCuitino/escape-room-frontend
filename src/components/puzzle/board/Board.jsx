@@ -54,6 +54,10 @@ function Board({ imgUrl }) {
   };
   const hasWon = isSolved(tiles)
 
+  if (!imageLoaded) {
+    return <div>Cargando imagen...</div>;
+  }
+
   return (
     <>
       <ul style={style} className="board">
@@ -69,10 +73,10 @@ function Board({ imgUrl }) {
           />
         ))}
       </ul>
-      {hasWon && isStarted && <div>Puzzle solved 🧠 🎉</div>}
+      {hasWon && isStarted && <div>Confeti 🎉</div>}
       {!isStarted ?
-        (<button onClick={() => handleStartClick()}>Start game</button>) :
-        (<button onClick={() => handleShuffleClick()}>Restart game</button>)}
+        (<button onClick={() => handleStartClick()}>Comenzar</button>) :
+        (<button onClick={() => handleShuffleClick()}>Reiniciar</button>)}
     </>
   );
 }

@@ -6,8 +6,8 @@ function Puzzle() {
   const [imgUrl, setImgUrl] = useState(imgURL)
 
   return (
-    <div className="Puzzle">
-      <h1>Meet an important programmer</h1>
+    <div className="App">
+      <h1>Ordena el retrato de la programadora</h1>
       <Board imgUrl={imgUrl} />
     </div>
   );
