@@ -1,5 +1,6 @@
 import React from "react";
-import PublicRouter from "@/router/public-route/PublicRouter";
+import PublicRouter from "../src/router/public-route/PublicRouter";
+import "./App.css"
 
 function App() {
   return (

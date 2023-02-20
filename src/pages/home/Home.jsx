@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Wordle from '../../components/wordle/Wordle';
 
-const Home = () => {
+function Home() {
     return (
         <div>
-            <h1> Hola Escape-room </h1>
+            <h1> Escape-room </h1>
+            <Wordle />
         </div>
     )
 }
