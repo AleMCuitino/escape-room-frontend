@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Tile from "../Tile";
+import Tile from "../tile/Tile";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "../constants"
 import { canSwap, shuffle, swap, isSolved } from "../helpers"
 

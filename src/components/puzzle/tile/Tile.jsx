@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { getMatrixPosition, getVisualPosition } from "./helpers";
-import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants"
+import { getMatrixPosition, getVisualPosition } from "../helpers";
+import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "../constants"
 
 function Tile(props) {
   const { tile, index, width, height, handleTileClick, imgUrl } = props;
