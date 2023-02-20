@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Tile from "../Tile";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "../constants"
 import { canSwap, shuffle, swap, isSolved } from "../helpers"
@@ -6,6 +6,19 @@ import { canSwap, shuffle, swap, isSolved } from "../helpers"
 function Board({ imgUrl }) {
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
   const [isStarted, setIsStarted] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
+  useEffect(() => {
+    const image = new Image();
+    image.src = imgUrl;
+    image.onload = () => {
+      setImageLoaded(true);
+    };
+    image.onerror = () => {
+      console.error(`Failed to load image from URL: ${imgUrl}`);
+    };
+  }, [imgUrl]);
+  
   console.log('is started:', isStarted)
 
   const shuffleTiles = () => {
