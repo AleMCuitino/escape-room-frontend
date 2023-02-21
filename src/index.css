@@ -4,14 +4,15 @@
 
 
 
-body{
+body, #root{
   font-family: 'Fira Code', monospace;
   line-height: 1.5;
   font-weight: 400;  
   color: #33C8CE;
   /* background-color: #242424; */
   background-color: #020100;
-  
+  width: 100%;
+  height: 100vh;
 
 }
 
