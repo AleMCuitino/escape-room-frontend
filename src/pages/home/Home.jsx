@@ -1,9 +1,10 @@
 import React from 'react'
+import Puzzle from '../../components/puzzle/Puzzle'
 
 const Home = () => {
     return (
         <div>
-            <h1> Hola Escape-room </h1>
+            <Puzzle />
         </div>
     )
 }
