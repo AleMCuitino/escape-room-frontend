@@ -1,8 +1,8 @@
 .wordle {
     text-align: center;
     background-color: #121212;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     /* display: flex; */
     color: white;
 }
