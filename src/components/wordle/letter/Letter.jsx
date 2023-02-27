@@ -1,19 +1,27 @@
-import React, { useContext } from 'react';
-import { WordleContext} from "../../wordle/Wordle";
+import React, { useContext, useEffect } from 'react';
+import { WordleContext } from "../../wordle/Wordle";
 
 function Letter({ letterPos, attemptVal }) {
-    const { board, correctWord, currAttempt } = useContext(WordleContext)
-    const letter = board [attemptVal][letterPos];
+    const { board, correctWord, currAttempt, setDisabledLetters } = useContext(WordleContext)
+    const letter = board[attemptVal][letterPos];
+    const correct = correctWord.toUpperCase()[letterPos] === letter;
+    const almost =
+        !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
+    const letterState =
+        currAttempt.attempt > attemptVal &&
+        (correct ? "correct" : almost ? "almost" : "error");
 
-    const correct = correctWord[letterPos] === letter
-    const almost = !correct && letter !== "" && correctWord.includes(letter);
-
-    const letterState = currAttempt.attempt > attemptVal && 
-    (correct ? "correct" : almost ? "almost" : "error");
-
+    useEffect(() => {
+        if (letter !== "" && !correct && !almost) {
+            console.log(letter);
+            setDisabledLetters((prev) => [...prev, letter]);
+        }
+    }, [currAttempt.attempt]);
     return (
-        <div className='letter' id={letterState}> {letter} </div>
-    )
+        <div className="letter" id={letterState}>
+            {letter}
+        </div>
+    );
 }
 
 export default Letter;
