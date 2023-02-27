@@ -10,7 +10,6 @@ function Puzzle() {
 
   return (
     <div className="App">
-      <h1>Ordena el retrato de la programadora</h1>
       <Board imgUrl={imgUrl} />
     </div>
   );
