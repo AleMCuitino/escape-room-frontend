@@ -18,21 +18,22 @@ Tablero de juego
 
 const Memorize_board = () => {
 
-const {flipCard, boardfill, shuffledArray, finishDisplay } = useContext(MemorizeContext); 
+const {flipCard, boardfill, shuffledArray, finishDisplay, ref } = useContext(MemorizeContext); 
 
 
   return (
     <section>
             <div className="container">
-                <div className="board" onClick={flipCard}>
+                <div className="board" onClick={flipCard} ref={ref}>
                     { boardfill ? 
                     
-                    shuffledArray.map((emoji) => {
-
-                      <Memorize_card id={emoji.id} emoji={emoji.emoji}/>
-                    })
-              
+                   shuffledArray.map((emoji, index) => {
+                    return  <Memorize_card key={index} id={emoji.id} emoji={emoji.emoji}/>
+                     
+                    }) 
+             
                     : "no hay nada" }
+                   
                 </div>
                 <div className={`finish-display ${finishDisplay}`}>
                     <p>🎉</p>

@@ -1,7 +1,6 @@
-import { createContext,useState } from "react";
+import { createContext, useState, useRef, useEffect } from 'react';
 import { EmojiFoods } from '@/utilities/memorize_db';
 import { ShuffleArray } from '@/utilities/memorize_shuffleArray';
-import Memorize_card from '@/components/memorize/card/Memorize_card'
 
 const MemorizeContext = createContext();
 
@@ -11,157 +10,189 @@ const board = document.querySelector('.board');
 const timer = document.querySelector('.score-board__item-time');
 const scoreItem = document.querySelector('.score-board__item-score');
 const finishDisplay = document.querySelector('.finish-display');
+
+//Array de carta que se comparan
 const initflippedCards = [];
+//Array de cartas matcheadas
+const matchArray = [];
+
 let initscoreCounter = 0;
 let totalTime = 0;
 let timeInterval = null;
 
 
+const MemorizeProvider = ({ children }) => {
+	//* tabla de puntos
+	const [scoreCounter, setScoreCounter] = useState(0);
+	const [scoreItem, setScoreItem] = useState(initscoreCounter);
 
-const MemorizeProvider = ({children}) =>{
+	//*tiempo
+	const [totalTime, setTotalTime] = useState(0);
+	const [timer, setTimer] = useState(totalTime);
 
-    //* tabla de puntos
-    const [ scoreCounter, setScoreCounter ] = useState(0);
-    const [ scoreItem, setScoreItem ] = useState(initscoreCounter);
+	//* cartas
+	const [flippedCards, setflippedCards] = useState(initflippedCards); //array de cartas que han hecho macht
+	console.log('aa', flippedCards);
+	const [shuffledArray, setShuffledArray] = useState([]); //mezclar cartas
+	const [isFlipped, setIsFlipped] = useState(false); // se ha clicado la carta y añade una clase
+	const ref = useRef(null);
 
-    //*tiempo
-    const [totalTime , setTotalTime] = useState(0);
-    const [timer , setTimer] = useState(totalTime);
+	//*board
+	const [boardfill, setBoardfill] = useState('');
 
-    //* cartas
-    const [ flippedCards, setflippedCards ] = useState(initflippedCards);
-    const [ shuffledArray , setShuffledArray  ] = useState([]);
-
-    //*board
-    const [ boardfill, setBoardfill ] = useState('');
-   
-    //* juego
-    const [finishDisplay, setFinishDisplay] = useState('hide');
+	//* juego
+	const [finishDisplay, setFinishDisplay] = useState('hide');
+	const [match, setMatch] = useState(matchArray)
 
 
-    //! logica
-    const handleClick_InitGame = () =>{
-        console.log("initGame","funciona");
-        resetGame();
-        createBoard();
-        timeInterval = setInterval(updateTime, 1000);
-    }
+	//! use effect
+
+	useEffect(()=>{
+		console.log("total:", match)
+	},[match]);
+
+
+
+
+	//! logica
+	const handleClick_InitGame = () => {
+		console.log('initGame', 'funciona');
+		resetGame();
+		createBoard();
+	};
+
+	function resetGame() {
+		/*  setBoardfill('') */ /* board.innerHTML = '';  */
+		clearInterval(timeInterval);
+		setTotalTime(0);
+		setTimer(totalTime); /*  timer.textContent = totalTime; */
+		setScoreCounter(0);
+		setScoreItem(scoreCounter); /* scoreItem.textContent = scoreCounter; */
+		setFinishDisplay('hide');
+	}
+
+	function createBoard() {
+		const randomArray = createRandomArrayFromOther(EmojiFoods, 8); //! selecciona un array y limite de parejas
+		const arrayRandomWithMatches = [...randomArray, ...randomArray]; //! obtener las parejas de randomArray duplicandolos dos veces ORdenado
+
+		setShuffledArray(ShuffleArray(arrayRandomWithMatches)); // ! baraja todo
+
+		console.log('baraja', shuffledArray);
+		setBoardfill(true);
+	}
+
+	function createRandomArrayFromOther(arrayToCopy, maxLength = 8) {
+		const clonedArray = [...arrayToCopy]; //! modificar el array por juego y no afectar el original
+		const randomArray = []; //! generar random
+
+		for (let i = 0; i < maxLength; i++) {
+			const randomIndex = Math.floor(Math.random() * clonedArray.length); //! generar un numero random
+			const randomItem = clonedArray[randomIndex]; //! buscar en el array ese index
+
+			randomArray.push(randomItem); //! crea un array con 8 elementos random de la lista de frutas
+			clonedArray.splice(randomIndex, 1); //* para que no se repita
+		}
+		console.log('randomArray', randomArray);
+		return randomArray; //! devuelve todo el array de 8 elementos
+	}
+
+	function flipCard(event) {
+	
+		const card = event.target.closest('.card'); //* selecionar la card
+
+		if (!card.classList.contains('flipped')) {
+			console.log('no tiene fillped card');
+		}
+
+		if (card.classList.contains('flipped')) {
+			console.log('tiene fillped card');
+		}
+
+		if (card && flippedCards.length < 2 && !card.classList.contains('flipped')) {
+			//! si la card existe dale la vuelta y si no hay dos cartas en el array y no tienen clase flipped
+			/*  setIsFlipped(true); */
+			/*  ref.current.classList.add('flipped'); */
+			card.classList.add('flipped');
+			initflippedCards.push(card);
+
+			console.log("array pusheado",initflippedCards);
+			setflippedCards(initflippedCards);
+
+			console.log('estado', flippedCards);
+			if (flippedCards.length === 2) {
+				//! si ya hay dos cartas para de dar vuelta
+				checkIdentityMatch(initflippedCards);
+				finishGameIfNoMoreMatches();
+			}
+		}
+	}
+
+	function checkIdentityMatch(array) {
+
+		//extrae los dataset-identity de las dos cartas a comparar
+		const [identity1, identity2] = array.map((card) => {
+      	return card.dataset.identity
+		
+	});
+
     
-    function resetGame() {
-        setBoardfill('') /* board.innerHTML = '';  */
-        clearInterval(timeInterval);
-        totalTime = 0;
-       /*  timer.textContent = totalTime; */
-        setScoreCounter(0);
-        setScoreItem(scoreCounter)  /* scoreItem.textContent = scoreCounter; */
-        setFinishDisplay('hide');
-      }
 
-      function createBoard() {
-        const randomArray = createRandomArrayFromOther(EmojiFoods, 8); //! selecciona un array y limite de parejas
-        const arrayRandomWithMatches = [...randomArray, ...randomArray]; //! obtener las parejas de randomArray duplicandolos dos veces ORdenado
-      
-        setShuffledArray(ShuffleArray(arrayRandomWithMatches)); // ! baraja todo
-        
-        setBoardfill(true)
-   
-      }
+		if (identity1 === identity2) {
+			flippedCards.forEach((card) => {
+				card.classList.add('match');
+			});
+			setMatch(matchArray.push(identity1, identity2));
 
-      function createRandomArrayFromOther(arrayToCopy, maxLength = 8) {
-        const clonedArray = [...arrayToCopy];
-        const randomArray = [];
-      
-        for (let i = 0; i < maxLength; i++) {
-          const randomIndex = Math.floor(Math.random() * clonedArray.length);
-          const randomItem = clonedArray[randomIndex];
-      
-          randomArray.push(randomItem);
-          clonedArray.splice(randomIndex, 1);
-        }
-        return randomArray;
-      }
-
-      function createCard({ id, emoji }) {
-        const card = template.content.cloneNode(true);
-        card.querySelector('.card').dataset.identity = id;
-        card.querySelector('.card__back').textContent = emoji;
-        return card;
-      }
+			flippedCards.length = 0;
+			setScoreCounter(scoreCounter + 1 );
+			setScoreItem(scoreCounter);
+			console.log("matcharry",match)
 
 
-      function flipCard(event) {
-        console.log("flipCard","funciona");
-        const card = event.target.closest('.card'); //* selecionar la card
-      
-        if (card && flippedCards.length < 2 && !card.classList.contains('flipped')) {
-            //! si la card existe dale la vuelta y si no hay dos cartas en el array y no tienen clase flipped
-          card.classList.add('flipped');
-          flippedCards.push(card);
-      
-          if (flippedCards.length === 2) {
-            	//! si ya hay dos cartas para de dar vuelta
-            checkIdentityMatch();
-            finishGameIfNoMoreMatches();
-          }
-        }
-      }
+
+		} else {
+			setTimeout(() => {
+				flippedCards.forEach((card) => {
+					card.classList.remove('flipped');
+				});
+				flippedCards.length = 0;
+			}, 1000);
+
+			setScoreCounter(scoreCounter - 1 );
+			setScoreItem(scoreCounter);
+			
+		}
+	}
 
 
-      function checkIdentityMatch() {
-        const [identity1, identity2] = flippedCards.map(
-          (card) => card.dataset.identity
-        );
-      
-        if (identity1 === identity2) {
-          flippedCards.forEach((card) => {
-            card.classList.add('match');
-          });
-          flippedCards.length = 0;
-          updateScoreCounter(1);
-        } else {
-          setTimeout(() => {
-            flippedCards.forEach((card) => {
-              card.classList.remove('flipped');
-            });
-            flippedCards.length = 0;
-          }, 1000);
-          updateScoreCounter(-1);
-        }
-      }
 
-      function updateScoreCounter(score) {
-        scoreItem.textContent = scoreCounter += score;
-      }
-      
-      function updateTime() {
-        totalTime++;
-        timer.textContent = totalTime;
-      }
+	function finishGameIfNoMoreMatches() {
 
-      function finishGameIfNoMoreMatches() {
-        const numberOfMatches = board.querySelectorAll('.match').length;
-        if (numberOfMatches === 16) {
-          finishDisplay.classList.remove('hide');
-          clearInterval(timeInterval);
-        }
-      }
+		
+		const numberOfMatches = matchArray.length;
+		console.log("array", match)
 
-    // objeto que envia las props a los hijos
-    const data = {
-        boardfill,
-        handleClick_InitGame,
-        flipCard,
-        shuffledArray,
-        finishDisplay,
-        scoreItem
-    }
+		if ( numberOfMatches === 16) {
+			setFinishDisplay('show');
+			
+		}
+	}
 
-    return(
-        <MemorizeContext.Provider value={data}>
-            {children}
-        </MemorizeContext.Provider>
-    )
+	// objeto que envia las props a los hijos
+	const data = {
+		boardfill,
+		handleClick_InitGame,
+		flipCard,
+		shuffledArray,
+		finishDisplay,
+		scoreItem,
+		EmojiFoods,
+		isFlipped,
+		ref,
+	};
+
+	return <MemorizeContext.Provider value={data}>{children}</MemorizeContext.Provider>;
 };
 
-export { MemorizeProvider }
+export { MemorizeProvider };
 export default MemorizeContext;
