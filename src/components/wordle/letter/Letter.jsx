@@ -19,6 +19,7 @@ function Letter({ letterPos, attemptVal }) {
     }, [currAttempt.attempt]);
     return (
         <div className="letter" id={letterState}>
+            {" "}
             {letter}
         </div>
     );
