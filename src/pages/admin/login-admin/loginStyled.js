@@ -1,4 +1,6 @@
-.container_login_view{
+import styled from "styled-components";
+
+export const StyledForm = styled.div`
     width: 80%;
     padding: 0vh 10%;
     padding-top:15vh;
@@ -8,4 +10,4 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-}
+`

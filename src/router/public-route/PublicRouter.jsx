@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "@/pages/home/Home"
-import LoginAdmin from "../../pages/login-admin/LoginAdmin";
+import Home from "@/pages/home/Home";
+import LoginAdmin from "@/pages/admin/login-admin/LoginAdmin.jsx";
 
 function PublicRouter() {
     return (

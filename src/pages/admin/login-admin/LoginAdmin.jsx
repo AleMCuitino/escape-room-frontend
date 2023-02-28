@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { register } from "../../services/user.service";
+import { register } from "../../../services/user.service";
 import { Link } from "react-router-dom";
-import './LoginAdmin.css'
+import { StyledForm } from "./loginStyled";
 
 const LoginAdmin = () => {
     const [email, setEmail] = useState("");
@@ -38,13 +38,13 @@ const LoginAdmin = () => {
     };
 
     return (
-        <div className="container_login_view">
+        <StyledForm>
             <form
                 onSubmit={handleSubmit}
                 style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "1rem",
+                    gap: "2rem",
                     maxWidth: "500px",
                 }}
             >
@@ -54,7 +54,7 @@ const LoginAdmin = () => {
                 <input type="password" onChange={handlePasswordChange} />
                 <Link to="/"><button type="submit">Ingresar</button></Link>
             </form>
-        </div>
+        </StyledForm>
     );
 };
 
