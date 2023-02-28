@@ -93,3 +93,9 @@ export const Submit = styled.button`
     `
 
 
+export const ClueButton = styled.img`
+
+    max-width: 100px;
+    position: absolute;
+    right: 4rem;
+    `

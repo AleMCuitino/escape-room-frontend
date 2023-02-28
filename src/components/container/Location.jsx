@@ -6,7 +6,7 @@ const  Location = (props) => {
 
     <div >
         
-        <TitleLocation > //// location {props.city} / año {props.year} </TitleLocation>
+        <TitleLocation > //// Location {props.city} / año {props.year} </TitleLocation>
 
     </div>
   )
