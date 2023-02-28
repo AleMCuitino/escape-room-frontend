@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "@/pages/home/Home"
 import ContainerMain from "../../components/container/ContainerMain";
-import Error404 from "../../components/container/Error404";
+import Error404 from "../../components/animations/Error404";
 
 
 function PublicRouter() {

@@ -1,27 +1,22 @@
-
-
 import React from 'react'
-
-import { Container , Title , Paragraph } from '@/components/container/containers-styled';
-import CountDown from './CountDown';
+import { Container , Paragraph, } from '@/components/container/containers-styled';
+import Location from './Location';
+import Answer from './Answer';
 
 
 const ContainerMain = (props) => {
   return (
 
+    <div className='container  vh-100 ' >
 
-    <div className='d-flex vh-100 flex-column justify-content-around align-items-center' >
+          <Location className='col-6 col-sm-4 '/>
+          <Container className='col-12 ' > 
+              <Paragraph className='col-10 col-sm-10'>{props.text} Hola soy texto con props Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.
+              </Paragraph>
+          </Container>
+          
+          <Answer/>
 
-        <div className='d-flex justify-content-start'>
-          <Title > //// {props.city} / año {props.year} </Title>
-        </div>
-
-        <CountDown/>
-
-        <Container> 
-            <Paragraph >{props.text} Hola soy texto con props Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-            </Paragraph>
-        </Container>
     </div>
   )
 }

@@ -1,6 +1,4 @@
 
-
-
 export const colorVar= {
     digital: "#33C8CE",
     digital2: "#33C8CE40",
