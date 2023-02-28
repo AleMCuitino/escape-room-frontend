@@ -12,12 +12,12 @@ Cartas del juego de memorize
 
 const Memorize_card = (props) => {
 
-  const {isFlipped, ref} = useContext(MemorizeContext);
+  const {ref} = useContext(MemorizeContext);
 
   return (
     <div className="card" ref={ref} data-identity={props.id}>
             <div className="card__front" >
-                {props.id}
+               
             </div>
             <div className="card__back">
                 {props.emoji}

@@ -4,162 +4,144 @@ import { ShuffleArray } from '@/utilities/memorize_shuffleArray';
 
 const MemorizeContext = createContext();
 
-//! logica
-
-const board = document.querySelector('.board');
-const timer = document.querySelector('.score-board__item-time');
-const scoreItem = document.querySelector('.score-board__item-score');
-const finishDisplay = document.querySelector('.finish-display');
 
 //Array de carta que se comparan
 const initflippedCards = [];
 //Array de cartas matcheadas
 const matchArray = [];
 
-let initscoreCounter = 0;
-let totalTime = 0;
-let timeInterval = null;
-
-
 const MemorizeProvider = ({ children }) => {
+
 	//* tabla de puntos
 	const [scoreCounter, setScoreCounter] = useState(0);
-	const [scoreItem, setScoreItem] = useState(initscoreCounter);
-
-	//*tiempo
-	const [totalTime, setTotalTime] = useState(0);
-	const [timer, setTimer] = useState(totalTime);
 
 	//* cartas
-	const [flippedCards, setflippedCards] = useState(initflippedCards); //array de cartas que han hecho macht
-	console.log('aa', flippedCards);
-	const [shuffledArray, setShuffledArray] = useState([]); //mezclar cartas
-	const [isFlipped, setIsFlipped] = useState(false); // se ha clicado la carta y añade una clase
-	const ref = useRef(null);
+	const [flippedCards, setflippedCards] = useState(initflippedCards); //Array de dos cartas que se comparan para ver si hay match
+
+	const [shuffledArray, setShuffledArray] = useState([]); //Array de cartas a mezclar y duplicar para crear las 16 cartas
+	
+	const ref = useRef(null);//! permite identificar las cards
 
 	//*board
-	const [boardfill, setBoardfill] = useState('');
+	const [boardfill, setBoardfill] = useState(''); // renderiza el board con todas las cartas
 
 	//* juego
-	const [finishDisplay, setFinishDisplay] = useState('hide');
-	const [match, setMatch] = useState(matchArray)
+	const [finishDisplay, setFinishDisplay] = useState('hide'); // mensaje final
+	const [match, setMatch] = useState(matchArray) // array
 
 
-	//! use effect
-
+	//! use effect, comprueba que cada vez que actualizan los puntos.
 	useEffect(()=>{
-		console.log("total:", match)
-	},[match]);
+		
+		if(scoreCounter === 0){
+			//si pierde todos los puntos reinicia el juego
+			handleClick_InitGame();
+		}
+		
+	},[scoreCounter]);
 
 
-
-
-	//! logica
+	//! Logica del juego:
 	const handleClick_InitGame = () => {
-		console.log('initGame', 'funciona');
+		//reinicia todo el juego
 		resetGame();
-		createBoard();
+		// Crea el juego
+		setTimeout(() => {
+			createBoard() 
+		}, 2000);
 	};
 
 	function resetGame() {
-		/*  setBoardfill('') */ /* board.innerHTML = '';  */
-		clearInterval(timeInterval);
-		setTotalTime(0);
-		setTimer(totalTime); /*  timer.textContent = totalTime; */
-		setScoreCounter(0);
-		setScoreItem(scoreCounter); /* scoreItem.textContent = scoreCounter; */
+
+		// Da la vuelta a todas las cartas
+		matchArray.forEach((cards) => {
+			cards.classList.remove('flipped');
+		})
+		// Reinicia el contador a 4 puntos
+		setScoreCounter(4); 
+		// limpia el array de matches
+		matchArray.length = 0;
+
+		//oculta la pantalla de ganador
 		setFinishDisplay('hide');
 	}
 
 	function createBoard() {
-		const randomArray = createRandomArrayFromOther(EmojiFoods, 8); //! selecciona un array y limite de parejas
-		const arrayRandomWithMatches = [...randomArray, ...randomArray]; //! obtener las parejas de randomArray duplicandolos dos veces ORdenado
 
-		setShuffledArray(ShuffleArray(arrayRandomWithMatches)); // ! baraja todo
+		const randomArray = createRandomArrayFromOther(EmojiFoods, 8); 
+		// Crea un array y limite de parejas
 
-		console.log('baraja', shuffledArray);
-		setBoardfill(true);
+		const arrayRandomWithMatches = [...randomArray, ...randomArray];
+		// Obtener las parejas de randomArray duplicandolos dos veces en orden
+
+		setShuffledArray(ShuffleArray(arrayRandomWithMatches));
+		//! Baraja todo el array
+
+		setBoardfill(true); //printa en pantalla todas las cartas
 	}
 
 	function createRandomArrayFromOther(arrayToCopy, maxLength = 8) {
-		const clonedArray = [...arrayToCopy]; //! modificar el array por juego y no afectar el original
-		const randomArray = []; //! generar random
+
+		const clonedArray = [...arrayToCopy]; // modificar el array cada vez que inicia el juego y no afectar el original
+		const randomArray = []; // random array
 
 		for (let i = 0; i < maxLength; i++) {
-			const randomIndex = Math.floor(Math.random() * clonedArray.length); //! generar un numero random
-			const randomItem = clonedArray[randomIndex]; //! buscar en el array ese index
+			const randomIndex = Math.floor(Math.random() * clonedArray.length); // generar un numero random
+			const randomItem = clonedArray[randomIndex]; // buscar en el array ese index
 
-			randomArray.push(randomItem); //! crea un array con 8 elementos random de la lista de frutas
-			clonedArray.splice(randomIndex, 1); //* para que no se repita
+			randomArray.push(randomItem); // crea un array con 8 elementos random de la lista de frutas
+			clonedArray.splice(randomIndex, 1); // para que no se repita
 		}
-		console.log('randomArray', randomArray);
-		return randomArray; //! devuelve todo el array de 8 elementos
+	
+		return randomArray; // devuelve todo el array de 8 elementos
 	}
 
 	function flipCard(event) {
 	
-		const card = event.target.closest('.card'); //* selecionar la card
-
-		if (!card.classList.contains('flipped')) {
-			console.log('no tiene fillped card');
-		}
-
-		if (card.classList.contains('flipped')) {
-			console.log('tiene fillped card');
-		}
+		const card = event.target.closest('.card'); //* selecionar la cards del board
 
 		if (card && flippedCards.length < 2 && !card.classList.contains('flipped')) {
-			//! si la card existe dale la vuelta y si no hay dos cartas en el array y no tienen clase flipped
-			/*  setIsFlipped(true); */
-			/*  ref.current.classList.add('flipped'); */
-			card.classList.add('flipped');
-			initflippedCards.push(card);
+			// si la card existe dale la vuelta, si no hay dos cartas en el array, y que no contenga la clase flipped
+	
+			card.classList.add('flipped'); // añade la clase flipped a la carta y dale vuelta
+			initflippedCards.push(card); // envia la carta al array de comprobación 
 
-			console.log("array pusheado",initflippedCards);
-			setflippedCards(initflippedCards);
+			setflippedCards(initflippedCards);// envia el array al useState
 
-			console.log('estado', flippedCards);
 			if (flippedCards.length === 2) {
-				//! si ya hay dos cartas para de dar vuelta
-				checkIdentityMatch(initflippedCards);
-				finishGameIfNoMoreMatches();
+				// si ya hay dos cartas para comparar
+				checkIdentityMatch(initflippedCards); //verifica que son iguales
+				finishGameIfNoMoreMatches(); // comprueba si ya tienen todas las cartas
 			}
 		}
 	}
 
 	function checkIdentityMatch(array) {
-
 		//extrae los dataset-identity de las dos cartas a comparar
 		const [identity1, identity2] = array.map((card) => {
-      	return card.dataset.identity
-		
+      	return card.dataset.identity		
 	});
 
-    
 
 		if (identity1 === identity2) {
 			flippedCards.forEach((card) => {
+				//añade la clase match y envialas al array de cartas con match
 				card.classList.add('match');
+				setMatch(matchArray.push(card));
 			});
-			setMatch(matchArray.push(identity1, identity2));
 
-			flippedCards.length = 0;
-			setScoreCounter(scoreCounter + 1 );
-			setScoreItem(scoreCounter);
-			console.log("matcharry",match)
-
-
+			flippedCards.length = 0; // resetea el array de comprobación
+			setScoreCounter(scoreCounter + 1 ); // añade un punto
 
 		} else {
 			setTimeout(() => {
 				flippedCards.forEach((card) => {
-					card.classList.remove('flipped');
+					card.classList.remove('flipped'); //elimina la clase flipped si no hay match
 				});
-				flippedCards.length = 0;
+				flippedCards.length = 0; // resetea el array de comprobación
 			}, 1000);
 
-			setScoreCounter(scoreCounter - 1 );
-			setScoreItem(scoreCounter);
+			setScoreCounter(scoreCounter - 1 );			
 			
 		}
 	}
@@ -167,16 +149,18 @@ const MemorizeProvider = ({ children }) => {
 
 
 	function finishGameIfNoMoreMatches() {
-
 		
+		// almacena el valor de la longitud del array de cartas con match
 		const numberOfMatches = matchArray.length;
-		console.log("array", match)
 
 		if ( numberOfMatches === 16) {
-			setFinishDisplay('show');
-			
+			setFinishDisplay('show'); // despliega el mensaje de victoria		
 		}
 	}
+
+	
+
+
 
 	// objeto que envia las props a los hijos
 	const data = {
@@ -185,9 +169,7 @@ const MemorizeProvider = ({ children }) => {
 		flipCard,
 		shuffledArray,
 		finishDisplay,
-		scoreItem,
-		EmojiFoods,
-		isFlipped,
+		scoreCounter,
 		ref,
 	};
 

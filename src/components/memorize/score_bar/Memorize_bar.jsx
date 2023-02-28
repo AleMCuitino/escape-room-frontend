@@ -9,7 +9,7 @@ Bloque de puntos
 
 const Memorize_bar = () => {
 
-   const {handleClick_InitGame, scoreItem } = useContext(MemorizeContext)
+   const {handleClick_InitGame, scoreCounter } = useContext(MemorizeContext)
 
   return (
     <section>
@@ -18,7 +18,7 @@ const Memorize_bar = () => {
             <div className="score-board">
                 <div className="score-board__item">
                     <p>Puntos</p>
-                    <p className="score-board__item-score">{scoreItem}</p>
+                    <p className="score-board__item-score">{scoreCounter}</p>
                 </div>
                 <div className="score-board__item">
                     <p>Tiempo</p>
