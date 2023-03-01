@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { register } from "../../../services/user.service";
+import React, { useState, useEffect, useContext } from "react";
+import { login } from "../../../services/user.service";
 import { Link } from "react-router-dom";
 import { StyledForm } from "./loginStyled";
+import { UserContext } from "../../../contexts/UserContext";
 
 const LoginAdmin = () => {
+
+    const {userStorage, setUserStorage} = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
-    const [user, setUser] = useState(null);
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
@@ -18,10 +19,9 @@ const LoginAdmin = () => {
     };
 
     const handleLogin = async (formData) => {
-        const { data } = await register(formData);
-        setUser(data);
-        // localStorage.setItem('token', data.token)
-        // localStorage.setItem('user_name', data.user.name)
+        const { data } = await login(formData);
+        //recibe el usuario y lo guarda en el local storage
+        setUserStorage(data.user)
     };
 
     const handleSubmit = (event) => {
@@ -29,13 +29,12 @@ const LoginAdmin = () => {
 
         const loginData = {
             email: email,
-            name: name,
             password: password,
-            password_confirmation: password,
         };
 
         handleLogin(loginData);
     };
+
 
     return (
         <StyledForm>
@@ -48,14 +47,16 @@ const LoginAdmin = () => {
                     maxWidth: "500px",
                 }}
             >
+                
                 <label htmlFor="">Email</label>
                 <input type="email" onChange={handleEmailChange} />
                 <label htmlFor="">password</label>
                 <input type="password" onChange={handlePasswordChange} />
-                <Link to="/"><button type="submit">Ingresar</button></Link>
+                <button type="submit">Ingresar </button>                
             </form>
         </StyledForm>
     );
 };
 
 export default LoginAdmin;
+
