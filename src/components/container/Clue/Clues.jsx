@@ -1,6 +1,6 @@
 import React from 'react'
 import Clock from '@/assets/helpers/compass.png';
-import { ClueButton } from '../containers-styled';
+import { ClueButton } from '../../../styled-components/containers-styled';
 import CluesModal from './CluesModal';
 
 const Clues = () => {
