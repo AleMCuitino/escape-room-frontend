@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import MemorizeContext from '../context/memorizeContext';
+import { MemorizeCard } from '@/styled-components/memorizeStyled'
 
 /*
 Cartas del juego de memorize
@@ -15,14 +16,14 @@ const Memorize_card = (props) => {
   const {ref} = useContext(MemorizeContext);
 
   return (
-    <div className="card" ref={ref} data-identity={props.id}>
+    <MemorizeCard className="card" ref={ref} data-identity={props.id} color={props.color}>
             <div className="card__front" >
                
             </div>
-            <div className="card__back">
+            <div className="card__back"  >
                 {props.emoji}
             </div>
-    </div>
+    </MemorizeCard>
   )
 }
 

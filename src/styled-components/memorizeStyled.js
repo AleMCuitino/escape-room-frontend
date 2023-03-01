@@ -1,6 +1,52 @@
-import styled,{ css } from "styled-components";
+import styled from "styled-components";
 
-export const Main_memorize = styled.div`
+
+const handleColorType = (color) => {
+    switch (color) {
+      case "FF0000":
+        return "color: #FFFF; background: #FF0000;";
+        break;
+      case "39FC58":
+        return "color: #FFFF; background: #39FC58;";
+        break;
+      case "FFC700":
+        return "color: #FFFF; background: #FFC700;";
+        break;
+      case "00B2FF":
+        return "color: #FFFF; background: #00B2FF;";
+        break;
+      case "FF3D00":
+        return "color: #FFFF; background: #FF3D00;";
+        break;
+      case "BF47F8":
+        return "color: #FFFF; background: #BF47F8;";
+        break;
+      case "0500FF":
+        return "color: #FFFF; background: #0500FF;";
+        break;
+      case "FF8A00":
+        return "color: #FFFF; background: #FF8A00;";
+        break;
+      case "4211BA":
+        return "color: #FFFF; background: #4211BA;";
+        break;
+      case "FFCFCF":
+        return "color: #FFFF; background: #FFCFCF;";
+        break;
+      case "7E3D00":
+        return "color: #FFFF; background: #7E3D00;";
+        break;
+      default:
+        return "color: #FFFF; background:  #006c66;";
+    }
+  };
+
+
+
+
+  export const Main_memorize = styled.div`
+
+
 
     font-family: 'DynaPuff', cursive;
     background: linear-gradient(to left, #2193b0, #6dd5ed);
@@ -55,15 +101,16 @@ export const Main_memorize = styled.div`
         }
         .board {
             display: grid;
-            grid-template-columns: repeat(4, auto);
-            grid-gap: 2rem;
+            grid-template-columns: repeat(11,auto);
+            /* grid-template-rows: 0fr; */
+            grid-gap: 3%;
             padding: 2rem 1rem;
             border: 3px solid #eee;
             border-radius: 5px;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
                 0 4px 6px -4px rgba(0, 0, 0, 0.1);
             position: relative;
-            min-height: 770px;
+           /*  min-height: 770px; */
         }
         .card {
             position: relative;
@@ -95,6 +142,8 @@ export const Main_memorize = styled.div`
             background: #006c66;
             transform: rotateY(180deg) rotateZ(50deg);
             user-select: none;
+
+
         }
         .card.flipped .card__front {
             transform: rotateY(180deg) rotateZ(50deg);
@@ -186,4 +235,12 @@ export const Main_memorize = styled.div`
     animation-timing-function: ease-out;
   }
 }
+`
+
+export const MemorizeCard = styled.div`
+ 
+        &.match .card__back {
+            ${(props) => handleColorType(props.color)};
+        }
+
 `

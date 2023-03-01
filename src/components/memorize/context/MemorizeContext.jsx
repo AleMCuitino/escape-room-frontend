@@ -1,14 +1,15 @@
 import { createContext, useState, useRef, useEffect } from 'react';
-import { EmojiFoods } from '@/utilities/memorize_db';
+import { EmojiFoods } from '@/utilities/memorize_dbv2';
 import { ShuffleArray } from '@/utilities/memorize_shuffleArray';
 
 const MemorizeContext = createContext();
-
 
 //Array de carta que se comparan
 const initflippedCards = [];
 //Array de cartas matcheadas
 const matchArray = [];
+
+const limite = 2;
 
 const MemorizeProvider = ({ children }) => {
 
@@ -17,7 +18,6 @@ const MemorizeProvider = ({ children }) => {
 
 	//* cartas
 	const [flippedCards, setflippedCards] = useState(initflippedCards); //Array de dos cartas que se comparan para ver si hay match
-
 	const [shuffledArray, setShuffledArray] = useState([]); //Array de cartas a mezclar y duplicar para crear las 16 cartas
 	
 	const ref = useRef(null);//! permite identificar las cards
@@ -57,18 +57,20 @@ const MemorizeProvider = ({ children }) => {
 		matchArray.forEach((cards) => {
 			cards.classList.remove('flipped');
 		})
-		// Reinicia el contador a 4 puntos
-		setScoreCounter(4); 
+		
 		// limpia el array de matches
 		matchArray.length = 0;
+		setMatch(matchArray);
 
+		// Reinicia el contador a 4 puntos
+		setScoreCounter(6); 
 		//oculta la pantalla de ganador
 		setFinishDisplay('hide');
 	}
 
 	function createBoard() {
 
-		const randomArray = createRandomArrayFromOther(EmojiFoods, 8); 
+		const randomArray = createRandomArrayFromOther(EmojiFoods, limite); 
 		// Crea un array y limite de parejas
 
 		const arrayRandomWithMatches = [...randomArray, ...randomArray];
@@ -152,14 +154,12 @@ const MemorizeProvider = ({ children }) => {
 		
 		// almacena el valor de la longitud del array de cartas con match
 		const numberOfMatches = matchArray.length;
+		const final = limite * 2;
 
-		if ( numberOfMatches === 16) {
+		if ( numberOfMatches === final ) {
 			setFinishDisplay('show'); // despliega el mensaje de victoria		
 		}
 	}
-
-	
-
 
 
 	// objeto que envia las props a los hijos

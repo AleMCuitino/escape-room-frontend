@@ -28,7 +28,7 @@ const {flipCard, boardfill, shuffledArray, finishDisplay, ref } = useContext(Mem
                     { boardfill ? 
                     
                    shuffledArray.map((emoji, index) => {
-                    return  <Memorize_card key={index} id={emoji.id} emoji={emoji.emoji}/>
+                    return  <Memorize_card  color={emoji.color} key={index} id={emoji.id} emoji={emoji.emoji}/>
                      
                     }) 
              
