@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { HomeOrange } from './pages-escape-room';
 import Factoria from '@/assets/logotype/factoria.svg';
 import { Glitch} from '@/components/animations/animations-styled';
-import ContainerMain from '../../components/container/ContainerMain';
+import ContainerMain from '../../../components/container/ContainerMain';
 
 
 const HomeLoading = () => {
