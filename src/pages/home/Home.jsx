@@ -6,8 +6,8 @@ import Memorize from '../../components/memorize/Memorize';
 function Home() {
     return (
         <div>
+            <h2> Hola Escape-room </h2>
             <Wordle />
-            <h1> Hola Escape-room </h1>
             <Memorize/>            
             <Puzzle />
         </div>
