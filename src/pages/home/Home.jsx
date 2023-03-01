@@ -7,6 +7,7 @@ const Home = () => {
             <h1> Hola Escape-room </h1>
         <Memorize/>
 
+            
         </div>
     )
 }
