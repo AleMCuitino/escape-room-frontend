@@ -49,10 +49,10 @@ const LoginAdmin = () => {
                 <StyledForm>
                     <div>
                         <form onSubmit={handleSubmit}>
-                            <label htmlFor="">Email</label>
-                            <input type="email" onChange={handleEmailChange} />
-                            <label htmlFor="">password</label>
-                            <input type="password" onChange={handlePasswordChange} />
+                            <label htmlFor="" >Correo electrónico</label>
+                            <input type="email" placeholder="name@example.com" onChange={handleEmailChange} />
+                            <label htmlFor="" >Contraseña</label>
+                            <input type="password" placeholder="**********" onChange={handlePasswordChange} />
                             <button type="submit">Ingresar </button>
                         </form>
                     </div>

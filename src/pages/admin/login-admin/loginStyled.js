@@ -4,6 +4,8 @@ export const ContainerLogin = styled.section`
 background-color: #FF4700;
 width: 100%;
 height: 100vh;
+display: flex;
+align-items: center;
 `
 
 export const LoginMain = styled.div`
@@ -25,17 +27,30 @@ export const ToAction = styled.p`
 `
 
 export const StyledForm = styled.div`
-    background-color: #FFFFFF;
-    border-color: #000000;
-    width: 50vw;
-    height: auto;
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-items: content;
+        align-items: center;
+        background-color: #FFFFFF;
+        border: 2px solid #000000;
+        padding: 1rem;
+        width: 40vw;
+        height: auto;
+        box-shadow: 0.5rem 0.5rem 0 0px #adb5bd;
+    }
     form {
-        width: 60vh;
+        font-family: 'Poppins', sans-serif;
+        gap: 1rem;
+        width: 30vh;
         height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
+        ::placeholder {
+            color: azure;
+        }
         
     }
     
