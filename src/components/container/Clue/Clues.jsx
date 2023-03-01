@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Clock from '@/assets/helpers/compass.png';
 import { ClueButton } from '../containers-styled';
 import CluesModal from './CluesModal';

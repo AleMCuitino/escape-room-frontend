@@ -2,6 +2,15 @@
 import {colorVar}  from '@/styled-components/variables.js';
 import styled from "styled-components";
 
+export const ContainerBody = styled.section`
+
+    color: #33C8CE;
+    background-color: #020100;
+    width: 100%;
+    height: 100vh;
+
+    `
+
 export const Container = styled.section`
 
     display: flex;
@@ -11,6 +20,7 @@ export const Container = styled.section`
     border: ${colorVar.digital} 2px solid;
     border-radius: 24px;
     margin-top: 90px;
+    
 
     `
 

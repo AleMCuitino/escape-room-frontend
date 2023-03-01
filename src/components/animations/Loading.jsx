@@ -8,7 +8,7 @@ const Loading = () => {
     <div>
       
       <Load/>
-      <Code/>
+      {/* <Code/> */}
 
 
     </div>
