@@ -2,12 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import { login } from "../../../services/user.service";
 import { Link } from "react-router-dom";
 import LogoEscape from "@/assets/logotype/logo404.svg"
-import { LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
+import { ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
 import { UserContext } from "../../../contexts/UserContext";
 
 const LoginAdmin = () => {
 
-    const {userStorage, setUserStorage} = useContext(UserContext);
+    const { userStorage, setUserStorage } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -38,24 +38,27 @@ const LoginAdmin = () => {
 
 
     return (
-        <LoginMain>
-            <GameLogo>
-                <img src= {LogoEscape}></img>
-            </GameLogo>
-            <ToAction>
-                Por favor, ingresa tus credenciales para acceder a tu cuenta
-            </ToAction>
-            <StyledForm>
-                <form onSubmit={handleSubmit}>
-                    
-                <label htmlFor="">Email</label>
-                    <input type="email" onChange={handleEmailChange} />
-                    <label htmlFor="">password</label>
-                    <input type="password" onChange={handlePasswordChange} />
-                    <button type="submit">Ingresar </button>                
-                </form>
-            </StyledForm>
-        </LoginMain>
+        <ContainerLogin>
+            <LoginMain>
+                <GameLogo>
+                    <img src={LogoEscape}></img>
+                </GameLogo>
+                <ToAction>
+                    Por favor, ingresa tus credenciales para acceder a tu cuenta
+                </ToAction>
+                <StyledForm>
+                    <div>
+                        <form onSubmit={handleSubmit}>
+                            <label htmlFor="">Email</label>
+                            <input type="email" onChange={handleEmailChange} />
+                            <label htmlFor="">password</label>
+                            <input type="password" onChange={handlePasswordChange} />
+                            <button type="submit">Ingresar </button>
+                        </form>
+                    </div>
+                </StyledForm>
+            </LoginMain>
+        </ContainerLogin>
     );
 };
 
