@@ -1,13 +1,26 @@
 import styled from "styled-components";
 
+export const LoginMain = styled.div`
+background-color: #FF4700;
+width: auto;
+height: auto;
+
+`
+
+export const GameLogo = styled.h1`
+
+`
+
+export const ToAction = styled.p`
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    
+`
+
 export const StyledForm = styled.div`
-    width: 80%;
-    padding: 0vh 10%;
-    padding-top:15vh;
-    padding-bottom:5vh;
-    min-height:80vh;
-    background-color: #F2F0F0;
-    display:flex;
+    background-color: #FFFFFF;
+    border-color: black;
     flex-direction: column;
     align-items: center;
+    justify-content:center;
 `

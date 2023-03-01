@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { register } from "../../../services/user.service";
 import { Link } from "react-router-dom";
-import { StyledForm } from "./loginStyled";
+import LogoEscape from "@/assets/logotype/logo404.svg"
+import { LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
 
 const LoginAdmin = () => {
     const [email, setEmail] = useState("");
@@ -38,23 +39,23 @@ const LoginAdmin = () => {
     };
 
     return (
-        <StyledForm>
-            <form
-                onSubmit={handleSubmit}
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "2rem",
-                    maxWidth: "500px",
-                }}
-            >
-                <label htmlFor="">Email</label>
-                <input type="email" onChange={handleEmailChange} />
-                <label htmlFor="">password</label>
-                <input type="password" onChange={handlePasswordChange} />
-                <Link to="/"><button type="submit">Ingresar</button></Link>
-            </form>
-        </StyledForm>
+        <LoginMain>
+            <GameLogo>
+                <img src= {LogoEscape}></img>
+            </GameLogo>
+            <ToAction>
+                Por favor, ingresa tus credenciales para acceder a tu cuenta
+            </ToAction>
+            <StyledForm>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="">Email</label>
+                    <input type="email" onChange={handleEmailChange} />
+                    <label htmlFor="">password</label>
+                    <input type="password" onChange={handlePasswordChange} />
+                    <Link to="/"><button type="submit">Ingresar</button></Link>
+                </form>
+            </StyledForm>
+        </LoginMain>
     );
 };
 
