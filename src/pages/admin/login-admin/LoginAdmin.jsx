@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { login } from "../../../services/user.service";
 import { Link } from "react-router-dom";
-import LogoEscape from "@/assets/logotype/logo404.svg"
-import { ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
+import LogoEscape from "@/assets/logotype/logo404.svg";
+import LogoFactoria from "@/assets/logotype/factoria.svg";
+import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
 import { UserContext } from "../../../contexts/UserContext";
 
 const LoginAdmin = () => {
@@ -39,7 +40,11 @@ const LoginAdmin = () => {
 
     return (
         <ContainerLogin>
+            <FactoriaLogo>
+                <img src={LogoFactoria}></img>
+            </FactoriaLogo>
             <LoginMain>
+
                 <GameLogo>
                     <img src={LogoEscape}></img>
                 </GameLogo>
@@ -53,12 +58,15 @@ const LoginAdmin = () => {
                             <input type="email" placeholder="name@example.com" onChange={handleEmailChange} />
                             <label htmlFor="" >Contraseña</label>
                             <input type="password" placeholder="**********" onChange={handlePasswordChange} />
-                            <button type="submit">Ingresar </button>
-                        </form>
-                    </div>
-                </StyledForm>
-            </LoginMain>
-        </ContainerLogin>
+
+                            <Link to="/" relative="path">
+                                <button type="submit">Ingresar </button>
+                            </Link>
+                    </form>
+                </div>
+            </StyledForm>
+        </LoginMain>
+        </ContainerLogin >
     );
 };
 

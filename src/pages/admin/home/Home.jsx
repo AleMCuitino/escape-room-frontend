@@ -4,7 +4,6 @@ const Home = () => {
     return (
         <div>
             <h1> Hola Escape-room </h1>
-            
         </div>
     )
 }

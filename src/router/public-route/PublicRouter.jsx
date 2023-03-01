@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "@/pages/home/Home";
+import Home from "@/pages/admin/home/Home";
 import LoginAdmin from "@/pages/admin/login-admin/LoginAdmin.jsx";
 
 function PublicRouter() {
@@ -8,8 +8,6 @@ function PublicRouter() {
             <Routes>
                 <Route path="/" index element={<Home />} />
                 <Route path="/login" element ={<LoginAdmin/>}/>
-                    {/* <Route path="/contact" element = {<Contact/>}/>
-                    <Route path="*" element = {<NoPage/>}/>  */}
 
             </Routes>
         </Router>
