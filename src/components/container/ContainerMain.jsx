@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container , Paragraph, ContainerBody} from '@/components/container/containers-styled';
+import { Container , Paragraph, ContainerBody} from '@/styled-components/containers-styled.js';
 import Location from './Location';
 import Answer from './Answer';
 import Clues from './Clue/Clues';

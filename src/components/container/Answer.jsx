@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerAnswer , FormAnswer , Submit} from './containers-styled'
+import { ContainerAnswer , FormAnswer , Submit} from '@/styled-components/containers-styled';
 
 
 const Answer = () => {

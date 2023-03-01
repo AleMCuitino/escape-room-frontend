@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleLocation } from './containers-styled';
+import { TitleLocation } from '@/styled-components/containers-styled';
 
 const  Location = (props) => {
   return (
