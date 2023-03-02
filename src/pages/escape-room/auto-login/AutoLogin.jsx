@@ -26,7 +26,7 @@ const AutoLogin = () => {
         try {
 
             const { data } = await login(formData);
-            setUserStorage(data.user)
+            setUserStorage(data)
             navigate('/home')
             
         }
