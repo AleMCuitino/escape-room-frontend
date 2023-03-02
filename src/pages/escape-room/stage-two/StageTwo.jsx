@@ -13,7 +13,6 @@ const StageTwo = () => {
   return (
 
     <ContainerMain 
-    initText="Os encontráis en Hollywood"
     locationYear="1942"
     locationCity="Hollywood"
     logicGame="problema lógico"
