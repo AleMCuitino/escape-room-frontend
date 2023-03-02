@@ -9,9 +9,11 @@ function PublicRouter() {
     return (
         <Router>
             <Routes>
+                <Route path="/" index element={<Home/>} />
                 <Route path="/home" index element={<HomeLoading />} />
                 <Route path="/container" index element={<ContainerMain />} />
                 <Route path="/404" index element={<Error404/>} />
+
                 {/* <Route path="/about" element ={<About/>}/>
                     <Route path="/contact" element = {<Contact/>}/>
                     <Route path="*" element = {<NoPage/>}/> */}
