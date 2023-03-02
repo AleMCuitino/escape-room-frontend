@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 function TableAdmin() {
     return (
@@ -14,19 +15,61 @@ function TableAdmin() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td>
+                            <div className='d-flex justify-content-between'>
+                                <div>
+                                    <p>Jornada selección P33</p>
+                                </div>
+                                <div className='buttons'>
+                                    <Button variant="light">Editar</Button>{' '}
+                                    <Button variant="warning">Eliminar</Button>{' '}
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div className='button-active'>
+                                <Button variant="light">Activar</Button>{' '}
+                            </div>
+                        </td>
                         <td>@mdo</td>
                     </tr>
                     <tr>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>
+                            <div className='d-flex justify-content-between'>
+                                <div>
+                                    <p>Escape selección P3</p>
+                                </div>
+                                <div className='buttons'>
+                                    <Button variant="light">Editar</Button>{' '}
+                                    <Button variant="warning">Eliminar</Button>{' '}
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div className='button-active'>
+                                <Button variant="light">Activar</Button>{' '}
+                            </div>
+                        </td>
+                        <td>@mdo</td>
                     </tr>
                     <tr>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                    <td>
+                            <div className='d-flex justify-content-between'>
+                                <div>
+                                    <p>Jornada IA P5</p>
+                                </div>
+                                <div className='buttons'>
+                                    <Button variant="light">Editar</Button>{' '}
+                                    <Button variant="warning">Eliminar</Button>{' '}
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div className='button-active'>
+                                <Button variant="light">Activar</Button>{' '}
+                            </div>
+                        </td>
+                        <td>@mdo</td>
                     </tr>
                 </tbody>
             </Table>
