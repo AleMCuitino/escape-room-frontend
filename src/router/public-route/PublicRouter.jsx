@@ -4,7 +4,7 @@ import LoginAdmin from "@/pages/admin/login-admin/LoginAdmin.jsx";
 import BoardAdmin from "../../pages/admin/board-admin/BoardAdmin";
 import ContainerMain from "../../components/container/ContainerMain";
 import Error404 from "../../components/animations/Error404";
-import HomeLoading from "../../pages/escape-room/Home/HomeLoading";
+import HomeLoading from "@/pages/escape-room/Home/HomeLoading";
 import StageOne from '@/pages/escape-room/Stage-one/StageOne'
 
 function PublicRouter() {
@@ -20,7 +20,6 @@ function PublicRouter() {
 
                 {/*   Niveles del Juego */}
                 <Route path="/stage-one" element={<StageOne/>} /> {/*//* Ada Lovelace */}
-
 
                 {/* Zona de administrador */}
                 <Route path="/login" element ={<LoginAdmin/>}/>
