@@ -7,8 +7,8 @@ function Home() {
     return (
         <div>
             <Wordle />
-            <Memorize/>            
-            <Puzzle />      
+            <Memorize />            
+            <Puzzle />
         </div>
     )
 }
