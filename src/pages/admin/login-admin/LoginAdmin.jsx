@@ -5,7 +5,7 @@ import LogoEscape from "@/assets/logotype/logo404.svg";
 import LogoFactoria from "@/assets/logotype/factoria.svg";
 import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
 import { UserContext } from "../../../contexts/UserContext";
-import Footer from '@/components/footer/FooterAdmin'
+import Footer from "../../../components/admin/footer/FooterAdmin"
 
 const LoginAdmin = () => {
 

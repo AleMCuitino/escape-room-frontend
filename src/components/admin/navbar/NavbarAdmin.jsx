@@ -1,10 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavAdmin } from "@/components/navbar/navbarAdminStyled.js";
-import Logout from "../../assets/icons/logout.svg";
-import Prision from "../../assets/icons/prision.svg";
-import User from "../../assets/icons/user.svg";
+import { NavAdmin } from "./navbarAdminStyled";
+import Logout from "@/assets/icons/logout.svg";
+import Prision from "@/assets/icons/prision.svg";
+import User from "@/assets/icons/user.svg";
 
 function NavbarAdmin() {
     return (

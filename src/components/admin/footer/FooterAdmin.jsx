@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import IconGit from '../../assets/icons/github.png';
+import IconGit from '@/assets/icons/github.png';
 
 function FooterAdmin() {
     return (
