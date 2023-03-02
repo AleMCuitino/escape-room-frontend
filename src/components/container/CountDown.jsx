@@ -70,7 +70,7 @@ const CountDown = () => {
     }, []);
 
     return (
-        <div>
+        <div className='text-end mb-4 mb-md-0'>
             <h2>{timer}</h2>  
         </div>
     )
