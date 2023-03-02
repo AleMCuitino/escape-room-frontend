@@ -23,7 +23,7 @@ const {flipCard, boardfill, shuffledArray, finishDisplay, ref } = useContext(Mem
 
   return (
     <section>
-            <div className="container">
+            <div className="containerM">
                 <div className="board" onClick={flipCard} ref={ref}>
                     { boardfill ? 
                     

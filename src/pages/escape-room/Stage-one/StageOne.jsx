@@ -1,6 +1,7 @@
 import React from 'react'
 import ContainerMain from '@/components/container/ContainerMain'
 import Memorize from '@/components/memorize/Memorize'
+import BgLovelance from '@/assets/images/lovelace.png'
 
 /*
 ** ADA LOVELACE
@@ -12,7 +13,8 @@ import Memorize from '@/components/memorize/Memorize'
 const StageOne = () => {
   return (
 
-    <ContainerMain 
+    <ContainerMain
+    bgImg={BgLovelance} 
     initText="Ada_lovelace bloque introductorio"
     locationYear="1837"
     locationCity="Londres"
