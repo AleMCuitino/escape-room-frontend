@@ -11,7 +11,7 @@ export const ContainerBody = styled.section`
     display: flex;
     align-items: center;
     overflow: hidden;
-    height: 100%;
+  
     
     .mboard-timeline{
         margin-bottom: 2rem;
@@ -58,6 +58,8 @@ export const Container = styled.section`
     border: ${colorVar.digital} 2px solid;
     border-radius: 24px;
     position:relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     display: flex;
     flex-direction: column;
@@ -86,6 +88,7 @@ export const TitleLocation = styled.h1`
     text-align:center;
     justify-content: center;
     animation: pulseLight 20s infinite alternate;
+
     
     @media (min-width: 768px){
         text-align: left;
@@ -127,15 +130,30 @@ export const TitleLocation = styled.h1`
 export const Paragraph= styled.p`
 
     display: flex;
-    background-color:${colorVar.secondary};
+    flex-direction: column;
     max-width: 600px;           
     height: max-content;
     min-height: 130px;
+    margin-top: -34px; 
+    padding: 15px;
+
+    background-color:${colorVar.secondary};
     border: ${colorVar.digital} 2px solid;
     border-radius: 10px;
     font-size: 15px;
-    margin-top: -34px; 
-    padding: 15px;
+
+    .btn-next{
+        background-color: transparent;
+        color: inherit;
+        border:none;
+        font-weight: bolder;
+        padding-top: .6rem;
+        text-align: right;
+
+        img{
+            max-width: 20px;
+        }
+    }
 
     @media (min-width: 768px){
         align-self: self-start;

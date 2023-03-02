@@ -1,18 +1,25 @@
-export const LovelaceDB = [
+import Machine from '@/assets/helpers/machine.png'
+import Glasses from '@/assets/helpers/glasses.png'
+import MemorizeHelp from '@/assets/helpers/content/memorize.png'
+import LogicaleHelp from '@/assets/helpers/content/logica_lovelace.png'
+
+export const LovelaceDB = 
     {
       location_city: 'Londres',
       location_year: '1837',
-      introduction: "Ada Lovelace fue pionera en la programación",
-      clue_component: [ {
+      introduction: "Registrada al nacer como Augusta Ada Byron y conocida habitualmente como Ada Lovelace, fue una matemática y escritora británica",
+      clue_components: [ {
         problem: 1,
+        clue: `${LogicaleHelp}`,
         text:"",
-        img:"",
-        resolt: false,   
+        img: `${Glasses}`,
+        result: false,   
       } , {
         problem: 2,
+        clue: `${MemorizeHelp}`,
         text:"",
-        img:"",
-        resolt: false,   
+        img:`${Machine}`,
+        result: false,   
       }],
       solution: "ada lovelace",
       logicGame: {
@@ -40,5 +47,4 @@ export const LovelaceDB = [
         }
       ]
 
-    },
-]
+    };
