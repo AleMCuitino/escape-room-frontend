@@ -8,7 +8,7 @@ const Clues = () => {
     const [modalShow, setModalShow] = React.useState(false);
     return (
         
-    <div>
+    <>
         <ClueButton src={Clock}  alt="clue"  onClick={() => setModalShow(true)}/> 
 
         <CluesModal
@@ -16,8 +16,7 @@ const Clues = () => {
         onHide={() => setModalShow(false)}
         />
 
-
-    </div>
+    </>
   )
 }
 

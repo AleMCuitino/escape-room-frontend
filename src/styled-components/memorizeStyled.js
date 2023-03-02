@@ -149,8 +149,6 @@ const handleColorType = (color) => {
                 bottom: -9px;
                 color: #ea9b00;
             }
-
-
         }
         .card.flipped .card__front {
             transform: rotateY(180deg) rotateZ(50deg);
