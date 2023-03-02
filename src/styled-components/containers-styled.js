@@ -58,10 +58,38 @@ export const TitleLocation = styled.h1`
     padding: 20px;
     text-align:center;
     justify-content: center;
+   /*  transition: background-color 2s ease-in-out; */
+    animation: pulseLight 25s infinite alternate;
 
+    
     @media (min-width: 768px){
         text-align: left;
         font-size:20px;
+    }
+
+    @keyframes pulseLight {
+
+        20%{
+            background-color:${colorVar.digital};
+            color:${colorVar.secondary};
+        }
+        40%{
+            background-color:${colorVar.digital2};
+            color:${colorVar.digital};
+        }
+        60%{
+            background-color:${colorVar.digital};
+            color:${colorVar.secondary};
+        }
+        80%{
+            background-color:${colorVar.digital2};
+            color:${colorVar.digital};
+        }
+        100%{
+            background-color:${colorVar.digital};
+            color:${colorVar.secondary};
+        }
+
     }
 
     `
@@ -132,6 +160,13 @@ export const Submit = styled.button`
     border-radius: 10px;
     font-size:20px;
     justify-content: center;
+    transition: background-color 1s ease-in-out, color .5s ease-in-out, box-shadow 1.4s ease-in-out;
+
+    &:hover{
+        background-color: ${colorVar.digital};
+        color:${colorVar.secondary};
+        box-shadow: 0 0 16px 8px ${colorVar.digital};
+    }
     
     `
 
@@ -153,6 +188,13 @@ export const ClueButton = styled.img`
 
     max-width: 100px;
     margin-bottom: 2rem;
+    cursor:pointer;
+    transition: transform .5s ease-in-out, filter .2s ease-in-out;
+
+    &:hover{
+        transform: rotate(15deg) scale(1.3);
+        filter: drop-shadow(0 1rem 24px ${colorVar.digital}); 
+    }
 
     `
 
@@ -170,7 +212,6 @@ export const ClueModalWindow = styled(Modal)`
                 background:transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='aqua' %3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
             }
         }
-
 
         .modal-body{
             padding-bottom:2.5rem;
