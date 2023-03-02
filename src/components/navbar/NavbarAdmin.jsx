@@ -2,6 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavAdmin } from "@/components/navbar/navbarAdminStyled.js";
+import Logout from "../../assets/icons/logout.svg";
+import Prision from "../../assets/icons/prision.svg";
+import User from "../../assets/icons/user.svg";
 
 function NavbarAdmin() {
     return (
@@ -14,9 +17,9 @@ function NavbarAdmin() {
                     </div>
                     <Navbar.Collapse className="d-flex justify-content-end" id="responsive-navbar-nav">
                         <Nav>
-                            <Nav.Link href="#deets">Icon 1</Nav.Link>
-                            <Nav.Link href="#deets">Icon 2</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">Icon 3</Nav.Link>
+                            <Nav.Link  href="#deets"><img src={Logout}></img></Nav.Link>
+                            <Nav.Link href="#deets"><img src={Prision}></img></Nav.Link>
+                            <Nav.Link href="#memes"><img src={User}></img></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

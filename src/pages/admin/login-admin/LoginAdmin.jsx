@@ -5,6 +5,7 @@ import LogoEscape from "@/assets/logotype/logo404.svg";
 import LogoFactoria from "@/assets/logotype/factoria.svg";
 import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
 import { UserContext } from "../../../contexts/UserContext";
+import Footer from '@/components/footer/FooterAdmin'
 
 const LoginAdmin = () => {
 
@@ -62,10 +63,11 @@ const LoginAdmin = () => {
                             <Link to="/" relative="path">
                                 <button type="submit">Ingresar </button>
                             </Link>
-                    </form>
-                </div>
-            </StyledForm>
-        </LoginMain>
+                        </form>
+                    </div>
+                </StyledForm>
+            </LoginMain>
+            <Footer />
         </ContainerLogin >
     );
 };
