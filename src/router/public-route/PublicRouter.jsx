@@ -5,6 +5,7 @@ import BoardAdmin from "../../pages/admin/board-admin/BoardAdmin";
 import ContainerMain from "../../components/container/ContainerMain";
 import Error404 from "../../components/animations/Error404";
 import HomeLoading from "../../pages/escape-room/Home/HomeLoading";
+import AutoLogin from "../../pages/escape-room/auto-login/AutoLogin";
 
 
 function PublicRouter() {
@@ -17,6 +18,7 @@ function PublicRouter() {
                 <Route path="/404" index element={<Error404/>} />
                 <Route path="/login" element ={<LoginAdmin/>}/>
                 <Route path="/mi-admin" element ={<BoardAdmin />}/>
+                <Route path="/login-auto/:email/:name" element={<AutoLogin/>}/>
             </Routes>
         </Router>
     );
