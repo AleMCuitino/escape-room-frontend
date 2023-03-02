@@ -8,8 +8,8 @@ import Clues from './Clue/Clues';
 const ContainerMain = (props) => {
   return (
     <>
-    <ContainerBody>
-    <div className='container  vh-100 ' >
+    <ContainerBody >
+    <div className='container  vh-100 mt-4' >
           
             <Location className='col-6 col-sm-4  position-relative'/>
             <Container className='col-12 ' > 
