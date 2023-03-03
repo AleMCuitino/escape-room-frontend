@@ -1,12 +1,13 @@
-import React , {useState} from 'react'
+import React from 'react'
 import Modal from 'react-bootstrap/Modal';
+import { ClueModalWindow } from '@/styled-components/containers-styled';
 
 
 const CluesModal = (props) => {
   
   return (
     <>
-      <Modal
+      <ClueModalWindow
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -22,7 +23,7 @@ const CluesModal = (props) => {
             </p>
           </Modal.Body>
       
-    </Modal>
+    </ClueModalWindow>
     </>
 
   )

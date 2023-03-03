@@ -1,5 +1,5 @@
 import { createContext, useState, useRef, useEffect } from 'react';
-import { EmojiFoods } from '@/utilities/memorize_dbv2';
+import { MemorizeDB } from '@/utilities/memorize_db';
 import { ShuffleArray } from '@/utilities/memorize_shuffleArray';
 
 const MemorizeContext = createContext();
@@ -9,7 +9,7 @@ const initflippedCards = [];
 //Array de cartas matcheadas
 const matchArray = [];
 
-const limite = 2;
+const limite = 11;
 
 const MemorizeProvider = ({ children }) => {
 
@@ -48,7 +48,7 @@ const MemorizeProvider = ({ children }) => {
 		// Crea el juego
 		setTimeout(() => {
 			createBoard() 
-		}, 2000);
+		}, 1600);
 	};
 
 	function resetGame() {
@@ -63,14 +63,14 @@ const MemorizeProvider = ({ children }) => {
 		setMatch(matchArray);
 
 		// Reinicia el contador a 4 puntos
-		setScoreCounter(6); 
+		setScoreCounter(11); 
 		//oculta la pantalla de ganador
 		setFinishDisplay('hide');
 	}
 
 	function createBoard() {
 
-		const randomArray = createRandomArrayFromOther(EmojiFoods, limite); 
+		const randomArray = createRandomArrayFromOther(MemorizeDB, limite); 
 		// Crea un array y limite de parejas
 
 		const arrayRandomWithMatches = [...randomArray, ...randomArray];
