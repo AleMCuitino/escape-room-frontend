@@ -12,6 +12,8 @@ const LoginAdmin = () => {
     const { userStorage, setUserStorage } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    // const [errorMsg, setErrorMsg] = useState(""); para los errores
+    // agregar to navigate
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
@@ -38,14 +40,12 @@ const LoginAdmin = () => {
         handleLogin(loginData);
     };
 
-
     return (
         <ContainerLogin>
             <FactoriaLogo>
                 <img src={LogoFactoria}></img>
             </FactoriaLogo>
             <LoginMain>
-
                 <GameLogo>
                     <img src={LogoEscape}></img>
                 </GameLogo>
@@ -55,11 +55,23 @@ const LoginAdmin = () => {
                 <StyledForm>
                     <div>
                         <form onSubmit={handleSubmit}>
-                            <label htmlFor="" >Correo electrónico</label>
-                            <input type="email" placeholder="name@example.com" onChange={handleEmailChange} />
+                            <label htmlFor="">Correo electrónico</label>
+                            <input 
+                                type="email"
+                                id="email" 
+                                placeholder="name@example.com" 
+                                onChange={handleEmailChange} 
+                                // value={email} para limpiar los campos?
+                                required
+                            />
                             <label htmlFor="" >Contraseña</label>
-                            <input type="password" placeholder="**********" onChange={handlePasswordChange} />
-
+                            <input 
+                                type="password" 
+                                id="password"
+                                placeholder="**********" 
+                                onChange={handlePasswordChange}
+                                required 
+                            />
                             <Link to="/" relative="path">
                                 <button type="submit">Ingresar </button>
                             </Link>
