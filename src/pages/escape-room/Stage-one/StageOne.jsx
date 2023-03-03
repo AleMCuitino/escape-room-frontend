@@ -11,7 +11,7 @@ import {LovelaceDB} from '@/pages/escape-room/Stage-one/adaLovelace_db.js'
 ** #Logic Game
 ** #Helps
 */
-
+ 
 
 const StageOne = () => {
   return (
