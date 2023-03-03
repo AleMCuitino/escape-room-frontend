@@ -1,7 +1,8 @@
 import React from 'react';
 import ContainerMain from '@/components/container/ContainerMain';
-import Wordle from '@/components/wordle/Wordle';
-
+// import Wordle from '@/components/wordle/Wordle';
+import BgENIAC from '@/assets/images/eniac.png';
+import {EniacDB} from '@/pages/escape-room/stage-three/ENIAC_db.js';
 /*
 ** ENIAC
 ** #Wordle Game 🟢
@@ -9,18 +10,18 @@ import Wordle from '@/components/wordle/Wordle';
 ** #Logic Game
 */
 
-const StageOne = () => {
+const StageThree = () => {
   return (
 
     <ContainerMain 
-    initText="ENIAC bloque introductorio"
-    locationYear="1946"
-    locationCity="Filadelfia"
-    logicGame="problema lógico"
-    interactiveGame={<Wordle/>}
-    clueOne="Pista 1"
-    clueTwo="Pista 2"
-    solution=""
+    bgImg={BgENIAC} 
+    initText={EniacDB.introduction}
+    locationYear={EniacDB.location_year}
+    locationCity={EniacDB.location_city}
+    // logicGame={LovelaceDB.logicGame}
+    // interactiveGame={<Wordle/>}
+    clues={EniacDB.clue_components}
+    solution={EniacDB.solution}
     />
 
   )
