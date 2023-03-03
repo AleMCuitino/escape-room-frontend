@@ -16,7 +16,7 @@ const StageOne = () => {
     initText="Ada_lovelace bloque introductorio"
     locationYear="1837"
     locationCity="Londres"
-    logicGame="problema logico"
+    logicGame="problema lógico"
     interactiveGame={<Memorize/>}
     clueOne="Pista 1"
     clueTwo="Pista 2"

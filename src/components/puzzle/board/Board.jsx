@@ -73,7 +73,7 @@ function Board({ imgUrl }) {
           />
         ))}
       </ul>
-      {hasWon && isStarted && <div>Confeti 🎉</div>}
+      {hasWon && isStarted && <div>Has ordenado el retrato de Hedy Lamarr, pionera de las telecomunicaciones. Ingresa su apellido para continuar.</div>}
       {!isStarted ?
         (<button onClick={() => handleStartClick()}>Comenzar</button>) :
         (<button onClick={() => handleShuffleClick()}>Reiniciar</button>)}
