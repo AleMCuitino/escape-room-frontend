@@ -13,6 +13,7 @@ const StageTwo = () => {
   return (
 
     <ContainerMain 
+    initText="Al ingresar la respuesta el dispositivo os ha dezplazado nuevamente en el tiempo y el espacio. Podéis ver en la pantalla que os encontráis en Hollywood y es el año 1942. Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     locationYear="1942"
     locationCity="Hollywood"
     logicGame="problema lógico"
