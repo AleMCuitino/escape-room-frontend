@@ -4,7 +4,10 @@ import LoginAdmin from "@/pages/admin/login-admin/LoginAdmin.jsx";
 import BoardAdmin from "../../pages/admin/board-admin/BoardAdmin";
 import ContainerMain from "../../components/container/ContainerMain";
 import Error404 from "../../components/animations/Error404";
+import Start from "../../pages/escape-room/Start/Start";
+import Waiting from "../../pages/escape-room/Start/Waiting";
 import HomeLoading from "@/pages/escape-room/Home/HomeLoading";
+import AutoLogin from "../../pages/escape-room/auto-login/AutoLogin";
 import StageOne from '@/pages/escape-room/stage-one/StageOne';
 import StageTwo from "@/pages/escape-room/stage-two/StageTwo";
 // import StageThree from "@/pages/escape-room/stage-three/StageThree";
@@ -19,6 +22,8 @@ function PublicRouter() {
                 <Route path="/home" element={<HomeLoading />} />
                 <Route path="/container" element={<ContainerMain />} />
                 <Route path="/404" element={<Error404/>} />
+                <Route path="/start" index element={<Start/>} />
+                <Route path="/waiting" index element={<Waiting/>} />
 
                 {/*   Niveles del Juego */}
                 <Route path="/stage-one" element={<StageOne/>} /> {/*//* Ada Lovelace */}
@@ -28,7 +33,7 @@ function PublicRouter() {
                 {/* Zona de administrador */}
                 <Route path="/login" element ={<LoginAdmin/>}/>
                 <Route path="/mi-admin" element ={<BoardAdmin />}/>
-
+                <Route path="/login-auto/:email/:name" element={<AutoLogin/>}/>
             </Routes>
         </Router>
     );
