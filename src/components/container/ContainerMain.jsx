@@ -65,7 +65,7 @@ const ContainerMain = (props) => {
 
               </Container>
               
-            {/* input de solución del puzzel */}
+            {/* input de solución del puzzle */}
             <Answer/>
           
     </div>
