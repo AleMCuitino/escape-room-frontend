@@ -6,7 +6,7 @@ const user = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.
 
 const token = user.token;
 
-export const sendMessage = (data) => {
+export const getEscapes = () => {
 
     const config = {
         headers: {
@@ -14,5 +14,17 @@ export const sendMessage = (data) => {
         },
     };
 
-    return axios.post(baseUrl + "/send", data, config);
+    return axios.get(baseUrl + "/escape", config);
+};
+
+export const deleteEscapes = (id) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.delete(baseUrl + "/escape/" + id , config);
+
 };

@@ -16,8 +16,6 @@ const LoginAdmin = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    // agregar to navigate
-
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     };

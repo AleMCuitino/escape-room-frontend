@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../../../components/admin/navbar/NavbarAdmin';
 import { Board } from '../board-admin/boardAdminStyled';
 import TableAdmin from '@/components/admin/dashboard/table-admin/TableAdmin';
@@ -8,8 +8,11 @@ import Flower2 from'../../../assets/elements/flower1.svg';
 import Footer from '@/components/admin/footer/FooterAdmin';
 
 
-
 const BoardAdmin = () => {
+
+
+
+
     return (
         <div>
             <Navbar />
@@ -27,7 +30,7 @@ const BoardAdmin = () => {
                     <img src={Flower1}></img>
                 </div>
             </Board>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     )
 }
