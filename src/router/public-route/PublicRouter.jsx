@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../../pages/admin/home/Home";
+import Home from "@/pages/home/Home";
 import LoginAdmin from "@/pages/admin/login-admin/LoginAdmin.jsx";
 import BoardAdmin from "../../pages/admin/board-admin/BoardAdmin";
 import ContainerMain from "../../components/container/ContainerMain";
@@ -8,7 +8,7 @@ import Start from "../../pages/escape-room/Start/Start";
 import Waiting from "../../pages/escape-room/Start/Waiting";
 import HomeLoading from "@/pages/escape-room/Home/HomeLoading";
 import AutoLogin from "../../pages/escape-room/auto-login/AutoLogin";
-import StageOne from '@/pages/escape-room/stage-one/StageOne';
+import StageOne from '@/pages/escape-room/stage/StageOne';
 import StageTwo from "@/pages/escape-room/stage-two/StageTwo";
 // import StageThree from "@/pages/escape-room/stage-three/StageThree";
 

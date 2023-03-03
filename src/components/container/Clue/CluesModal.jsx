@@ -16,11 +16,18 @@ const CluesModal = (props) => {
           <Modal.Header closeButton>  
           </Modal.Header>
           <Modal.Body>
-            <h4>{props.cluesTitle} Titulo</h4>
-            <p>
-              {props.cluesPara}
-              Teeeeeeeeeeeeeeeeeexto con props
-            </p>
+
+            { props.clue !== "" ? <img className='img-fluid mx-auto d-block' src={props.clue} />  : "" }
+
+            { props.text !== "" ?
+            <>
+            <h4>{props.text}</h4>
+            </>
+             : "" }
+           
+         
+             
+          
           </Modal.Body>
       
     </ClueModalWindow>

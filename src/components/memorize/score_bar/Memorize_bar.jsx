@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import MemorizeContext from '../context/memorizeContext'
+import MemorizeContext from '../context/MemorizeContext'
 /*
 Bloque de puntos
     tiene que mostrarse el numero de intentos
@@ -13,7 +13,7 @@ const Memorize_bar = () => {
 
   return (
     <>
-        <div className="container score-container">
+        <div className="containerM score-container">
             {/* <button className="start-btn" onClick={handleClick_InitGame}>Empezar el juego</button> */}
             <div className="score-board">
                 <div className="score-board__item">

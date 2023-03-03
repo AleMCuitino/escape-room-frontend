@@ -6,21 +6,47 @@ import styled from "styled-components";
 export const ContainerBody = styled.section`
 
     color: ${colorVar.digital};
-    background-color: ${colorVar.secondary} ;
+    background: url( ${ (props) => props.bgImg } ) no-repeat center center / cover;
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-
+  
+    
     .mboard-timeline{
         margin-bottom: 2rem;
     }
 
     @media (min-width: 768px){
+        height: 100vh;
         .mboard-timeline{
         margin-bottom:4rem;
     }
+
+    @media (max-height: 768px){
+        height: fit-content;
+        overflow: auto;
+    }
+
+    
+
+    }
+
+    @media screen and (max-width: 844px) and (orientation: landscape){
+        
+    > .container{
+        padding-top: 0!important;
+        padding-bottom: 0!important;
+        height: 100%;
+        place-content: center;
+        display: flex;
+        flex-direction: column;
+       }
+
+    .mboard-timeline{
+        margin-bottom: 2.4rem;
+    }
+
     }
 
     `
@@ -28,10 +54,12 @@ export const ContainerBody = styled.section`
 /* layout interno de los elementos */
 export const Container = styled.section`
 
-    height: 65vh;
+   /*  height: 65vh; */
     border: ${colorVar.digital} 2px solid;
     border-radius: 24px;
     position:relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     display: flex;
     flex-direction: column;
@@ -42,6 +70,7 @@ export const Container = styled.section`
         justify-content: center;
         text-align: center;
     }
+
 
     `
 
@@ -58,13 +87,17 @@ export const TitleLocation = styled.h1`
     padding: 20px;
     text-align:center;
     justify-content: center;
-   /*  transition: background-color 2s ease-in-out; */
-    animation: pulseLight 25s infinite alternate;
+    animation: pulseLight 20s infinite alternate;
 
     
     @media (min-width: 768px){
         text-align: left;
         font-size:20px;
+    }
+
+    @media screen and (max-width: 844px) and (orientation: landscape){
+       font-size: 1rem;
+       padding: 2px 1rem;
     }
 
     @keyframes pulseLight {
@@ -97,27 +130,43 @@ export const TitleLocation = styled.h1`
 export const Paragraph= styled.p`
 
     display: flex;
-    background-color:${colorVar.secondary};
+    flex-direction: column;
     max-width: 600px;           
     height: max-content;
     min-height: 130px;
+    margin-top: -34px; 
+    padding: 15px;
+
+    background-color:${colorVar.secondary};
     border: ${colorVar.digital} 2px solid;
     border-radius: 10px;
     font-size: 15px;
-    margin-top: -34px; 
-    padding: 15px;
+
+    .btn-next{
+        background-color: transparent;
+        color: inherit;
+        border:none;
+        font-weight: bolder;
+        padding-top: .6rem;
+        text-align: right;
+
+        img{
+            max-width: 20px;
+        }
+    }
 
     @media (min-width: 768px){
         align-self: self-start;
     }
+
+    @media screen and (max-width: 844px) and (orientation: landscape){
+        margin-top: -20px;
+    }
     
     `
 export const ContainerAnswer= styled.div`
-
     display: flex;
     align-items:center;
-        
-
     `
     export const FormAnswer= styled.form`
 
@@ -142,10 +191,16 @@ export const ContainerAnswer= styled.div`
         color:${colorVar.digital};
         background-color:${colorVar.secondary};
 
-        ::placeholder {       
-        color:${colorVar.digital};
+            ::placeholder {       
+            color:${colorVar.digital};
+            }
         }
-        }
+
+    @media screen and (max-width: 844px) and (orientation: landscape){
+       font-size: 1rem;
+       padding: 2px 1rem;
+       margin-top: -4rem;
+    }
 
 
     `
@@ -181,6 +236,10 @@ export const ClueContainer = styled.aside`
         top: 20%;
     }
 
+    @media screen and (max-width: 768px) and (orientation: landscape){
+        top: 0;
+    }
+
 `
 
 
@@ -194,6 +253,11 @@ export const ClueButton = styled.img`
     &:hover{
         transform: rotate(15deg) scale(1.3);
         filter: drop-shadow(0 1rem 24px ${colorVar.digital}); 
+    }
+
+    @media screen and (max-width: 844px) and (orientation: landscape){
+        width: 90px;
+        margin-bottom: .6rem;
     }
 
     `

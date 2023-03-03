@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import Memorize_card from '../Card/Memorize_card';
-import MemorizeContext from '../context/memorizeContext';
+import Memorize_card from '../card/Memorize_card';
+import MemorizeContext from '../context/MemorizeContext';
 
 /*
 Tablero de juego
@@ -15,7 +15,6 @@ Tablero de juego
 */
 
 
-
 const Memorize_board = () => {
 
 const {flipCard, boardfill, shuffledArray, finishDisplay, ref } = useContext(MemorizeContext); 
@@ -23,7 +22,7 @@ const {flipCard, boardfill, shuffledArray, finishDisplay, ref } = useContext(Mem
 
   return (
     <section>
-            <div className="container">
+            <div className="containerM">
                 <div className="board" onClick={flipCard} ref={ref}>
                     { boardfill ? 
                     
