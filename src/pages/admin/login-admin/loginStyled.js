@@ -49,16 +49,16 @@ export const StyledForm = styled.div`
         align-items: center;
         background-color: #FFFFFF;
         border: 2px solid #000000;
-        width: 50vw;
-        height: auto;
+        width: 35vw;
+        height: 35vh;
         box-shadow: 0.5rem 0.5rem 0 0px #adb5bd;
     }
     form {
         font-family: 'Poppins', sans-serif;
-        padding: 1rem 0 1rem 0;
-        gap: 1rem;
-        width: 45vw;
-        height: auto;
+        padding: 0 0 1rem 0;
+        gap: 0.5rem;
+        width: 30vw;
+        height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content: center;

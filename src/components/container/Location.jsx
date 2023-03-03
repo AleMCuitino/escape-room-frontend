@@ -1,12 +1,14 @@
 import React from 'react'
 import { TitleLocation } from '@/styled-components/containers-styled';
+import CountDown from './CountDown';
 
 const  Location = (props) => {
   return (
 
-    <div >
+    <div className='mboard-timeline d-flex flex-column flex-md-row justify-content-between'>
         
-        <TitleLocation > //// Location {props.city} / año {props.year} </TitleLocation>
+        <TitleLocation className="order-1 order-md-0 mb-5 mb-md-0"> Location {props.city} / año {props.year} </TitleLocation>
+        <CountDown className="order-0 order-md-1"/>
 
     </div>
   )

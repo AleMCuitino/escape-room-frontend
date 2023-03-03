@@ -23,12 +23,12 @@ const {flipCard, boardfill, shuffledArray, finishDisplay, ref } = useContext(Mem
 
   return (
     <section>
-            <div className="container">
+            <div className="containerM">
                 <div className="board" onClick={flipCard} ref={ref}>
                     { boardfill ? 
                     
-                   shuffledArray.map((emoji, index) => {
-                    return  <Memorize_card  color={emoji.color} key={index} id={emoji.id} emoji={emoji.emoji}/>
+                   shuffledArray.map((dbMemorize, index) => {
+                    return  <Memorize_card  color={dbMemorize.color} key={index} id={dbMemorize.id} letter={dbMemorize.letter} differentiator={dbMemorize.differentiator}/>
                      
                     }) 
              
@@ -36,8 +36,8 @@ const {flipCard, boardfill, shuffledArray, finishDisplay, ref } = useContext(Mem
                    
                 </div>
                 <div className={`finish-display ${finishDisplay}`}>
-                    <p>🎉</p>
-                    <h2>Has terminado el juego!</h2>
+                    {/* <p>🎉</p>
+                    <h2>Has terminado el juego!</h2> */}
                 </div>
             </div>
     </section>
