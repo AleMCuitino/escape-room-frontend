@@ -63,9 +63,13 @@ export const StyledForm = styled.div`
         flex-direction: column;
         justify-content: center;
         align-content: center;
-        ::placeholder {
-            color: azure;
-        }
+
+    button {
+        background-color: #000000;
+        color: #FFFFFF;
+        width: 20vw;
+
+    }
         
     }
     

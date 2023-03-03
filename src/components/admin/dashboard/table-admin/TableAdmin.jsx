@@ -31,7 +31,7 @@ function TableAdmin() {
                                 <Button variant="light">Activar</Button>{' '}
                             </div>
                         </td>
-                        <td>@mdo</td>
+                        <td>activo</td>
                     </tr>
                     <tr>
                         <td>
@@ -50,7 +50,7 @@ function TableAdmin() {
                                 <Button variant="light">Activar</Button>{' '}
                             </div>
                         </td>
-                        <td>@mdo</td>
+                        <td>en proceso</td>
                     </tr>
                     <tr>
                     <td>
@@ -69,7 +69,7 @@ function TableAdmin() {
                                 <Button variant="light">Activar</Button>{' '}
                             </div>
                         </td>
-                        <td>@mdo</td>
+                        <td>finalizado</td>
                     </tr>
                 </tbody>
             </Table>

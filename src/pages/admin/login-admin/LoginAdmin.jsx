@@ -72,7 +72,7 @@ const LoginAdmin = () => {
                                 onChange={handlePasswordChange}
                                 required 
                             />
-                            <Link to="/" relative="path">
+                            <Link className='d-flex justify-content-center' to="/mi-admin" relative="path">
                                 <button type="submit">Ingresar </button>
                             </Link>
                         </form>

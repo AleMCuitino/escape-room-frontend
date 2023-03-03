@@ -29,7 +29,7 @@ function AddRoom() {
                         </Form.Select>
                     </Form.Group>
                 </div>
-                <Button className='button-add' type="submit">
+                <Button className='button-add mt-3 mb-3' type="submit">
                     Añadir Escape Room
                 </Button>
             </Form>
