@@ -21,7 +21,8 @@ const Memorize_card = (props) => {
                
             </div>
             <div className="card__back"  >
-                {props.emoji}
+                <span>{props.letter}</span>
+                <span className='simbol'>{props.differentiator}</span>
             </div>
     </MemorizeCard>
   )

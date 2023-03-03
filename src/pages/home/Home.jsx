@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Wordle from '../../components/wordle/Wordle';
+import Puzzle from '../../components/puzzle/Puzzle'
 import Memorize from '../../components/memorize/Memorize'
 
-const Home = () => {
+function Home() {
     return (
         <div>
             <h1> Hola Escape-room </h1>
-        <Memorize/>
+            <Wordle/>
+            <Memorize/>            
+            <Puzzle/>
+  
 
             
         </div>
