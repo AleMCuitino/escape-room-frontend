@@ -1,11 +1,11 @@
 import React from 'react'
-import F1 from '@/assets/buttons/f1.svg';
-import F2 from '@/assets/buttons/f2.svg';
-import F3 from '@/assets/buttons/f3.svg';
-import F4 from '@/assets/buttons/f4.svg';
-import F5 from '@/assets/buttons/f5.svg';
-import F6 from '@/assets/buttons/f6.svg';
-import F7 from '@/assets/buttons/f7.svg';
+import F1 from '@/assets/buttons/F1.svg';
+import F2 from '@/assets/buttons/F2.svg';
+import F3 from '@/assets/buttons/F3.svg';
+import F4 from '@/assets/buttons/F4.svg';
+import F5 from '@/assets/buttons/F5.svg';
+import F6 from '@/assets/buttons/F6.svg';
+import F7 from '@/assets/buttons/F7.svg';
 import { ButtonF} from './start-styled';
 import { Link } from 'react-router-dom';
 

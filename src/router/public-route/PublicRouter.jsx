@@ -8,7 +8,7 @@ import Start from "../../pages/escape-room/Start/Start";
 import Waiting from "../../pages/escape-room/Start/Waiting";
 import HomeLoading from "@/pages/escape-room/Home/HomeLoading";
 import AutoLogin from "../../pages/escape-room/auto-login/AutoLogin";
-import StageOne from '@/pages/escape-room/stage-one/StageOne';
+import StageOne from '@/pages/escape-room/stage/StageOne';
 import StageTwo from "@/pages/escape-room/stage-two/StageTwo";
 // import StageThree from "@/pages/escape-room/stage-three/StageThree";
 

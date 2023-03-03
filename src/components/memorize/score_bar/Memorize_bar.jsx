@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import MemorizeContext from '../context/memorizeContext'
+import MemorizeContext from '../context/MemorizeContext'
 /*
 Bloque de puntos
     tiene que mostrarse el numero de intentos

@@ -2,7 +2,7 @@ import React from 'react'
 import ContainerMain from '@/components/container/ContainerMain'
 import Memorize from '@/components/memorize/Memorize'
 import BgLovelance from '@/assets/images/lovelace.png'
-import {LovelaceDB} from '@/pages/escape-room/Stage-one/adaLovelace_db.js'
+import {LovelaceDB} from '@/pages/escape-room/stage/adaLovelace_db.js'
 
 /*
 ** ADA LOVELACE
@@ -11,7 +11,6 @@ import {LovelaceDB} from '@/pages/escape-room/Stage-one/adaLovelace_db.js'
 ** #Logic Game
 ** #Helps
 */
-
 
 const StageOne = () => {
   return (

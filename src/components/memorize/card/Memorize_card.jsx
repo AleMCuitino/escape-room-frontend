@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import MemorizeContext from '../context/memorizeContext';
+import MemorizeContext from '../context/MemorizeContext';
 import { MemorizeCard } from '@/styled-components/memorizeStyled'
 
 /*
