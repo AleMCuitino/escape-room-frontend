@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { login } from "../../../services/user.service";
-import { Link } from "react-router-dom";
+import swal from 'sweetalert';
+
+import { Link, useNavigate } from "react-router-dom";
 import LogoEscape from "@/assets/logotype/logo404.svg";
 import LogoFactoria from "@/assets/logotype/factoria.svg";
 import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
@@ -12,7 +14,8 @@ const LoginAdmin = () => {
     const { userStorage, setUserStorage } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [errorMsg, setErrorMsg] = useState(""); para los errores
+    const navigate = useNavigate();
+
     // agregar to navigate
 
     const handlePasswordChange = (event) => {
@@ -24,9 +27,23 @@ const LoginAdmin = () => {
     };
 
     const handleLogin = async (formData) => {
-        const { data } = await login(formData);
-        //recibe el usuario y lo guarda en el local storage
-        setUserStorage(data.user)
+        
+        try {
+            const { data } = await login(formData);
+            setUserStorage(data);
+            navigate('/mi-admin');
+        }
+        catch (error) {
+
+            //manejo de errores
+
+            if(error.response.status == 400){
+                swal(error.response.data.error);
+            }
+            if(error.response.status == 422){
+                swal(error.response.data.error);
+            }
+        }        
     };
 
     const handleSubmit = (event) => {
@@ -72,9 +89,7 @@ const LoginAdmin = () => {
                                 onChange={handlePasswordChange}
                                 required 
                             />
-                            <Link className='d-flex justify-content-center' to="/mi-admin" relative="path">
                                 <button type="submit">Ingresar </button>
-                            </Link>
                         </form>
                     </div>
                 </StyledForm>
