@@ -100,7 +100,7 @@ const MemorizeProvider = ({ children }) => {
 
 	function flipCard(event) {
 	
-		const card = event.target.closest('.card'); //* selecionar la cards del board
+		const card = event.target.closest('.cardM'); //* selecionar la cards del board
 
 		if (card && flippedCards.length < 2 && !card.classList.contains('flipped')) {
 			// si la card existe dale la vuelta, si no hay dos cartas en el array, y que no contenga la clase flipped
