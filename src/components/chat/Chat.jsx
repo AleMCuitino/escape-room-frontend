@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Pusher from 'pusher-js';
 import { sendMessage } from '../../services/chat.service';
+import { ContainerChat } from './chat.styled';
 
 function Chat() {
   const [chatHistory, setChatHistory] = useState([]);
@@ -41,24 +42,27 @@ function Chat() {
       message: message,
     };
     handleSend(formData);
+    setMessage('')
   };
 
   return (
-    <div>
-      <span>Icono de chat</span>
-      <p>mensaje</p>
-      {chatHistory.map((item, index) => {
-        return (
-          <div key={index}>
-            <p>
-              {item.user}: {item.message}
-            </p>
-          </div>
-        );
-      })}
-      <input type="text" placeholder="Message" onChange={handleMessage} />
-      <button onClick={handleSubmit}>Enviar</button>
-    </div>
+    <ContainerChat>
+      <span>Chat sala 2 </span>
+      <div className='container_messages'>
+
+        {chatHistory.map((item, index) => {
+          return (
+              <p key={index}>
+                {item.user}: {item.message}
+              </p>
+          );
+        })}
+      </div>
+      <div className='container_inputs'>
+        <input type="text" placeholder="Message" value={message} onChange={handleMessage} />
+        <button onClick={handleSubmit}>Enviar</button>
+      </div>
+    </ContainerChat>
   );
 }
 
