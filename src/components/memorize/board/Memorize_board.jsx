@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Memorize_card from '../Card/Memorize_card';
+import Memorize_card from '../card/Memorize_card';
 import MemorizeContext from '../context/MemorizeContext';
 
 /*
@@ -13,7 +13,6 @@ Tablero de juego
     tiene que poder ganar
     tiene que poder perder
 */
-
 
 
 const Memorize_board = () => {
