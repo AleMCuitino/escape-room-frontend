@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { HomeOrange , Loading} from './pages-escape-room.js';
 import Factoria from '@/assets/logotype/logoblanco.svg';
 import { Glit} from '@/pages/escape-room/Home/pages-escape-room.js';
-import Load from '@/assets/logotype/Streaming.svg';
+import Load from '@/assets/buttons/Streaming.svg';
 
 
 const HomeLoading = () => {

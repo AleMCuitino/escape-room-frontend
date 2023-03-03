@@ -33,7 +33,7 @@ export const Loading= styled.img`
 width: 200px;
 height: 200px;
 transform-origin: center;
-animation: ${rotate360} 3s linear infinite;
+animation: ${rotate360} 3.5s linear infinite;
 
     `
 const effect = keyframes`
