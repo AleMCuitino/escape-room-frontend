@@ -1,4 +1,5 @@
 import Container from 'react-bootstrap/Container';
+import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavAdmin } from "./navbarAdminStyled";
@@ -16,10 +17,10 @@ function NavbarAdmin() {
                         <Navbar.Brand className="user-admin">Lorem Ipsum</Navbar.Brand>
                     </div>
                     <Navbar.Collapse className="d-flex justify-content-end" id="responsive-navbar-nav">
-                        <Nav>
-                            <Nav.Link><img src={Logout}></img></Nav.Link>
-                            <Nav.Link><img src={Prision}></img></Nav.Link>
-                            <Nav.Link><img src={User}></img></Nav.Link>
+                        <Nav className='gap-3'>
+                            <Link to='/login'><img src={Logout}></img></Link>
+                            <Link to='/login'><img src={Prision}></img></Link>
+                            <Link to='/login'><img src={User}></img></Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

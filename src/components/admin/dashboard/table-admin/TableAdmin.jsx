@@ -1,10 +1,8 @@
-import { Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 function TableAdmin() {
     return (
-        <Container>
             <Table striped>
                 <thead>
                     <tr>
@@ -73,7 +71,6 @@ function TableAdmin() {
                     </tr>
                 </tbody>
             </Table>
-        </Container>
     );
 }
 
