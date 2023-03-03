@@ -1,8 +1,8 @@
 .wordle {
     text-align: center;
     background-color: #121212;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     /* display: flex; */
     color: white;
 }
@@ -10,6 +10,8 @@
 body {
     padding: 0%;
     margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 nav {
@@ -35,10 +37,13 @@ nav h1 {
     align-items: center;
     padding-top: 50px;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .board {
-    width: 450px;
+    width: 950px;
     height: 550px;
     border: 1px solid black;
     display: flex;

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "@/pages/home/Home";
 import LoginAdmin from "@/pages/admin/login-admin/LoginAdmin.jsx";
 import BoardAdmin from "../../pages/admin/board-admin/BoardAdmin";
+import EscapeAdmin from "../../pages/admin/escape-admin/EscapeAdmin";
 import ContainerMain from "../../components/container/ContainerMain";
 import Error404 from "../../components/animations/Error404";
 import Start from "../../pages/escape-room/Start/Start";
@@ -33,6 +34,7 @@ function PublicRouter() {
                 {/* Zona de administrador */}
                 <Route path="/login" element ={<LoginAdmin/>}/>
                 <Route path="/mi-admin" element ={<BoardAdmin />}/>
+                <Route path="/escape-admin" element ={<EscapeAdmin />}/>
                 <Route path="/login-auto/:email/:name" element={<AutoLogin/>}/>
             </Routes>
         </Router>

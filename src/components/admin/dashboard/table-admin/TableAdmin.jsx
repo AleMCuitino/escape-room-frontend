@@ -1,5 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 function TableAdmin() {
     return (
@@ -16,7 +17,7 @@ function TableAdmin() {
                         <td>
                             <div className='d-flex justify-content-between'>
                                 <div>
-                                    <p>Jornada selección P33</p>
+                                    <Link to="/escape-admin" ><p>Jornada selección P33</p></Link>
                                 </div>
                                 <div className='buttons'>
                                     <Button variant="light">Editar</Button>{' '}
