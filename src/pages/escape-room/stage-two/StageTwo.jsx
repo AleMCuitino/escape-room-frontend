@@ -1,6 +1,8 @@
-import React from 'react'
-import ContainerMain from '@/components/container/ContainerMain'
-import Puzzle from '@/components/puzzle/Puzzle'
+import React from 'react';
+import ContainerMain from '@/components/container/ContainerMain';
+import Puzzle from '@/components/puzzle/Puzzle';
+import BgLamarr from '@/assets/images/lamarr.png';
+import {LamarrDB} from '@/pages/escape-room/stage-two/hedyLamarr_db.js';
 
 /*
 ** HEDY LAMARR
@@ -12,14 +14,15 @@ import Puzzle from '@/components/puzzle/Puzzle'
 const StageTwo = () => {
   return (
 
-    <ContainerMain 
-    locationYear="1942"
-    locationCity="Hollywood"
-    logicGame="problema lógico"
+    <ContainerMain
+    bgImg={BgLamarr}
+    initText={LamarrDB.introduction}  
+    locationYear={LamarrDB.location_year}
+    locationCity={LamarrDB.location_city}
+    logicGame={LamarrDB.logicGame}
     interactiveGame={<Puzzle/>}
-    clueOne="Pista 1"
-    clueTwo="Pista 2"
-    solution="Lamarr"
+    clues={LamarrDB.clue_components}
+    solution={LamarrDB.solution}
     />
 
   )
