@@ -1,85 +1,75 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Navbar from '../../../components/admin/navbar/NavbarAdmin';
 import AddRoom from '../../../components/admin/dashboard/add-room/AddRoom';
 import Footer from '../../../components/admin/footer/FooterAdmin';
 import { Container } from 'react-bootstrap';
+import { getEscapeById } from '../../../services/escape.service';
 
 const EscapeRoom = () => {
+
+    const { id } = useParams();
+
+    console.log(id)
+
+    const [escapeRoom, setEscapeRoom] = useState(null);
+
+    const getEscape = async (id) => {
+
+        try {
+            const { data } = await getEscapeById(id);
+            console.log(data)
+            setEscapeRoom(data);
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getEscape(id)
+    }, [])
+
+
     return (
         <div>
             <Navbar />
             <Container>
-                <h1 className='mt-5 mb-5'>Jornada selección P33</h1>
+                <h1 className='mt-5 mb-5'>{escapeRoom ? escapeRoom.escape.title : "title"}</h1>
                 <AddRoom />
                 <Table striped className='mt-5 mb-5'>
                     <thead>
                         <tr>
-                            <th>ID sala</th>
+                            <th>ID salas</th>
                             <th>Núm de participantes</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <div className='d-flex justify-content-between'>
-                                    <div>
-                                        <Link to="/escape-admin" ><p>Jornada selección P33</p></Link>
-                                    </div>
-                                    <div className='buttons'>
-                                        <Button variant="light">Editar</Button>{' '}
-                                        <Button variant="warning">Eliminar</Button>{' '}
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div className='button-active'>
-                                    <Button variant="light">Activar</Button>{' '}
-                                </div>
-                            </td>
-                            <td>activo</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className='d-flex justify-content-between'>
-                                    <div>
-                                        <p>Escape selección P3</p>
-                                    </div>
-                                    <div className='buttons'>
-                                        <Button variant="light">Editar</Button>{' '}
-                                        <Button variant="warning">Eliminar</Button>{' '}
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div className='button-active'>
-                                    <Button variant="light">Activar</Button>{' '}
-                                </div>
-                            </td>
-                            <td>en proceso</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className='d-flex justify-content-between'>
-                                    <div>
-                                        <p>Jornada IA P5</p>
-                                    </div>
-                                    <div className='buttons'>
-                                        <Button variant="light">Editar</Button>{' '}
-                                        <Button variant="warning">Eliminar</Button>{' '}
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div className='button-active'>
-                                    <Button variant="light">Activar</Button>{' '}
-                                </div>
-                            </td>
-                            <td>finalizado</td>
-                        </tr>
+                        {escapeRoom?.escape.rooms.map((item) => {
+                            return (
+                                <tr key={item.id}>
+                                    <td>
+                                        <div className='d-flex justify-content-between'>
+                                            <div>
+                                                <Link to="/escape-admin" ><p>{item?.id}</p></Link>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p>{item?.users?.length}</p>
+                                    </td>
+                                    <td><div className='button-active'>
+                                        <Button variant="warning">Eliminar</Button>
+                                    </div></td>
+                                </tr>
+                            )
+                        })}
+
+
+
                     </tbody>
                 </Table>
             </Container>

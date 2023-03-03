@@ -17,6 +17,17 @@ export const getEscapes = () => {
     return axios.get(baseUrl + "/escape", config);
 };
 
+export const getEscapeById = (id) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.get(baseUrl + "/escape/" + id, config);
+};
+
 export const createEscape = (data) => {
 
     const config = {
