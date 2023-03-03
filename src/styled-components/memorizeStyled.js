@@ -54,10 +54,8 @@ const handleColorType = (color) => {
         box-sizing: border-box;
     }
 
-        section {
-            padding: 2rem 0;
-        }
-        .container {
+       
+        .containerM {
             width: 100%;
             max-width: 700px;
             margin: 0 auto;
@@ -66,8 +64,7 @@ const handleColorType = (color) => {
         .score-container {
             display: flex;
             justify-content: space-between;
-            padding: 2rem 1rem;
-            border: 3px solid #eee;
+            padding: 0 1rem;
             border-radius: 5px;
             align-items: center;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -100,7 +97,7 @@ const handleColorType = (color) => {
         .board {
             display: grid;
             grid-template-columns: repeat(11,auto);
-             grid-template-rows: 0fr; 
+            grid-template-rows: 0fr; 
             grid-gap: 3%;
             padding: 2rem 1rem;
             border: 3px solid ${colorVar.digital};
@@ -110,8 +107,9 @@ const handleColorType = (color) => {
             position: relative;
             width: 100%;
             height: 100%;
+            margin-bottom:4rem;
         }
-        .card {
+        .cardM {
             position: relative;
             cursor: pointer;
             width: auto;
@@ -137,7 +135,7 @@ const handleColorType = (color) => {
             font-family: 'DynaPuff', cursive;
             display: grid;
             place-items: center;
-            font-size: 2rem;
+            font-size: 1rem;
             text-align: center;
             line-height: 100px;
             background: linear-gradient(#7c4200, #2f1701);
@@ -150,10 +148,10 @@ const handleColorType = (color) => {
                 color: #ea9b00;
             }
         }
-        .card.flipped .card__front {
+        .cardM.flipped .card__front {
             transform: rotateY(180deg) rotateZ(50deg);
         } 
-        .card.flipped .card__back {
+        .cardM.flipped .card__back {
             transform: rotateY(0) rotateZ(0);
         }           
         .match {
@@ -183,6 +181,8 @@ const handleColorType = (color) => {
         .finish-display.hide {
             display: none;
         }
+
+      
 
 
         // animaciones
@@ -241,6 +241,19 @@ const handleColorType = (color) => {
     animation-timing-function: ease-out;
   }
 }
+
+@media (min-width: 768px) {
+          .card__back {
+          font-size: 2rem; 
+          }
+        }
+
+@media screen and (max-width: 844px) and (orientation: landscape){
+  .card__back {
+          font-size: 1rem; 
+          }
+    }
+
 `
 
 export const MemorizeCard = styled.div`

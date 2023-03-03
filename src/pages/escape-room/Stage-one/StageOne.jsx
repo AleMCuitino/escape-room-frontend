@@ -1,26 +1,30 @@
 import React from 'react'
 import ContainerMain from '@/components/container/ContainerMain'
 import Memorize from '@/components/memorize/Memorize'
+import BgLovelance from '@/assets/images/lovelace.png'
+import {LovelaceDB} from '@/pages/escape-room/Stage-one/adaLovelace_db.js'
 
 /*
 ** ADA LOVELACE
 ** #Memorize Game 🟢
-** #DB Json
+** #DB Json 🟢
 ** #Logic Game
+** #Helps
 */
+
 
 const StageOne = () => {
   return (
 
-    <ContainerMain 
-    initText="Ada_lovelace bloque introductorio"
-    locationYear="1837"
-    locationCity="Londres"
-    logicGame="problema logico"
+    <ContainerMain
+    bgImg={BgLovelance} 
+    initText={LovelaceDB.introduction}
+    locationYear={LovelaceDB.location_year}
+    locationCity={LovelaceDB.location_city}
+    logicGame={LovelaceDB.logicGame}
     interactiveGame={<Memorize/>}
-    clueOne="Pista 1"
-    clueTwo="Pista 2"
-    solution=""
+    clues={LovelaceDB.clue_components}
+    solution={LovelaceDB.solution}
     />
 
   )
