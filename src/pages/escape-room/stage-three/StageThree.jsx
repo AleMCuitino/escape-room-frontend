@@ -18,7 +18,7 @@ const StageThree = () => {
     initText={EniacDB.introduction}
     locationYear={EniacDB.location_year}
     locationCity={EniacDB.location_city}
-    // logicGame={LovelaceDB.logicGame}
+    logicGame={EniacDB.logicGame}
     // interactiveGame={<Wordle/>}
     clues={EniacDB.clue_components}
     solution={EniacDB.solution}
