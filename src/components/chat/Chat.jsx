@@ -57,8 +57,7 @@ function Chat() {
         );
       })}
       <input type="text" placeholder="Message" onChange={handleMessage} />
-      <button onClick={handleSubmit}>aa</button>
-      <button onClick={() => console.log(chatHistory)}>Console</button>
+      <button onClick={handleSubmit}>Enviar</button>
     </div>
   );
 }
