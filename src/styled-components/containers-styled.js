@@ -250,6 +250,8 @@ export const ClueButton = styled.img`
     cursor:pointer;
     transition: transform .5s ease-in-out, filter .2s ease-in-out;
 
+    ${(props) => props.result === "yes" ? "filter: saturate(0)" : "" };
+
     &:hover{
         transform: rotate(15deg) scale(1.3);
         filter: drop-shadow(0 1rem 24px ${colorVar.digital}); 
