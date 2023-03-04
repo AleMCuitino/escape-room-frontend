@@ -4,16 +4,59 @@ import Location from './Location';
 import Answer from './Answer';
 import Clues from './Clue/Clues';
 import Next from '@/assets/icons/Forward.png'
-
-
+import { AnswerProvider } from './context/answerContext';
+import { useNavigate } from 'react-router-dom';
 
 const ContainerMain = (props) => {
 
+   // redirecciona
+   const navigate = useNavigate();
+
+  // introducción al juego
   const [ intro, setIntro] = useState(true);
 
+  //Juego Logico
+  const [ logicGame , setLogicGame ] = useState(true);
+  const [ logicResult, setLogicResult ] = useState("");
+
+
+  const [ interactiveGame , setInteractiveGame] = useState(false);
+  const [ interactiveResult, setInteractiveResult ] = useState("");
+  // Eventos
   const handleClick = () => {
     setIntro(false);
   }
+
+const problemsResults = (e) => {
+  e.preventDefault();
+
+  if ( props.logicGame.result === logicResult )  {    
+
+      setLogicGame(false);
+
+      if( props.solution === interactiveResult ){
+       console.log("resuleto", props.nextStage)
+        navigate(props.nextStage);
+
+      }
+
+  }
+
+}
+
+
+  // AnswerContext para pasar la resolución de los problemas y eventos
+  const data = {
+    logicGame,
+    logicResult,
+    setLogicResult,
+    interactiveGame,
+    interactiveResult,
+    setInteractiveResult,
+    problemsResults,
+  } 
+
+
 
   return (
     <>
@@ -29,19 +72,30 @@ const ContainerMain = (props) => {
 
               { intro === true  ? 
                   <>
-                  <Paragraph className='col-10 col-sm-10'>
+                  <Paragraph className='col-10 col-sm-10 mb-5'>
                     {props.initText}
                     <button  className="btn-next" onClick={ handleClick } >Continuar <img src={Next}/></button>
                   </Paragraph>
                   </>
                   :
-                  ""
+                  <div className='col-12'>
+                
+                { logicGame ?
+                <>
+                <div className='mb-5'>
+                { props.logicGame.text === "" ? "" : <p>{props.logicGame.text}</p> }
+                { props.logicGame.img === "" ? "" :
+                   <img className="img-fluid" src={props.logicGame.img}/>
+                } 
+                </div>
+                </> : 
+                props.interactiveGame }
+    
+      
+                  </div>
+                
                 }   
 
-                  <div className='col-12'>
-                    {props.interactiveGame}
-                
-                  </div>
                   {/* Aside de pistas logicas, recorre un array */}
                   <ClueContainer> 
                     
@@ -65,8 +119,10 @@ const ContainerMain = (props) => {
 
               </Container>
               
-            {/* input de solución del puzzle */}
-            <Answer/>
+            {/* input de solución del puzzles */}
+            <AnswerProvider value={data}>
+               <Answer/>
+            </AnswerProvider>
           
     </div>
   </ContainerBody>

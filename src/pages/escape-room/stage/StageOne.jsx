@@ -8,7 +8,7 @@ import {LovelaceDB} from '@/pages/escape-room/stage/adaLovelace_db.js'
 ** ADA LOVELACE
 ** #Memorize Game 🟢
 ** #DB Json 🟢
-** #Logic Game
+** #Logic Game 🟢
 ** #Helps
 */
 
@@ -24,6 +24,8 @@ const StageOne = () => {
     interactiveGame={<Memorize/>}
     clues={LovelaceDB.clue_components}
     solution={LovelaceDB.solution}
+    nextStage={LovelaceDB.nextStage}
+
     />
 
   )
