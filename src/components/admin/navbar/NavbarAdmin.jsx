@@ -19,8 +19,8 @@ function NavbarAdmin() {
                     <Navbar.Collapse className="d-flex justify-content-end" id="responsive-navbar-nav">
                         <Nav className='gap-3'>
                             <Link to='/login'><img src={Logout}></img></Link>
-                            <Link to='/login'><img src={Prision}></img></Link>
-                            <Link to='/login'><img src={User}></img></Link>
+                            <Link to='/mi-admin'><img src={Prision}></img></Link>
+                            <Link to='/crear-usuario-admin'><img src={User}></img></Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
