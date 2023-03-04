@@ -5,6 +5,7 @@ export const colorVar= {
     primary: "#FF4700",
     secondary: "#020100",
     
+    
 }
 
 

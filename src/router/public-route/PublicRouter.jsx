@@ -10,7 +10,9 @@ import HomeLoading from "@/pages/escape-room/Home/HomeLoading";
 import AutoLogin from "../../pages/escape-room/auto-login/AutoLogin";
 import StageOne from '@/pages/escape-room/stage/StageOne';
 import StageTwo from "@/pages/escape-room/stage-two/StageTwo";
+import Bubble from "../../components/navigation/game/Bubble";
 // import StageThree from "@/pages/escape-room/stage-three/StageThree";
+
 
 function PublicRouter() {
     return (
@@ -24,6 +26,7 @@ function PublicRouter() {
                 <Route path="/404" element={<Error404/>} />
                 <Route path="/start" index element={<Start/>} />
                 <Route path="/waiting" index element={<Waiting/>} />
+                <Route path="/nav" index element={<Bubble/>} />
 
                 {/*   Niveles del Juego */}
                 <Route path="/stage-one" element={<StageOne/>} /> {/*//* Ada Lovelace */}
