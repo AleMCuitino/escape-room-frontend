@@ -2,6 +2,7 @@ import Machine from '@/assets/helpers/machine.png'
 import Glasses from '@/assets/helpers/glasses.png'
 import MemorizeHelp from '@/assets/helpers/content/memorize.png'
 import LogicaleHelp from '@/assets/helpers/content/logica_lovelace.png'
+import LogicGame from '@/assets/games/lovelace.png'
 
 export const LovelaceDB = 
     {
@@ -17,14 +18,16 @@ export const LovelaceDB =
       } , {
         problem: 2,
         clue: `${MemorizeHelp}`,
-        text:"",
+        text: "",
         img:`${Machine}`,
         result: false,   
       }],
       solution: "ada lovelace",
+      nextStage: "/stage-two",
       logicGame: {
-        text:"",
-        img:"",
+        text:" texto explicativo",
+        img:`${LogicGame}`,
+        result: "abcde",
       },
       help: [
         {
