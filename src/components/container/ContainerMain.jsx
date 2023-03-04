@@ -29,19 +29,20 @@ const ContainerMain = (props) => {
 
               { intro === true  ? 
                   <>
-                  <Paragraph className='col-10 col-sm-10'>
+                  <Paragraph className='col-10 col-sm-10 mb-5'>
                     {props.initText}
                     <button  className="btn-next" onClick={ handleClick } >Continuar <img src={Next}/></button>
                   </Paragraph>
                   </>
                   :
-                  ""
+                  <div className='col-12'>
+                
+                    {props.interactiveGame}
+      
+                  </div>
+                
                 }   
 
-                  <div className='col-12'>
-                    {props.interactiveGame}
-                
-                  </div>
                   {/* Aside de pistas logicas, recorre un array */}
                   <ClueContainer> 
                     
