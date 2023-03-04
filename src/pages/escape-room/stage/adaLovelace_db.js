@@ -23,13 +23,11 @@ export const LovelaceDB =
         result: false,   
       }],
       solution: "ada lovelace",
+      nextStage: "/stage-two",
       logicGame: {
         text:" texto explicativo",
         img:`${LogicGame}`,
         result: "abcde",
-      },
-      interactiveGame: {
-        result: "ada lovelace",
       },
       help: [
         {

@@ -5,8 +5,12 @@ import Answer from './Answer';
 import Clues from './Clue/Clues';
 import Next from '@/assets/icons/Forward.png'
 import { AnswerProvider } from './context/answerContext';
+import { useNavigate } from 'react-router-dom';
 
 const ContainerMain = (props) => {
+
+   // redirecciona
+   const navigate = useNavigate();
 
   // introducción al juego
   const [ intro, setIntro] = useState(true);
@@ -17,7 +21,7 @@ const ContainerMain = (props) => {
 
 
   const [ interactiveGame , setInteractiveGame] = useState(false);
-
+  const [ interactiveResult, setInteractiveResult ] = useState("");
   // Eventos
   const handleClick = () => {
     setIntro(false);
@@ -26,10 +30,16 @@ const ContainerMain = (props) => {
 const problemsResults = (e) => {
   e.preventDefault();
 
-  if ( props.logicGame.result === logicResult )  {
-    
-    console.log(logicResult)
-    setLogicGame(false);
+  if ( props.logicGame.result === logicResult )  {    
+
+      setLogicGame(false);
+
+      if( props.solution === interactiveResult ){
+       console.log("resuleto", props.nextStage)
+        navigate(props.nextStage);
+
+      }
+
   }
 
 }
@@ -41,6 +51,8 @@ const problemsResults = (e) => {
     logicResult,
     setLogicResult,
     interactiveGame,
+    interactiveResult,
+    setInteractiveResult,
     problemsResults,
   } 
 
