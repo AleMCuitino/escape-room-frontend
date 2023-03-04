@@ -5,7 +5,7 @@ import AnswerContext from './context/answerContext';
 
 const Answer = (props) => {
 
-  const {logicGame} = useContext(AnswerContext);
+  const {logicGame , problemsResults , setLogicResult } = useContext(AnswerContext);
 
 console.log("2",logicGame);
 
@@ -13,11 +13,11 @@ console.log("2",logicGame);
     <div >
         <ContainerAnswer className='py-2 ' >
 
-            <FormAnswer className='flex-column flex-md-row mx-auto col-10 '>  
+            <FormAnswer onSubmit={problemsResults} className='flex-column flex-md-row mx-auto col-10 '>  
 
-              <input  placeholder='Ingresa tu respuesta_' className= 'fs-6 col-12 col-md-8 mb-3 mb-md-0'  type="text"  ></input>
+              <input  placeholder='Ingresa tu respuesta_' className= 'fs-6 col-12 col-md-8 mb-3 mb-md-0'  type="text" onChange={e => setLogicResult(e.target.value)} ></input>
             
-            <Submit className='col-12 col-md-4' type="submit" value="" > Enviar </Submit>
+            <Submit className='col-12 col-md-4' type="submit"> Enviar </Submit>
             
             </FormAnswer>
         </ContainerAnswer>    

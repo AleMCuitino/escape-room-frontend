@@ -26,7 +26,10 @@ export const LovelaceDB =
       logicGame: {
         text:" texto explicativo",
         img:`${LogicGame}`,
-        result: false,
+        result: "abcde",
+      },
+      interactiveGame: {
+        result: "ada lovelace",
       },
       help: [
         {

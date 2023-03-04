@@ -11,8 +11,11 @@ const ContainerMain = (props) => {
   // introducción al juego
   const [ intro, setIntro] = useState(true);
 
-  //Juegos
+  //Juego Logico
   const [ logicGame , setLogicGame ] = useState(true);
+  const [ logicResult, setLogicResult ] = useState("");
+
+
   const [ interactiveGame , setInteractiveGame] = useState(false);
 
   // Eventos
@@ -20,9 +23,14 @@ const ContainerMain = (props) => {
     setIntro(false);
   }
 
-const logicResult = () => {
+const problemsResults = (e) => {
+  e.preventDefault();
 
-  setLogicGame(false);
+  if ( props.logicGame.result === logicResult )  {
+    
+    console.log(logicResult)
+    setLogicGame(false);
+  }
 
 }
 
@@ -30,8 +38,10 @@ const logicResult = () => {
   // AnswerContext para pasar la resolución de los problemas y eventos
   const data = {
     logicGame,
+    logicResult,
+    setLogicResult,
     interactiveGame,
-    logicResult
+    problemsResults,
   } 
 
 
