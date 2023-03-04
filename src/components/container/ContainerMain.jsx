@@ -4,16 +4,37 @@ import Location from './Location';
 import Answer from './Answer';
 import Clues from './Clue/Clues';
 import Next from '@/assets/icons/Forward.png'
-
-
+import { AnswerProvider } from './context/answerContext';
 
 const ContainerMain = (props) => {
 
+  // introducción al juego
   const [ intro, setIntro] = useState(true);
 
+  //Juegos
+  const [ logicGame , setLogicGame ] = useState(true);
+  const [ interactiveGame , setInteractiveGame] = useState(false);
+
+  // Eventos
   const handleClick = () => {
     setIntro(false);
   }
+
+const logicResult = () => {
+
+  setLogicGame(false);
+
+}
+
+
+  // AnswerContext para pasar la resolución de los problemas y eventos
+  const data = {
+    logicGame,
+    interactiveGame,
+    logicResult
+  } 
+
+
 
   return (
     <>
@@ -37,7 +58,17 @@ const ContainerMain = (props) => {
                   :
                   <div className='col-12'>
                 
-                    {props.interactiveGame}
+                { logicGame ?
+                <>
+                <div className='mb-5'>
+                { props.logicGame.text === "" ? "" : <p>{props.logicGame.text}</p> }
+                { props.logicGame.img === "" ? "" :
+                   <img className="img-fluid" src={props.logicGame.img}/>
+                } 
+                </div>
+                </> : 
+                props.interactiveGame }
+    
       
                   </div>
                 
@@ -66,8 +97,10 @@ const ContainerMain = (props) => {
 
               </Container>
               
-            {/* input de solución del puzzle */}
-            <Answer/>
+            {/* input de solución del puzzles */}
+            <AnswerProvider value={data}>
+               <Answer/>
+            </AnswerProvider>
           
     </div>
   </ContainerBody>
