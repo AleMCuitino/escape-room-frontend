@@ -10,19 +10,22 @@ import Footer from '@/components/admin/footer/FooterAdmin';
 
 const BoardAdmin = () => {
 
-
-
-
     return (
         <div>
             <Navbar />
             <Board className='container'>
-                <h1 className='pt-5'>Escape Rooms</h1>
-                <TableAdmin />
-                <h2 className='fs-4 pt-5'>Añadir un Escape Room</h2>
-                <div className='add-form'>
-                    <AddRoom />
-                </div>
+                <section className='row justify-content-start'>
+                    <div className='col-7'>
+                        <h1 className='pt-5'>Escape Rooms</h1>
+                        <TableAdmin />
+                    </div>
+                    <div className='col-5'>
+                        <h2 className='fs-4 pt-5'>Añadir un Escape Room</h2>
+                        <div className='add-form'>
+                            <AddRoom />
+                        </div>
+                    </div>
+                </section>
                 <div className='flower'>
                     <img src={Flower2}></img>
                 </div>

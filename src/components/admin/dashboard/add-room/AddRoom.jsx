@@ -60,7 +60,7 @@ function AddRoom() {
                         <Form.Control placeholder="120 min" required type='number' min={0} {...register("time")} />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>Cantidad de salas</Form.Label>
+                        <Form.Label>Núm de salas</Form.Label>
                         <Form.Select defaultValue="1" required {...register("rooms_amount")}>
                             {
                                 Array.from({ length: 10 }, (_, i) => i + 1).map((number) => {

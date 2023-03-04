@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { colorVar } from "../../../styled-components/variables";
 
 export const ContainerLogin = styled.section`
-background-color: #FF4700;
+background-color: ${colorVar.primary};
 width: 100%;
 height: 100%;
 
@@ -65,12 +66,9 @@ export const StyledForm = styled.div`
         align-content: center;
 
     button {
-        background-color: #000000;
+        background-color: ${colorVar.secondary};
         color: #FFFFFF;
         width: 20vw;
-
     }
-        
-    }
-    
+}    
 `
