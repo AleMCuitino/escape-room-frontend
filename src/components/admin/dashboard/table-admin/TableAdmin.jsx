@@ -74,13 +74,13 @@ function TableAdmin() {
                 </tr>
             </thead>
             <tbody>
-                {
+                { 
                     escapes ? escapes.map((item) => {
                         return <tr key={item.id}>
                             <td>
                                 <div className='d-flex justify-content-between'>
                                     <div>
-                                        <Link to="/escape-admin" ><p>{item.title}</p></Link>
+                                        <Link to={`/escape-admin/${item.id}`} ><p>{item.title}</p></Link>
                                     </div>
                                     <div className='buttons'>
                                         <Button variant="light">Editar</Button>{' '}
