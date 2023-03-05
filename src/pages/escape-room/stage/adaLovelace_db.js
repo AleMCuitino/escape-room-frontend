@@ -23,7 +23,7 @@ export const LovelaceDB =
         result: "no",   
       }],
       solution: "ada lovelace",
-      nextStage: "/stage-two",
+      nextStage: "/trip/stage-two",
       logicGame: {
         text: `Dado un grupo de 5 personas: George, Charles, Claire, Ada y Mary: \n 
         Una de ellas nació en 1788, otra en 1797, otra en 1798, otra en 1791 y otra en 1815. \n \n

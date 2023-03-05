@@ -22,6 +22,7 @@ const StageThree = () => {
     // interactiveGame={<Wordle/>}
     clues={EniacDB.clue_components}
     solution={EniacDB.solution}
+    nextStage={EniacDB.nextStage}
     />
 
   )

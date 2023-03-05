@@ -28,10 +28,11 @@ export const LamarrDB =
         result: false,   
       }],
       solution: "Lamarr",
+      nextStage: "/trip/stage-three",
       logicGame: {
         text:"¿Qué numero de estrellas tiene la constelación en la que no están marcadas?",
         img:`${LogicGame}`,
-        result: 8,
+        result: "8",
       },
       help: [
         {
