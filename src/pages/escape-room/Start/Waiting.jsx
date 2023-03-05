@@ -1,11 +1,14 @@
 import React from 'react'
 import { ContainerBody, Text, Hour, Rotate } from '../../../components/buttons/start-styled'
-
 import { Link } from 'react-router-dom';
 import Hourglass from '@/assets/buttons/Hourglass.svg';
 
 
-const Start = () => {
+const Waiting = () => {
+
+
+
+
   return (
     <div>
 
@@ -20,16 +23,17 @@ const Start = () => {
               
               <Hour>
                   <Rotate  src={Hourglass} alt="hour" /> 
-                  
               </Hour>
-              <p className= 'd-flex justify-content-center my-4' > 1 de 4 partipantes </p> 
+
+              <p className= 'd-flex justify-content-center my-4'> 1 de 4 partipantes </p> 
+              
           </div>
         </ContainerBody>
     </div>
   )
 }
 
-export default Start
+export default Waiting
 
 
 

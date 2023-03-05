@@ -30,7 +30,6 @@ const HomeLoading = () => {
     };
   }, []);
 
-  
 
   return (
 <>
