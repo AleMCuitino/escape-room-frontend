@@ -15,6 +15,7 @@ import Bubble from "../../components/navigation/game/Bubble";
 import Trip from '@/components/animations/trip';
 
 
+import StageThree from "@/pages/escape-room/stage-three/StageThree";
 
 
 function PublicRouter() {
@@ -35,7 +36,7 @@ function PublicRouter() {
                 {/*   Niveles del Juego */}
                 <Route path="/stage-one" element={<StageOne/>} /> {/*//* Ada Lovelace */}
                 <Route path="/stage-two" element={<StageTwo/>} /> {/*//* Hedy Lamarr */}
-
+                <Route path="/stage-three" element={<StageThree/>} />  {/*//* ENIAC Programmers */}
                 
                 {/* Zona de administrador */}
                 <Route path="/login" element ={<LoginAdmin/>}/>
