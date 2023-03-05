@@ -39,6 +39,18 @@ export const createEscape = (data) => {
     return axios.post(baseUrl + "/escape",data, config);
 }
 
+
+export const updateEscape = (id,data) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.put(baseUrl + "/escape/" + id,data, config);
+}
+
 export const deleteEscapes = (id) => {
 
     const config = {
