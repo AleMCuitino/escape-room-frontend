@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Pusher from 'pusher-js';
 import { sendMessage } from '../../services/chat.service';
+import ChatIcon from '@/assets/icons/messaging.png'
+import { CssChatProvider } from './chat-styled'
 
 function Chat() {
   const [chatHistory, setChatHistory] = useState([]);
@@ -13,6 +15,7 @@ function Chat() {
     });
 
     const channel = pusher.subscribe('my-channel');
+
     channel.bind('my-event', function (data) {
       setChatHistory(prevData => {
         // Filtrar los mensajes duplicados
@@ -36,7 +39,8 @@ function Chat() {
     const { data } = await sendMessage(formData);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const formData = {
       message: message,
     };
@@ -44,21 +48,37 @@ function Chat() {
   };
 
   return (
-    <div>
-      <span>Icono de chat</span>
-      <p>mensaje</p>
-      {chatHistory.map((item, index) => {
-        return (
-          <div key={index}>
-            <p>
-              {item.user}: {item.message}
-            </p>
-          </div>
-        );
-      })}
-      <input type="text" placeholder="Message" onChange={handleMessage} />
-      <button onClick={handleSubmit}>Enviar</button>
-    </div>
+    <CssChatProvider className='col-12 col-md-6'>
+      <div className='d-flex align-items-center mb-3'>
+        <img src={ChatIcon} alt="chat" className='d-none d-md-block img-fluid me-4'/>
+        <div className='chat-window'>
+        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje largo larglo largo largo</small>
+        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
+        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
+        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
+        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
+       
+      
+
+        </div>
+        {chatHistory.map((item, index) => {
+          return (
+            
+              <small className='mb-0' key={index}>
+                <strong className='me-2'>{item.user}:</strong> {item.message}
+              </small>
+          
+          );
+        })}
+
+      </div>
+
+      <form onSubmit={handleSubmit} className='d-flex'>
+        
+        <input className="flex-fill" type="text"  inputmode="text" placeholder="Message" onChange={handleMessage} />
+        
+      </form>
+    </CssChatProvider>
   );
 }
 
