@@ -73,3 +73,15 @@ export const deleteEscapes = (id) => {
     return axios.delete(baseUrl + "/escape/" + id, config);
 
 };
+
+export const addParticipants = () => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.post(baseUrl + "/user/assign", config);
+
+};
