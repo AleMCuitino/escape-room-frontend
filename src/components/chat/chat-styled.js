@@ -8,8 +8,8 @@ export const CssChatProvider = styled.div`
     border-radius: 0.5rem;
     backdrop-filter: blur(5px);
     border: 1px solid rgb(0 255 255 / 18%);
-    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-    margin-top:1rem;
+    box-shadow: 0 8px 32px 0 rgb(29 119 127 / 37%);
+    margin-top:2rem;
 
     .chat-window{
         overflow: auto;

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { ContainerAnswer , FormAnswer , Submit} from '@/styled-components/containers-styled';
+import {  FormAnswer , Submit} from '@/styled-components/containers-styled';
 import AnswerContext from './context/answerContext';
 
 
@@ -9,9 +9,9 @@ const Answer = () => {
 
   return (
   
-        <ContainerAnswer className='py-2' >
+     
             <FormAnswer onSubmit={problemsResults} 
-            className='flex-column flex-md-row mx-auto'>  
+            className='flex-column flex-md-row mx-auto col-12 col-md-8'>  
 
               <input
                 placeholder='Ingresa tu respuesta_'
@@ -33,7 +33,7 @@ const Answer = () => {
               <Submit className='col-12 col-md-4' type="submit"> Enviar </Submit>
             
             </FormAnswer>
-        </ContainerAnswer>    
+      
 
   )
 }
