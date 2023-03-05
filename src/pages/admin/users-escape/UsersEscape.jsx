@@ -12,9 +12,9 @@ import { getEscapeById, getUsersInEscapeById } from '../../../services/escape.se
 
 
 function UsersEscape() {
-    
-    const {id} = useParams();
-    
+
+    const { id } = useParams();
+
     const [modalShow, setModalShow] = useState(false);
 
     const [escapeRoom, setEscapeRoom] = useState(null);
@@ -64,13 +64,13 @@ function UsersEscape() {
                         </tr>
                     </thead>
                     <tbody>
-                        {usersEscape ? usersEscape.map(user => {
+                        {usersEscape.length > 0 ? usersEscape.map(user => {
                             return <tr key={user.id}>
-                            <td>{user?.id}</td>
-                            <td>{user?.name}</td>
-                            <td>{user?.room_id}</td>
-                        </tr>
-                        }):'no hay usuarios'}
+                                <td>{user?.id}</td>
+                                <td>{user?.name}</td>
+                                <td>{user?.room_id}</td>
+                            </tr>
+                        }) : <tr>no hay usuarios</tr>}
                     </tbody>
                 </Table>
                 <section className='view-points m-5 d-flex justify-content-center align-items-center'>
@@ -80,11 +80,12 @@ function UsersEscape() {
                     <ModalPoints
                         show={modalShow}
                         onHide={() => setModalShow(false)}
+                        escapeRoom={escapeRoom}
                     />
                     <img className='deco1 img-fluid' src={Deco1} alt="" />
                 </section>
                 <section className='add-users'>
-                    <AddUsers />
+                    <AddUsers id={id}/>
                 </section>
             </MainUsers>
             <Footer />

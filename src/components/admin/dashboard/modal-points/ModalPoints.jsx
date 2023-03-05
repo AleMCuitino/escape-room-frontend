@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Table from 'react-bootstrap/Table';
 
 function ModalPoints(props) {
+
     return (
         <Modal
             {...props}
@@ -12,7 +13,7 @@ function ModalPoints(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                Puntuaciones
+                    Puntuaciones
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className='m-5'>
@@ -24,10 +25,15 @@ function ModalPoints(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>40</td>
-                        </tr>
+                        {props?.escapeRoom?.escape?.rooms?.map(item => {
+                            return (
+                                <tr key={item?.id}>
+                                    <td>{item?.id}</td>
+                                    <td>{item?.points}</td>
+                                </tr>
+                            )
+                        })}
+
                     </tbody>
                 </Table>
             </Modal.Body>
