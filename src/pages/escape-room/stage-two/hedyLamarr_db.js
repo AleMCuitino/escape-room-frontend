@@ -1,6 +1,14 @@
 import Star from '@/assets/helpers/star.png'
 import Play from '@/assets/helpers/play.png'
 
+
+import LogicGame from '@/assets/games/constellation-logic.png'
+
+
+
+
+
+
 export const LamarrDB = 
     {
       location_city: 'Hollywood',
@@ -21,8 +29,9 @@ export const LamarrDB =
       }],
       solution: "Lamarr",
       logicGame: {
-        text:"",
-        img:"",
+        text:"¿Qué numero de estrellas tiene la constelación en la que no están marcadas?",
+        img:`${LogicGame}`,
+        result: 8,
       },
       help: [
         {
