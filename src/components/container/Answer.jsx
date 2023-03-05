@@ -8,9 +8,10 @@ const Answer = () => {
   const {logicGame , input , setInput, problemsResults , setLogicResult, setInteractiveResult } = useContext(AnswerContext);
 
   return (
-    <div >
+  
         <ContainerAnswer className='py-2' >
-            <FormAnswer onSubmit={problemsResults} className='flex-column flex-md-row mx-auto col-10 '>  
+            <FormAnswer onSubmit={problemsResults} 
+            className='flex-column flex-md-row mx-auto'>  
 
               <input
                 placeholder='Ingresa tu respuesta_'
@@ -33,7 +34,7 @@ const Answer = () => {
             
             </FormAnswer>
         </ContainerAnswer>    
-    </div>
+
   )
 }
 

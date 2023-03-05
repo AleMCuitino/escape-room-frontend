@@ -68,17 +68,15 @@ const problemsResults = (e) => {
     setInput
   } 
 
-
-
   return (
     <>
     <ContainerBody bgImg={props.bgImg}>
-    <div className='container py-5' >
+    <div className='container pt-5 h-100 d-flex flex-column align-items-center' >
           
             {/* board situaciónal y de tiempo */}
             <Location year={props.locationYear} city={props.locationCity} className='col-6 col-sm-4 position-relative'/>
             
-              <Container className='col-12 flex-wrap' > 
+              <Container className='col-12 flex-wrap flex-fill' > 
 
               {/* Texto introductorio */}
               { intro === true  ? 
@@ -131,8 +129,11 @@ const problemsResults = (e) => {
             <AnswerProvider value={data}>
                <Answer/>
             </AnswerProvider>
-          <div className='fixed-bottom '>
+            <div className='col-12'>
+
             <Chat/>
+            </div>
+          <div className='fixed-bottom '>
             <Bubble/>
           </div>
     </div>

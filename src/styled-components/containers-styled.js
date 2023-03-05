@@ -24,7 +24,7 @@ export const ContainerBody = styled.section`
     }
 
     @media (max-height: 768px){
-        height: fit-content;
+        height: 100%;
         overflow: auto;
     }
 
@@ -190,7 +190,7 @@ export const ContainerAnswer= styled.div`
         outline: none;
         color:${colorVar.digital};
         background-color:${colorVar.secondary};
-
+  
             ::placeholder {       
             color:${colorVar.digital};
             }

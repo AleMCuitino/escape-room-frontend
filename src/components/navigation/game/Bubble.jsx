@@ -19,7 +19,7 @@ const [ expand , setExpand ] = useState('');
 
   return (
     <BubbleCssProvider>
-      <div className="smartphone-viewport">
+      
           <div className={`float-button ${pulse}`} id="float-button" onClick={handleClick}> <img className="img-fluid" src={Target}/></div>
           <nav className={`circular-menu ${expand}`} id="circular-menu">
               <ul>
@@ -27,7 +27,7 @@ const [ expand , setExpand ] = useState('');
               <li><a className="icon-cart" onClick="" to="#"><Ask/></a></li>
               </ul>
           </nav>
-      </div>
+    
     </BubbleCssProvider>
   )
 }
