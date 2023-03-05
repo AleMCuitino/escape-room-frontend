@@ -3,7 +3,13 @@ import ButtonsF from '../../../components/buttons/ButtonsF'
 import { ContainerBody, ContainerButtons, Look, Text } from '../../../components/buttons/start-styled'
 import Target from '@/assets/buttons/Target.svg';
 import { Link } from 'react-router-dom';
+
 const Start = () => {
+
+
+
+
+  
   return (
     <div>
 
