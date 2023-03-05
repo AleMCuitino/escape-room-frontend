@@ -37,8 +37,8 @@ const EscapeRoom = () => {
         <div>
             <Navbar />
             <Container>
-                <h1 className='mt-5 mb-5'>{escapeRoom ? escapeRoom.escape.title : "title"}</h1>
-                <AddRoom />
+                <h1 className='mt-5 mb-5'>{escapeRoom ? escapeRoom.escape.title + ' ' + `(${escapeRoom.escape.time} min)` : "title"}</h1>
+                <AddRoom  update={true} idEscape={escapeRoom?.escape?.id}/>
                 <Table striped className='mt-5 mb-5'>
                     <thead>
                         <tr>
