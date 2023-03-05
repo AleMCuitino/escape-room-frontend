@@ -8,64 +8,26 @@ export const BubbleCssProvider = styled.div`
 --size: 3rem;
 --animation-time: .3s;
 
-.smartphone-viewport {
-  height: calc(var(--unit) * 16);
-  width: calc(var(--unit) * 9);
-  background: url(https://static.pexels.com/photos/310386/pexels-photo-310386.jpeg) center center/cover;
-  margin: auto;
-  box-shadow: 0 20px 20px -10px #000;
-  position: relative;
-  overflow: hidden;
-}
-.smartphone-viewport::before {
-  content: "Hola Mundo";
-  position: absolute;
-  top: 45%;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  font-size: 2em;
-  z-index: 100;
-  font-family: "Open Sans";
-}
-.smartphone-viewport::after {
-  /*  */
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
-}
-
 .float-button {
-  /*  */
   cursor: pointer;
+  color:white;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: ${colorVar.digital};
+  background: ${colorVar.digital2};
   position: absolute;
   bottom: 1rem;
   right: 1rem;
   z-index: 1000;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   transition: transform var(--animation-time);
 }
 .float-button.pulsed {
   transform: rotate(45deg);
   background: ${colorVar.digital2};
-}
-.float-button::before, .float-button::after {
-  /*  */
-  position: absolute;
-  width: 40%;
-  height: 4%;
-  content: "";
-  top: 49%;
-  left: 30%;
-  background: #fff;
-}
-.float-button::after {
-  transform: rotate(90deg);
+  color: ${colorVar.digital}
 }
 
 .circular-menu {

@@ -6,6 +6,9 @@ import Clues from './Clue/Clues';
 import Next from '@/assets/icons/Forward.png'
 import { AnswerProvider } from './context/answerContext';
 import { useNavigate } from 'react-router-dom';
+import Bubble from '../navigation/game/Bubble';
+import Chat from '../chat/Chat';
+
 
 const ContainerMain = (props) => {
 
@@ -128,8 +131,12 @@ const problemsResults = (e) => {
             <AnswerProvider value={data}>
                <Answer/>
             </AnswerProvider>
-          
+          <div className='fixed-bottom '>
+            <Chat/>
+            <Bubble/>
+          </div>
     </div>
+
   </ContainerBody>
     
     </>

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import { BubbleCssProvider } from './bubble-styled'
-import { ReactComponent as Arrow }  from '@/assets/icons/arrow.svg'
+import { ReactComponent as Arrow }  from '@/assets/icons/arrowr.svg'
+import { ReactComponent as Ask}  from '@/assets/icons/ask.svg'
+import Target  from '@/assets/icons/target.png'
 
 
-
-const Bubble = () => {
+const Bubble = (props) => {
 
 const [ pulse, setPulse ] = useState('');
 const [ expand , setExpand ] = useState('');
@@ -18,11 +20,11 @@ const [ expand , setExpand ] = useState('');
   return (
     <BubbleCssProvider>
       <div className="smartphone-viewport">
-          <div className={`float-button ${pulse}`} id="float-button" onClick={handleClick}></div>
+          <div className={`float-button ${pulse}`} id="float-button" onClick={handleClick}> <img className="img-fluid" src={Target}/></div>
           <nav className={`circular-menu ${expand}`} id="circular-menu">
               <ul>
-              <li><a className="icon-heart" href="#"><Arrow/></a></li>
-              <li><a className="icon-cart" href="#"></a></li>
+              <li><a className="icon-heart" as={Link} to="#"><Arrow/></a></li>
+              <li><a className="icon-cart" onClick="" to="#"><Ask/></a></li>
               </ul>
           </nav>
       </div>
