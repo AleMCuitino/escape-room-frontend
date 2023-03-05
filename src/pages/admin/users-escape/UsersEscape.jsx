@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import Navbar from '../../../components/admin/navbar/NavbarAdmin';
 import Button from 'react-bootstrap/Button';
@@ -7,16 +7,54 @@ import Footer from '../../../components/admin/footer/FooterAdmin';
 import { MainUsers } from './usersEscapeStyled';
 import ModalPoints from '../../../components/admin/dashboard/modal-points/ModalPoints';
 import Deco1 from '../../../assets/elements/decoration1.svg';
+import { useParams } from 'react-router-dom';
+import { getEscapeById, getUsersInEscapeById } from '../../../services/escape.service';
 
 
 function UsersEscape() {
-    const [modalShow, setModalShow] = React.useState(false);
+    
+    const {id} = useParams();
+    
+    const [modalShow, setModalShow] = useState(false);
+
+    const [escapeRoom, setEscapeRoom] = useState(null);
+
+    const [usersEscape, setUsersEscape] = useState(null);
+
+    const getEscape = async (id) => {
+
+        try {
+            const { data } = await getEscapeById(id);
+            console.log(data)
+            setEscapeRoom(data);
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    const getUsersInEscape = async (id) => {
+
+        try {
+            const { data } = await getUsersInEscapeById(id);
+            console.log(data.users)
+            setUsersEscape(data.users);
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getEscape(id)
+        getUsersInEscape(id)
+    }, [])
 
     return (
         <div>
             <Navbar />
             <MainUsers className='container'>
-                <h1 className='mt-5'>P7</h1>
+                <h1 className='mt-5'>{escapeRoom?.escape?.title}</h1>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -26,11 +64,13 @@ function UsersEscape() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Gary Limón</td>
-                            <td>3</td>
+                        {usersEscape ? usersEscape.map(user => {
+                            return <tr key={user.id}>
+                            <td>{user?.id}</td>
+                            <td>{user?.name}</td>
+                            <td>{user?.room_id}</td>
                         </tr>
+                        }):'no hay usuarios'}
                     </tbody>
                 </Table>
                 <section className='view-points m-5 d-flex justify-content-center align-items-center'>
