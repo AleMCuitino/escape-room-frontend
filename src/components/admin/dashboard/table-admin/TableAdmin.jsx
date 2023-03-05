@@ -55,7 +55,7 @@ function TableAdmin() {
                     });
                     getEscapesTable();
                 } else {
-                    
+
                 }
             });
 
@@ -74,16 +74,16 @@ function TableAdmin() {
                 </tr>
             </thead>
             <tbody>
-                { 
+                {
                     escapes ? escapes.map((item) => {
                         return <tr key={item.id}>
                             <td>
                                 <div className='d-flex justify-content-between'>
                                     <div>
-                                        <Link to={`/escape-admin/${item.id}`} ><p>{item.title}</p></Link>
+                                        <p>{item.title}</p>
                                     </div>
                                     <div className='buttons'>
-                                        <Button variant="light">Editar</Button>{' '}
+                                        <Link to={`/escape-admin/${item.id}`} ><Button variant="light">Editar</Button></Link>
                                         <Button variant="warning" onClick={() => handleDelete(item.id, item.title)}>Eliminar</Button>{' '}
                                     </div>
                                 </div>
