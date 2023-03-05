@@ -11,6 +11,9 @@ import AutoLogin from "../../pages/escape-room/auto-login/AutoLogin";
 import StageOne from '@/pages/escape-room/stage/StageOne';
 import StageTwo from "@/pages/escape-room/stage-two/StageTwo";
 // import StageThree from "@/pages/escape-room/stage-three/StageThree";
+import Trip from '@/components/animations/trip';
+
+
 
 function PublicRouter() {
     return (
@@ -24,11 +27,12 @@ function PublicRouter() {
                 <Route path="/404" element={<Error404/>} />
                 <Route path="/start" index element={<Start/>} />
                 <Route path="/waiting" index element={<Waiting/>} />
+                <Route path="/trip" index element={<Trip/>} />
 
                 {/*   Niveles del Juego */}
                 <Route path="/stage-one" element={<StageOne/>} /> {/*//* Ada Lovelace */}
                 <Route path="/stage-two" element={<StageTwo/>} /> {/*//* Hedy Lamarr */}
-               
+
                 
                 {/* Zona de administrador */}
                 <Route path="/login" element ={<LoginAdmin/>}/>

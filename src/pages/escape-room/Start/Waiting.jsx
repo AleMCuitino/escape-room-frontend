@@ -15,7 +15,7 @@ const Start = () => {
 
               <Text > 
                   <h3>Factoria ha sido hackeada...</h3>
-                  <p> Hagan click en el botón correcto para corregir el eror 404 </p>
+                  <p> LOREM LOREM  LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM LOREM </p>
               </Text>
               
               <Hour>
@@ -30,3 +30,6 @@ const Start = () => {
 }
 
 export default Start
+
+
+
