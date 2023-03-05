@@ -2,8 +2,7 @@ import React from 'react'
 import Memorize_bar from '@/components/memorize/score_bar/Memorize_bar'
 import Memorize_board from '@/components/memorize/board/Memorize_board'
 import { Main_memorize } from '@/styled-components/memorizeStyled'
-import { MemorizeProvider } from './context/memorizeContext'
-
+import { MemorizeProvider } from '@/components/memorize/context/MemorizeContext'
 
 /*
 Layout de memorize

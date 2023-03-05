@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import MemorizeContext from '../context/memorizeContext';
+import MemorizeContext from '../context/MemorizeContext';
 import { MemorizeCard } from '@/styled-components/memorizeStyled'
 
 /*
@@ -16,12 +16,13 @@ const Memorize_card = (props) => {
   const {ref} = useContext(MemorizeContext);
 
   return (
-    <MemorizeCard className="card" ref={ref} data-identity={props.id} color={props.color}>
+    <MemorizeCard className="cardM" ref={ref} data-identity={props.id} color={props.color}>
             <div className="card__front" >
                
             </div>
             <div className="card__back"  >
-                {props.emoji}
+                <span>{props.letter}</span>
+                <span className='simbol'>{props.differentiator}</span>
             </div>
     </MemorizeCard>
   )
