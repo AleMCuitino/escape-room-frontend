@@ -74,7 +74,7 @@ export const deleteEscapes = (id) => {
 
 };
 
-export const addParticipants = () => {
+export const addParticipants = (data) => {
 
     const config = {
         headers: {
@@ -82,6 +82,6 @@ export const addParticipants = () => {
         },
     };
 
-    return axios.post(baseUrl + "/user/assign", config);
+    return axios.post(baseUrl + "/user/assign",data, config);
 
 };
