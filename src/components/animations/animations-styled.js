@@ -200,3 +200,44 @@ export const VideoStyle = styled.video`
     object-fit: cover;
 
 `
+export const typing =keyframes`
+ 0%
+  {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+`
+
+export const blink=keyframes`
+50% {
+    border-color: transparent;
+  }
+`
+
+export const ContainerText = styled.p`
+
+  height: 100vh;
+  display: grid;
+  justify-content: space-evenly;
+  place-items: center;
+  background-color: ${colorVar.secondary};
+  color:white;
+
+
+    h1 {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 6rem;
+    /* margin: 0 auto; */
+    border-right: 0.05rem solid white;
+    animation: ${typing} 4s steps(50) 1s 1 normal both, ${blink} 1s steps(1) infinite;
+  }
+
+  
+
+`
+
+
