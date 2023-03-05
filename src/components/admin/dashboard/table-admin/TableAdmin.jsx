@@ -80,7 +80,7 @@ function TableAdmin() {
                             <td>
                                 <div className='d-flex justify-content-between'>
                                     <div>
-                                        <p>{item.title}</p>
+                                    <Link to={`/add-participants/${item.id}`} ><p>{item.title}</p></Link>
                                     </div>
                                     <div className='buttons'>
                                         <Link to={`/escape-admin/${item.id}`} ><Button variant="light">Editar</Button></Link>
