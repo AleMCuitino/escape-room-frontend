@@ -1,31 +1,16 @@
-.wordle {
+import styled from "styled-components";
+
+export const WordleMain = styled.div`
     text-align: center;
     background-color: #121212;
-    width: auto;
-    height: auto;
-    /* display: flex; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     color: white;
-}
 
 body {
     padding: 0%;
     margin: 0;
-}
-
-nav {
-    height: 60px;
-    width: 100%;
-    margin: 0;
-    border-bottom: 1px solid grey;
-    display: grid;
-    place-items: center;
-}
-
-nav h1 {
-    margin: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    color: white;
-    font-size: 45px;
 }
 
 .game {
@@ -38,31 +23,31 @@ nav h1 {
 }
 
 .board {
-    width: 450px;
-    height: 550px;
+    width: 20vw;
+    height: 50vh;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
 
 .row {
-    flex: 33%;
+    flex: 10%;
     display: flex;
     flex-direction: row;
-    margin: 5px;
+    margin: 1px;
 }
 
 .letter {
-    flex: 33%;
-    height: 100%;
-    border: 1px solid grey;
-    margin: 5px;
+    flex: 10%;
+    height: 5vh;
+    border: 2px solid grey;
+    margin: 2px;
     display: grid;
     place-items: center;
     font-size: 30px;
     font-weight: bolder;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fira', monospace;
 }
 
 #correct {
@@ -78,9 +63,9 @@ nav h1 {
 }
 
 .keyboard {
-    width: 700px;
-    height: 300px;
-    margin-top: 60px;
+    width: 70vw;
+    height: 30vh;
+    margin-top: 10vh;
 }
 
 .line1 {
@@ -109,8 +94,8 @@ nav h1 {
 }
 
 .key {
-    width: 50px;
-    height: 70px;
+    width: 40px;
+    height: 60px;
     margin: 5px;
     border-radius: 4px;
     display: grid;
@@ -129,3 +114,5 @@ nav h1 {
 #disabled {
     background-color: #3a393c;
 }
+
+`
