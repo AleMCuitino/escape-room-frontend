@@ -28,6 +28,17 @@ export const getEscapeById = (id) => {
     return axios.get(baseUrl + "/escape/" + id, config);
 };
 
+export const getUsersInEscapeById = (id) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.get(baseUrl + "/get-users-in-rooms/" + id, config);
+};
+
 export const createEscape = (data) => {
 
     const config = {
