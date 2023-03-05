@@ -14,8 +14,10 @@ const Start = () => {
           <div className='container vh-100 d-flex flex-column '>
 
               <Text > 
-                  <h3>Factoria ha sido hackeada...</h3>
-                  <p> Hagan click en el botón correcto para corregir el eror 404 </p>
+                  <h3>¡Factoría F5 ha sido hackeada...</h3>
+                  <p> Has intentado ingresar a la página de Factoría F5 pero descubres que ha sido hackeada. Tu misión a partir de ahora será remediar el hackeo y descubrir quién está detrás y con qué intenciones... 
+                  Para ello, te has desplazado a las oficinas centrales de Factoria. El primer paso será reunirte con un equipo de coders que Factoría ha asignado para ayudarte en esta importante misión.
+                  Espera a que llegue todo tu equipo completo para iniciar la aventura! </p>
               </Text>
               
               <Hour>

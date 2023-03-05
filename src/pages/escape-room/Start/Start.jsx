@@ -13,7 +13,9 @@ const Start = () => {
 
               <Text > 
                   <h3>Comenzamos!</h3>
-                  <p> Hagan click en el botón correcto para corregir el eror 404 </p>
+                  <p> Encendéis el dispositivo y en la pantalla de inicio veis el siguiente mensaje:
+                  “Hola. Soy el dispositivo 404Gpt. Como modelo de lenguaje, fui programado y entrenado por una antigua y legendaria promoción de coders, la P5.22-23, para guiar a futuros coders en la resolución de problemas. Presiona el botón correcto para continuar”. 
+                  Sin más instrucciones, tenéis delante una serie de botones y ¡llega el momento de tomar la primera decisión de equipo! ¿Cuál será el botón correcto? </p>
               </Text>
               
               <ContainerButtons >            
