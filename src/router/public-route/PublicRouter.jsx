@@ -38,7 +38,7 @@ function PublicRouter() {
                 <Route path="/mi-admin" element ={<BoardAdmin />}/>
                 <Route path="/escape-admin/:id" element ={<EscapeAdmin />}/>
                 <Route path="/login-auto/:email/:name" element={<AutoLogin/>}/>
-                <Route path="/participantes-escaperoom" element ={<UsersEscape />}/>
+                <Route path="/add-participants/:id" element ={<UsersEscape />}/>
                 <Route path="/crear-usuario-admin" element ={<CreateAdmin />}/>
 
             </Routes>
