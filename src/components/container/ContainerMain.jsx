@@ -9,8 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 const ContainerMain = (props) => {
 
-   // redirecciona
-   const navigate = useNavigate();
+  // redireccionar
+  const navigate = useNavigate();
+
+  //limpiar el input al enviar una respuesta
+  const [input , setInput ] = useState("");
 
   // introducción al juego
   const [ intro, setIntro] = useState(true);
@@ -19,41 +22,47 @@ const ContainerMain = (props) => {
   const [ logicGame , setLogicGame ] = useState(true);
   const [ logicResult, setLogicResult ] = useState("");
 
-
-  const [ interactiveGame , setInteractiveGame] = useState(false);
+  //juego interactivo
   const [ interactiveResult, setInteractiveResult ] = useState("");
-  // Eventos
+  
+  // Pasar al juego
   const handleClick = () => {
     setIntro(false);
   }
 
+// evaluar si las respuestas son correctas
 const problemsResults = (e) => {
+
+  //evita el refresh natural del formulario
   e.preventDefault();
 
-  if ( props.logicGame.result === logicResult )  {    
+  if ( props.logicGame.result.toLowerCase() === logicResult )  {    
 
       setLogicGame(false);
+      props.clues[0].result = "yes";
+     
 
-      if( props.solution === interactiveResult ){
-       console.log("resuleto", props.nextStage)
-        navigate(props.nextStage);
+      if( props.solution.toLowerCase() === interactiveResult ){
+
+          navigate(props.nextStage);
+          props.clues[1].result = "yes";
 
       }
 
   }
-
+  //limpiar el input
+  setInput("")
 }
 
 
   // AnswerContext para pasar la resolución de los problemas y eventos
   const data = {
     logicGame,
-    logicResult,
     setLogicResult,
-    interactiveGame,
-    interactiveResult,
     setInteractiveResult,
     problemsResults,
+    input,
+    setInput
   } 
 
 
@@ -68,8 +77,7 @@ const problemsResults = (e) => {
             
               <Container className='col-12 flex-wrap' > 
 
-                   {/* Texto introductorio */}
-
+              {/* Texto introductorio */}
               { intro === true  ? 
                   <>
                   <Paragraph className='col-10 col-sm-10 mb-5'>
@@ -79,19 +87,16 @@ const problemsResults = (e) => {
                   </>
                   :
                   <div className='col-12'>
-                
-                { logicGame ?
-                <>
-                <div className='mb-5'>
-                { props.logicGame.text === "" ? "" : <p>{props.logicGame.text}</p> }
-                { props.logicGame.img === "" ? "" :
-                   <img className="img-fluid" src={props.logicGame.img}/>
-                } 
-                </div>
-                </> : 
-                props.interactiveGame }
-    
-      
+                    { logicGame ?
+                      <>
+                      <div className='mb-5'>
+                      { props.logicGame.text === "" ? "" : <p>{props.logicGame.text}</p> }
+                      { props.logicGame.img === "" ? "" :
+                        <img className="img-fluid" src={props.logicGame.img}/>
+                      } 
+                      </div>
+                      </> : 
+                      props.interactiveGame }
                   </div>
                 
                 }   
@@ -112,7 +117,7 @@ const problemsResults = (e) => {
                       
                      }) 
               
-                     : "no hay nada" }
+                     : "" }
                     
                   
                   </ClueContainer>
