@@ -38,7 +38,19 @@ function AddUsers({id}) {
 
     const onSubmit = (data) =>{
         console.log("info del formualrio de añadir", data)
-        handleAddParticipantAssignRoom(data)
+        swal({
+            title: `Estás añadiendo al usuario ${data.name}, a la sala ${data.room_id}`,
+            icon: "info",
+            buttons:[true, 'Continuar'],
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    handleAddParticipantAssignRoom(data);
+                } else {
+
+                }
+            });
+        
     }
 
     const handleAddParticipantAssignRoom = async (formData) => {
@@ -46,12 +58,26 @@ function AddUsers({id}) {
         try {
             const { data } = await addParticipants(formData);
             console.log('data fetch', data)
+            swal(`Añadiste correctamente al usuario`, {
+                icon: "success",
+            });
             window.location.reload()
         }
         catch (error) {
-            console.log(error)
+            console.log(error);
+            if(error.response.data.message === "The email has already been taken. (and 1 more error)"){
+                swal(`Este correo ya está en uso `, {
+                    icon: "error",
+                });
+            }
+            else{
+                swal(`Error al seleccionar la sala`, {
+                    icon: "error",
+                });
+            }
         }
     }
+    
 
     return (
         <FormSpace>
@@ -59,11 +85,11 @@ function AddUsers({id}) {
                 <div className='mt-4 gap-3 d-flex'>
                     <Form.Group className="user-box mb-3" controlId="formBasicEmail">
                         <Form.Label>Participante</Form.Label>
-                        <Form.Control type="text" placeholder="Nombre Ejemplo Ejemplar" {...register("name")}/>
+                        <Form.Control type="text" placeholder="Nombre Ejemplo Ejemplar" required {...register("name")}/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGridState">
                         <Form.Label>Sala</Form.Label>
-                        <Form.Select defaultValue="1" required {...register("room_id")}>
+                        <Form.Select  required {...register("room_id")}>
                             {
                                 escapeRoom?.escape?.rooms.map(room =>{
                                     return (
@@ -76,7 +102,7 @@ function AddUsers({id}) {
                 </div>
                 <Form.Group className="mail-box mb-5" controlId="formBasicEmail">
                     <Form.Label>Correo Electrónico</Form.Label>
-                    <Form.Control type="email" placeholder="Ingresar correo electrónico" {...register("email")} />
+                    <Form.Control type="email" placeholder="Ingresar correo electrónico" required {...register("email")} />
                 </Form.Group>
                 <Button className='button-add-users mb-5' variant="primary" type="submit">
                     Añadir participante 

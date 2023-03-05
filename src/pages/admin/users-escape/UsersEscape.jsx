@@ -64,7 +64,7 @@ function UsersEscape() {
                         </tr>
                     </thead>
                     <tbody>
-                        {usersEscape.length > 0 ? usersEscape.map(user => {
+                        {usersEscape?.length > 0 ? usersEscape.map(user => {
                             return <tr key={user.id}>
                                 <td>{user?.id}</td>
                                 <td>{user?.name}</td>
