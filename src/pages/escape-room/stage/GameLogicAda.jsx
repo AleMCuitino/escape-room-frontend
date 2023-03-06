@@ -4,6 +4,8 @@ import Charles  from '@/assets/games/charles.png'
 import Claire  from '@/assets/games/claire.png'
 import George  from '@/assets/games/george.png'
 import Mary  from '@/assets/games/mary.png'
+import {Slider} from '@/pages/escape-room/stage/logicgamecss-styled.js';
+
 
 const pictures = [ Ada, Charles, Mary, George, Claire ];
 
@@ -20,12 +22,26 @@ const GameLogicAda = () => {
             <li>III)La persona nacida en 1788 está casada con Claire.</li>
         </ul>
         <p>Ingresa el nombre de la persona nacida en 1798 seguido del año de nacimiento de Mary en el siguiente formato: nombre-año.</p>
-        <div className='d-flex align-items-center justify-content-between'>
-            { pictures.map( (portrait, index) => <img key={index} className="img-fluid" src={portrait} alt="personas" /> )  
+        <Slider>
+        <a href="#slide-0">1</a>
+        <a href="#slide-1">2</a>
+        <a href="#slide-2">3</a>
+        <a href="#slide-3">4</a>
+        <a href="#slide-4">5</a>
+            <div className="slides">
+            { pictures.map( (portrait, index) => {return(
+            
+                <div key={index}  id={`slide-${index}`}>
+                 <img className="img-fluid" src={portrait} alt="personas" />
+                </div>)
+                
+            })  
             }
             
-            <img src=""></img>
-        </div>
+          </div>
+        </Slider>
+
+      
 
     </>
   )

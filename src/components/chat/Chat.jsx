@@ -80,7 +80,6 @@ function Chat() {
         value={inputChat}  
         className="flex-fill"
         type="text"
-        inputmode="text"
         placeholder="Message"
         onChange={handleMessage} />
         
