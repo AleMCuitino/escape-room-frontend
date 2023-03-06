@@ -1,4 +1,4 @@
-import "../Wordle.css";
+import "../wordleStyled.js";
 import React, { useState } from 'react'
 import Letter from "../letter/Letter";
 

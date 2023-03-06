@@ -1,4 +1,4 @@
-import "../Wordle.css";
+import "../wordleStyled.js";
 import React, {useContext, useCallback, useEffect} from 'react';
 import Key from "../key/Key";
 import { WordleContext} from "../../wordle/Wordle";
