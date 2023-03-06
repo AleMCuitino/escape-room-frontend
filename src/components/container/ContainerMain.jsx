@@ -19,9 +19,6 @@ const ContainerMain = (props) => {
   //limpiar el input al enviar una respuesta
   const [input , setInput ] = useState("");
 
-  // introducción al juego
-  /* const [ intro, setIntro] = useState(true); */
-
   const [intro, setIntro] = useLocalStorage('intro',true);
 
   //Juego Logico
@@ -52,7 +49,7 @@ const problemsResults = (e) => {
 
           navigate(props.nextStage);
           props.clues[1].result = "yes";
-
+          setIntro(true);
       }
 
   }
@@ -94,7 +91,7 @@ const problemsResults = (e) => {
                     { logicGame ?
                       <>
                       <div className='mb-5'>
-                      { props.logicGame.text === "" ? "" : <p>{props.logicGame.text}</p> }
+                      { props.logicGame.text === "" ? "" : <div className='col-10 mx-auto'>{props.logicGame.text}</div> }
                       { props.logicGame.img === "" ? "" :
                         <img className="img-fluid" src={props.logicGame.img}/>
                       } 

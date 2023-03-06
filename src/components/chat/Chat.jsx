@@ -5,7 +5,12 @@ import ChatIcon from '@/assets/icons/messaging.png'
 import { CssChatProvider } from './chat-styled'
 
 function Chat() {
+
+  //mostrar un mensaje del chat
   const [chatHistory, setChatHistory] = useState([]);
+    
+  //limpiar el input al enviar una mensaje del chat
+  const [inputChat , setInputChat ] = useState("");
 
   useEffect(() => {
     Pusher.logToConsole = true;
@@ -32,6 +37,7 @@ function Chat() {
   const [message, setMessage] = useState('');
 
   const handleMessage = event => {
+    setInputChat(event.target.value);
     setMessage(event.target.value);
   };
 
@@ -45,6 +51,10 @@ function Chat() {
       message: message,
     };
     handleSend(formData);
+
+    //limpiar el input del chat
+    setInputChat("");
+
   };
 
   return (
@@ -52,30 +62,27 @@ function Chat() {
       <div className='d-flex align-items-center mb-3'>
         <img src={ChatIcon} alt="chat" className='d-none d-md-block img-fluid me-4'/>
         <div className='chat-window'>
-        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje largo larglo largo largo</small>
-        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
-        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
-        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
-        <small className='mb-0 d-block'><strong className='me-2'>Carla:</strong>mensaje</small>
-       
-      
-
-        </div>
-        {chatHistory.map((item, index) => {
-          return (
-            
-              <small className='mb-0 d-block' key={index}>
-                <strong className='me-2'>{item.user}:</strong> {item.message}
-              </small>
-          
-          );
-        })}
-
+            {chatHistory.map((item, index) => {
+              return (
+                
+                  <small className='mb-0 d-block' key={index}>
+                    <strong className='me-2'>{item.user}:</strong>{item.message}
+                  </small>
+              
+              );
+            })}
+          </div>
       </div>
 
       <form onSubmit={handleSubmit} className='d-flex'>
         
-        <input className="flex-fill" type="text"  inputmode="text" placeholder="Message" onChange={handleMessage} />
+        <input
+        value={inputChat}  
+        className="flex-fill"
+        type="text"
+        inputmode="text"
+        placeholder="Message"
+        onChange={handleMessage} />
         
       </form>
     </CssChatProvider>
