@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colorVar } from "../../../styled-components/variables"
 
-export const Board = styled.section`
+export const CreateSpace = styled.section`
 z-index: 1;
     h1 {
         font-family: 'Poppins', sans-serif;

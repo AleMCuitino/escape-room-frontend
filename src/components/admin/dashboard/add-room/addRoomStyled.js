@@ -16,6 +16,6 @@ export const SpaceAdd = styled.div`
         font-family: 'Poppins', sans-serif;
         background-color: #000000;
         border-color: #000000;
-        width: 40vw;
+        width: 20vw;
     }
 `

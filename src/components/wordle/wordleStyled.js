@@ -3,14 +3,16 @@ import styled from "styled-components";
 export const WordleMain = styled.div`
     text-align: center;
     background-color: #121212;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
     color: white;
 
 body {
     padding: 0%;
     margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .game {
@@ -20,6 +22,9 @@ body {
     align-items: center;
     padding-top: 50px;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .board {
