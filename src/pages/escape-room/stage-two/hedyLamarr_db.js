@@ -2,7 +2,7 @@ import Star from '@/assets/helpers/star.png'
 import Play from '@/assets/helpers/play.png'
 
 
-import LogicGame from '@/assets/games/constellation-logic.png'
+import LogicGame from '@/assets/games/lamarr-logic.png'
 
 
 
@@ -13,26 +13,26 @@ export const LamarrDB =
     {
       location_city: 'Hollywood',
       location_year: '1942',
-      introduction: "Registrada al nacer como Augusta Ada Byron y conocida habitualmente como Ada Lovelace, fue una matemática y escritora británica",
+      introduction: "¡Habéis resulto con éxito la prueba! Y tenido el honor de visitar el estudio de Charles Babbagge y Ada Lovelace, ¡la primera programadora de la historia! Pero ahora os encontráis en lo que parece el camerino de una actriz. Según el dispositivo, os encontráis en Hollywood y es el año 1942. Mientras os preguntáis por qué en esa época y lugar descubrís que quizás el camerino no pertenezca a una actriz cualquiera, ya que en su espejo hay escrito en lápiz labial un acertijo matemático...",
       clue_components: [ {
         problem: 1,
         clue: "",
-        text:"",
+        text:"Ingresa la contraseña con el formato X+X+X",
         img: `${Star}`,
         result: false,   
       } , {
         problem: 2,
         clue: "",
-        text:"",
+        text:"Resuelve el puzzle para obtener la contraseña.",
         img:`${Play}`,
         result: false,   
       }],
       solution: "Lamarr",
       nextStage: "/trip/stage-three",
       logicGame: {
-        text:"¿Qué numero de estrellas tiene la constelación en la que no están marcadas?",
+        text:"La suma de 3 números pares consecutivos es 1242. ¿Cuáles son esos números?",
         img:`${LogicGame}`,
-        result: "8",
+        result: "412+414+416",
       },
       help: [
         {
