@@ -23,7 +23,7 @@ export const HipatiaDB =
       solution: "8",
       nextStage: "/trip/stage-one",
       logicGame: {
-        text:"",
+        text:"¿Qué número de estrellas tiene la constelación con el signo de interrogación?",
         img:`${LogicGame}`,
         result: "8",
       },
