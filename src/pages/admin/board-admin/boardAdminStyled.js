@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colorVar } from "../../../styled-components/variables"
 
 export const Board = styled.section`
 z-index: 1;
@@ -16,6 +17,12 @@ z-index: 1;
     .flower {
         position: absolute;
         z-index: -1;
-        left:500px;
+        top: 400px;
+        left:-60px;
+    }
+    .flower1 {
+        position: absolute;
+        z-index: -1;
+        left:1400px;
     }
 `

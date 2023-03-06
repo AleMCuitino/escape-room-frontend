@@ -5,6 +5,8 @@ function Home() {
     return (
         <div>
             <Wordle />
+            {/* <Memorize />            
+            <Puzzle /> */}
         </div>
     )
 }

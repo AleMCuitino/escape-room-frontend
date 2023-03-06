@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { colorVar } from "../../../styled-components/variables";
 
 export const ContainerLogin = styled.section`
-background-color: #FF4700;
+background-color: ${colorVar.primary};
 width: 100%;
 height: 100%;
 
@@ -63,10 +64,11 @@ export const StyledForm = styled.div`
         flex-direction: column;
         justify-content: center;
         align-content: center;
-        ::placeholder {
-            color: azure;
-        }
-        
+
+    button {
+        background-color: ${colorVar.secondary};
+        color: #FFFFFF;
+        width: 20vw;
     }
-    
+}    
 `
