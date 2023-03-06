@@ -1,6 +1,6 @@
 import Compass from '@/assets/helpers/compass.png'
 import Bracelet from '@/assets/helpers/bracelet.png'
-import Circuit from '@/assets/helpers/content/stage3-logic.png'
+import LogicGame from '@/assets/games//stage3-logic.png'
 
 
 export const EniacDB = 
@@ -21,10 +21,12 @@ export const EniacDB =
         img:`${Bracelet}`,
         result: false,   
       }],
-      solution: "pasta",
+      solution: "eniac",
+      nextStage: "/trip/end-game",
       logicGame: {
-        text:"`Las programadoras de la máquina ENIAC han creado un algoritmo para controlar el flujo de energía en las entrañas de la máquina. El equipo cuenta con un plano de los circuitos  de la máquina que muestra la red de componentes que requieren suministro energético.  Para garantizar la eficiencia, la corriente debe llegar a todos los componentes sin pasar dos veces por el mismo y regresando al punto de origen. Cada componente está señalado con un letra ¿Podríais encontrar la sucesión de letras correcta?` ",
-        img:`${Circuit}`,
+        text:"`Las programadoras de la máquina ENIAC han creado un algoritmo para controlar el flujo de energía en las entrañas de la máquina. El equipo cuenta con un plano de los circuitos  de la máquina que muestra la red de componentes que requieren suministro energético.  Para garantizar la eficiencia, la corriente debe llegar a todos los componentes sin pasar dos veces por el mismo y regresando al punto de origen. Cada componente está señalado con un letra ¿Podríais encontrar la sucesión de letras correcta? Ingrésala en minúsculas y sin espacios.` ",
+        img:`${LogicGame}`,
+        result: "arribalabirra"
       },
       help: [
         {
