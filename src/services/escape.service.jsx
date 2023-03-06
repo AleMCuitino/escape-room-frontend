@@ -85,3 +85,14 @@ export const addParticipants = (data) => {
     return axios.post(baseUrl + "/user/assign",data, config);
 
 };
+
+export const sendEmailsToUsers = (id) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.get(baseUrl + "/send-emails/" + id, config);
+}
