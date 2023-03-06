@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
+import {colorVar}  from '@/styled-components/variables.js';
+
 export const Slider = styled.div`
-  width: 300px;
+  width: 200px;
   text-align: center;
   overflow: hidden;
+  margin: auto;
 
 .slides {
   display: flex;
@@ -26,11 +29,11 @@ export const Slider = styled.div`
 .slides > div {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: 300px;
+  width: 200px;
   height: 300px;
-  margin-right: 50px;
+  margin-right: 1rem;
   border-radius: 10px;
-  background: #eee;
+  
   transform-origin: center center;
   transform: scale(1);
   transition: transform 0.5s;
@@ -59,7 +62,7 @@ export const Slider = styled.div`
   color: white;
 }
 img {
-  object-fit: cover;
+  object-fit: contain;
   position: absolute;
   top: 0;
   left: 0;
@@ -71,19 +74,37 @@ img {
   display: inline-flex;
   width: 1.5rem;
   height: 1.5rem;
-  background: white;
+  color: ${colorVar.digital};
+  background: ${colorVar.digital2};
+  backdrop-filter: blur(5px);
+    border: 1px solid rgb(0 255 255 / 18%);
+    box-shadow: 0 8px 32px 0 rgb(29 119 127 / 37%);
   text-decoration: none;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   margin: 0 0 0.5rem 0;
   position: relative;
+transition: background 0.2s ease-in-out, color 0.2s ease-in;
+  :not(:last-child){
+    margin-right: .5rem;
+  }
+  :hover{
+    background: ${colorVar.digital};
+    color:${colorVar.secondary};
+  }
+
 }
  > a:active {
   top: 1px;
 }
 > a:focus {
   background: #000;
+}
+
+@media (min-width: 400px) {
+    
+    width: 100%;
 }
 
 `    

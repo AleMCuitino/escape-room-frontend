@@ -23,16 +23,13 @@ const GameLogicAda = () => {
         </ul>
         <p>Ingresa el nombre de la persona nacida en 1798 seguido del año de nacimiento de Mary en el siguiente formato: nombre-año.</p>
         <Slider>
-        <a href="#slide-0">1</a>
-        <a href="#slide-1">2</a>
-        <a href="#slide-2">3</a>
-        <a href="#slide-3">4</a>
-        <a href="#slide-4">5</a>
+            { pictures.map(( el, index)=> <a className="d-md-none" key={index} href={`#slide-${index}`}>{index + 1 }</a> )}
+       
             <div className="slides">
             { pictures.map( (portrait, index) => {return(
             
                 <div key={index}  id={`slide-${index}`}>
-                 <img className="img-fluid" src={portrait} alt="personas" />
+                 <img className="" src={portrait} alt="personas" />
                 </div>)
                 
             })  
