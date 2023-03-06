@@ -39,22 +39,24 @@ const problemsResults = (e) => {
   //evita el refresh natural del formulario
   e.preventDefault();
 
-  if ( props.logicGame.result.toLowerCase() === logicResult )  {    
+  if ( props.logicGame.result.toLowerCase() === logicResult ) {    
 
       setLogicGame(false);
       props.clues[0].result = "yes";
      
-
-      if( props.solution.toLowerCase() === interactiveResult ){
+  if( props.interactiveGame === "" ){ 
+    navigate(props.nextStage);
+    setIntro(true);
+  }else if( props.solution.toLowerCase() === interactiveResult ){
 
           navigate(props.nextStage);
           props.clues[1].result = "yes";
           setIntro(true);
       }
-
-  }
+    
   //limpiar el input
   setInput("")
+}
 }
 
 

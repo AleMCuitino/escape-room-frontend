@@ -3,6 +3,7 @@ import Glasses from '@/assets/helpers/glasses.png'
 import MemorizeHelp from '@/assets/helpers/content/memorize.png'
 import LogicaleHelp from '@/assets/helpers/content/logica_lovelace.png'
 import GameLogicAda from './GameLogicAda'
+import Memorize from '@/components/memorize/Memorize'
 
 export const LovelaceDB = 
     {
@@ -29,6 +30,7 @@ export const LovelaceDB =
         img:"",
         result: "claire-1797",
       },
+      interactiveGame: <Memorize/>,
       help: [
         {
             problem:1,
