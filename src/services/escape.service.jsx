@@ -86,7 +86,7 @@ export const addParticipants = (data) => {
 
 };
 
-export const sendEmailsToUsers = (id) => {
+export const sendEmailsToUsersInRooms = (id) => {
 
     const config = {
         headers: {
