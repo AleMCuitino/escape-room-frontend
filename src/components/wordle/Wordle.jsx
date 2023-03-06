@@ -91,6 +91,7 @@ function Wordle() {
                     }}
             >
                 <div className='game col-6 mx-auto mb-4'>
+                    <h6>Haz click a continuación:</h6>
                     <Board />
                     {gameOver.gameOver ? <GameOver /> : <Keyboard />}
                 </div>
