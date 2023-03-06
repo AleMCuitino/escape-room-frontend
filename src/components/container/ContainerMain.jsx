@@ -8,6 +8,7 @@ import { AnswerProvider } from './context/answerContext';
 import { useNavigate } from 'react-router-dom';
 import Bubble from '../navigation/game/Bubble';
 import Chat from '../chat/Chat';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 
 const ContainerMain = (props) => {
@@ -18,8 +19,7 @@ const ContainerMain = (props) => {
   //limpiar el input al enviar una respuesta
   const [input , setInput ] = useState("");
 
-  // introducción al juego
-  const [ intro, setIntro] = useState(true);
+  const [intro, setIntro] = useLocalStorage('intro',true);
 
   //Juego Logico
   const [ logicGame , setLogicGame ] = useState(true);
@@ -49,7 +49,7 @@ const problemsResults = (e) => {
 
           navigate(props.nextStage);
           props.clues[1].result = "yes";
-
+          setIntro(true);
       }
 
   }
@@ -91,7 +91,7 @@ const problemsResults = (e) => {
                     { logicGame ?
                       <>
                       <div className='mb-5'>
-                      { props.logicGame.text === "" ? "" : <p>{props.logicGame.text}</p> }
+                      { props.logicGame.text === "" ? "" : <div className='col-10 mx-auto'>{props.logicGame.text}</div> }
                       { props.logicGame.img === "" ? "" :
                         <img className="img-fluid" src={props.logicGame.img}/>
                       } 
