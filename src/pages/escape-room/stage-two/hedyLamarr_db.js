@@ -2,7 +2,7 @@ import Star from '@/assets/helpers/star.png'
 import Play from '@/assets/helpers/play.png'
 
 
-import LogicGame from '@/assets/games/constellation-logic.png'
+import LogicGame from '@/assets/games/lamarr-logic.png'
 
 
 
@@ -30,7 +30,7 @@ export const LamarrDB =
       solution: "Lamarr",
       nextStage: "/trip/stage-three",
       logicGame: {
-        text:"¿Qué numero de estrellas tiene la constelación en la que no están marcadas?",
+        text:"La suma de 3 números pares consecutivos es 1242. ¿Cuáles son esos números?",
         img:`${LogicGame}`,
         result: "8",
       },
