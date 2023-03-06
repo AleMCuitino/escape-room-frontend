@@ -7,24 +7,24 @@ export const EniacDB =
     {
       location_city: 'Filadelfia',
       location_year: '1946',
-      introduction: "ENIAC Filadelfia",
+      introduction: "¡Otro desplazamiento más! ¿Cuántos quedarán? Y nuevamente el honor de haber sido testigos de otro paso importante en los avances tecnológicos, de la mano de Hedy Lamarr, cuyo trabajo sentó las bases de la comunicación por bluetooth y wifi. Ahora estáis ante una gran máquina que intuís tiene que ser uno de los primeros ordenadores. Os encontráis en Filadelfia y es el año 1946 y vuestro dispositivo ahora os pide que echéis un vistazo a los planos de los circuitos de la máquina. Muy cerca del lugar donde habéis sido transportados, encontráis una nota con los nombres de seis mujeres y un plano... ¿Será el que necesitáis?",
       clue_components: [ {
         problem: 1,
         clue: "",
-        text:"",
+        text:"Ingresa la sucesión de letras del circuito en minúsculas y sin espacios.",
         img: `${Compass}`,
         result: false,   
       } , {
         problem: 2,
         clue: "",
-        text:"",
+        text:"Resulve el wordle para obtener la contraseña",
         img:`${Bracelet}`,
         result: false,   
       }],
       solution: "eniac",
       nextStage: "/trip/end-game",
       logicGame: {
-        text:"`Las programadoras de la máquina ENIAC han creado un algoritmo para controlar el flujo de energía en las entrañas de la máquina. El equipo cuenta con un plano de los circuitos  de la máquina que muestra la red de componentes que requieren suministro energético.  Para garantizar la eficiencia, la corriente debe llegar a todos los componentes sin pasar dos veces por el mismo y regresando al punto de origen. Cada componente está señalado con un letra ¿Podríais encontrar la sucesión de letras correcta? Ingrésala en minúsculas y sin espacios.` ",
+        text:"`El plano está firmado por las programadoras que han creado un algoritmo para controlar el flujo de energía en las entrañas de la máquina. En él podéis ver la red de componentes que requieren suministro energético. Para garantizar la eficiencia, la corriente debe llegar a todos los componentes sin pasar dos veces por el mismo y regresando al punto de origen, que es el círculo verde con una A. Cada uno del resto de componentes está señalado con un letra ¿Podríais encontrar la sucesión de letras correcta? ` ",
         img:`${LogicGame}`,
         result: "arribalabirra"
       },
