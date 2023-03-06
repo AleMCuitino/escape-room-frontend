@@ -3,6 +3,7 @@ import styled, {keyframes} from "styled-components";
 import {colorVar}  from '@/styled-components/variables.js';
 
 
+
 const effect = keyframes`
 0% {
   clip: rect(71px, 9999px, 50px, 0);
@@ -231,13 +232,15 @@ export const ContainerText = styled.p`
     overflow: hidden;
     white-space: nowrap;
     font-size: 6rem;
-    /* margin: 0 auto; */
     border-right: 0.05rem solid white;
-    animation: ${typing} 4s steps(50) 1s 1 normal both, ${blink} 1s steps(1) infinite;
+    animation: ${typing} 3s steps(50) 0.4s 1 normal both, ${blink} 1s steps(1) infinite;
   }
 
   
 
 `
+
+
+
 
 

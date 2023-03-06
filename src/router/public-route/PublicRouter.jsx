@@ -13,7 +13,7 @@ import StageTwo from "@/pages/escape-room/stage-two/StageTwo";
 import Bubble from "../../components/navigation/game/Bubble";
 import StageThree from "@/pages/escape-room/stage-three/StageThree";
 import Trip from '@/components/animations/trip';
-import Final from '@/pages/escape-room/final-escape/final';
+import Final from '@/pages/escape-room/final-escape/final.jsx';
 
 function PublicRouter() {
     return (
