@@ -7,8 +7,8 @@ import LogicGame from '@/assets/games/lovelace.png'
 export const LovelaceDB = 
     {
       location_city: 'Londres',
-      location_year: '1837',
-      introduction: "Registrada al nacer como Augusta Ada Byron y conocida habitualmente como Ada Lovelace, fue una matemática y escritora británica",
+      location_year: '1843',
+      introduction: "¡Correcto! Habéis llegado a la misma conclusión a la que llegaron vuestras predecesoras con la ayuda de Hipatia. Ahora os encontráis en un estudio, y el aparato que lleváis os informa que estáis en Inglaterra en el año 1843. En la pantalla, otra vez aparece un campo de ingreso de contraseña y el sieguiente mensaje: 'Ingresa el resultado del acertijo para ejercitar tu memoria...”.   En el estudio, junto a una máquina muy extraña veis un conjunto de folios encuadernados con el título de 'Notas'. En la primera página de las notas podéis leer un acertijo lógico... ¿Será la respuesta para avanzar con el reinicio?",
       clue_components: [ {
         problem: 1,
         clue: `${LogicaleHelp}`,
@@ -31,7 +31,7 @@ export const LovelaceDB =
         II)La persona nacida en 1791, Ada y George son familia, pero dos de ellas prefieren la ciencia a las letras. \n
         III)La persona nacida en 1788 está casada con Claire. \n
 
-        Ingresa el nombre de la persona nacida en 1798 seguido del año de nacimiento de Mary en el siguiente formato; nombre-año.
+        Ingresa el nombre de la persona nacida en 1798 seguido del año de nacimiento de Mary en el siguiente formato: nombre-año.
         `,
         img:`${LogicGame}`,
         result: "claire-1797",
