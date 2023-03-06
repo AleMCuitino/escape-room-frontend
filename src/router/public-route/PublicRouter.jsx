@@ -10,6 +10,7 @@ import Start from "../../pages/escape-room/Start/Start";
 import Waiting from "../../pages/escape-room/Start/Waiting";
 import HomeLoading from "@/pages/escape-room/Home/HomeLoading";
 import AutoLogin from "../../pages/escape-room/auto-login/AutoLogin";
+import StageZero from '@/pages/escape-room/stage-zero/StageZero';
 import StageOne from '@/pages/escape-room/stage/StageOne';
 import StageTwo from "@/pages/escape-room/stage-two/StageTwo";
 import CreateAdmin from "../../pages/admin/create-admin/CreateAdmin";
@@ -35,6 +36,7 @@ function PublicRouter() {
                 <Route path="/nav" index element={<Bubble/>} />
 
                 {/*   Niveles del Juego */}
+                <Route path="/stage-zero" element={<StageZero/>} /> {/*//* Hipatia */}
                 <Route path="/stage-one" element={<StageOne/>} /> {/*//* Ada Lovelace */}
                 <Route path="/stage-two" element={<StageTwo/>} /> {/*//* Hedy Lamarr */}
                 <Route path="/stage-three" element={<StageThree/>} />  {/*//* ENIAC Programmers */}
