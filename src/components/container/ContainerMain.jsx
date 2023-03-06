@@ -8,6 +8,7 @@ import { AnswerProvider } from './context/answerContext';
 import { useNavigate } from 'react-router-dom';
 import Bubble from '../navigation/game/Bubble';
 import Chat from '../chat/Chat';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 
 const ContainerMain = (props) => {
@@ -19,7 +20,9 @@ const ContainerMain = (props) => {
   const [input , setInput ] = useState("");
 
   // introducción al juego
-  const [ intro, setIntro] = useState(true);
+  /* const [ intro, setIntro] = useState(true); */
+
+  const [intro, setIntro] = useLocalStorage('intro',true);
 
   //Juego Logico
   const [ logicGame , setLogicGame ] = useState(true);

@@ -64,7 +64,7 @@ function Chat() {
         {chatHistory.map((item, index) => {
           return (
             
-              <small className='mb-0' key={index}>
+              <small className='mb-0 d-block' key={index}>
                 <strong className='me-2'>{item.user}:</strong> {item.message}
               </small>
           
