@@ -23,7 +23,7 @@ export const HipatiaDB =
       solution: "Lamarr",
       nextStage: "/trip/stage-one",
       logicGame: {
-        text:"¿Qué numero de estrellas tiene la constelación en la que no están marcadas?",
+        text:"¿Qué número de estrellas tiene la constelación en la que no están marcadas?",
         img:`${LogicGame}`,
         result: "8",
       },
