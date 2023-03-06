@@ -18,7 +18,7 @@ import CreateAdmin from "../../pages/admin/create-admin/CreateAdmin";
 import Bubble from "../../components/navigation/game/Bubble";
 import StageThree from "@/pages/escape-room/stage-three/StageThree";
 import Trip from '@/components/animations/trip';
-
+import Final from '@/pages/escape-room/final-escape/final.jsx';
 
 function PublicRouter() {
     return (
@@ -34,6 +34,8 @@ function PublicRouter() {
                 <Route path="/waiting" index element={<Waiting/>} />
                 <Route path="/trip/:path" index element={<Trip/>} /> 
                 <Route path="/nav" index element={<Bubble/>} />
+                <Route path="/final" index element={<Final/>} />
+
 
                 {/*   Niveles del Juego */}
                 <Route path="/stage-zero" element={<StageZero/>} /> {/*//* Hipatia */}
