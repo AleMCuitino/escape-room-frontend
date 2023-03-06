@@ -12,13 +12,13 @@ export const LovelaceDB =
       clue_components: [ {
         problem: 1,
         clue: `${LogicaleHelp}`,
-        text:"",
+        text:"Quizás una tabla así te ayude a ordenar la lógica del ejercicio",
         img: `${Glasses}`,
         result: "no",   
       } , {
         problem: 2,
         clue: `${MemorizeHelp}`,
-        text: "",
+        text: "¿Qué relación tienen estos colores con el memeorize?",
         img:`${Machine}`,
         result: "no",   
       }],
