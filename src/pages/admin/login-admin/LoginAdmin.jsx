@@ -3,8 +3,8 @@ import { login } from "../../../services/user.service";
 import swal from 'sweetalert';
 
 import { Link, useNavigate } from "react-router-dom";
-import LogoEscape from "@/assets/logotype/logo404.svg";
-import LogoFactoria from "@/assets/logotype/factoria.svg";
+import LogoEscape from "../../../assets/logotype/logo404.svg";
+import LogoFactoria from "../../../assets/logotype/factoria.svg";
 import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
 import { UserContext } from "../../../contexts/UserContext";
 import Footer from "../../../components/admin/footer/FooterAdmin"
@@ -71,7 +71,8 @@ const LoginAdmin = () => {
                     <div>
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="">Correo electrónico</label>
-                            <input 
+                            <input
+                                title="email" 
                                 type="email"
                                 id="email" 
                                 placeholder="name@example.com" 
