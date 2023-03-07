@@ -13,7 +13,7 @@ export const LamarrDB =
     {
       location_city: 'Hollywood',
       location_year: '1942',
-      introduction: "¡Habéis resulto con éxito la prueba! Y tenido el honor de visitar el estudio de Charles Babbagge y Ada Lovelace, ¡la primera programadora de la historia! Pero ahora os encontráis en lo que parece el camerino de una actriz. Según el dispositivo, os encontráis en Hollywood y es el año 1942. Mientras os preguntáis por qué en esa época y lugar descubrís que quizás el camerino no pertenezca a una actriz cualquiera, ya que en su espejo hay escrito en lápiz labial un acertijo matemático...",
+      introduction: "¡Habéis resuelto con éxito la prueba! Y tenido el honor de visitar el estudio de Charles Babbagge y Ada Lovelace, ¡la primera programadora de la historia! Pero ahora os encontráis en lo que parece el camerino de una actriz. Según el dispositivo, os encontráis en Hollywood y es el año 1942. Mientras os preguntáis por qué en esa época y lugar, descubrís que quizás el camerino no pertenezca a una actriz cualquiera, ya que en su espejo hay escrito en lápiz labial un acertijo matemático...",
       clue_components: [ {
         problem: 1,
         clue: "",

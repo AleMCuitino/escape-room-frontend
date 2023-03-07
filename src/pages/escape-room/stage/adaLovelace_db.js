@@ -8,7 +8,7 @@ export const LovelaceDB =
     {
       location_city: 'Londres',
       location_year: '1843',
-      introduction: "¡Correcto! Habéis llegado a la misma conclusión a la que llegaron vuestras predecesoras con la ayuda de Hipatia. Ahora os encontráis en un estudio, y el aparato que lleváis os informa que estáis en Inglaterra en el año 1843. En la pantalla, otra vez aparece un campo de ingreso de contraseña y el sieguiente mensaje: 'Ingresa el resultado del acertijo para ejercitar tu memoria...”.   En el estudio, junto a una máquina muy extraña veis un conjunto de folios encuadernados con el título de 'Notas'. En la primera página de las notas podéis leer un acertijo lógico... ¿Será la respuesta para avanzar con el reinicio?",
+      introduction: "¡Correcto! Habéis llegado a la misma conclusión a la que llegaron vuestras predecesoras con la ayuda de Hipatia. Ahora os encontráis en un estudio, y el aparato que lleváis os informa que estáis en Inglaterra en el año 1843. En la pantalla, otra vez aparece un campo de ingreso de contraseña y el siguiente mensaje: 'Ingresa el resultado del acertijo para ejercitar tu memoria...”.   En el estudio, junto a una máquina muy extraña, veis un conjunto de folios encuadernados bajo el título de 'Notas'. En la primera página de las notas podéis leer un acertijo lógico... ¿Será la respuesta para avanzar con el reinicio?",
       clue_components: [ {
         problem: 1,
         clue: `${LogicaleHelp}`,
