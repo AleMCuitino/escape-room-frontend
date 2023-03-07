@@ -26,7 +26,9 @@ export const HipatiaDB =
         text:"¿Qué número de estrellas tiene la constelación con el signo de interrogación?",
         img:`${LogicGame}`,
         result: "8",
+        
       },
+      interactiveGame:"",
       help: [
         {
             problem:1,
