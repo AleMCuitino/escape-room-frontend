@@ -1,13 +1,11 @@
-// import { BoxArrowRight } from 'react-bootstrap-icons';
 import Container from 'react-bootstrap/Container';
 import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavAdmin } from "./navbarAdminStyled";
-// import logout from "../../../assets/icons/logout.png" ;
-// import Logout from "../../../assets/icons/logout.svg";
-// import Prision from "@/assets/icons/prision.svg";
-// import User from "@/assets/icons/user.svg";
+import Logout from "@/assets/icons/logout.svg";
+import Prision from "@/assets/icons/prision.svg";
+import User from "@/assets/icons/user.svg";
 
 function NavbarAdmin() {
     return (
@@ -20,7 +18,7 @@ function NavbarAdmin() {
                     </div>
                     <Navbar.Collapse className="d-flex justify-content-end" id="responsive-navbar-nav">
                         <Nav className='gap-3'>
-                            {/* <Link to='/login'><BoxArrowRight /></Link>  */}
+                            <Link to='/login'><img src={Logout}></img></Link>
                             <Link to='/mi-admin'><img src={Prision}></img></Link>
                             <Link to='/crear-usuario-admin'><img src={User}></img></Link>
                         </Nav>

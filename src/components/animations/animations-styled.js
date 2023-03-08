@@ -1,6 +1,6 @@
 
 import styled, {keyframes} from "styled-components";
-import {colorVar}  from '@/styled-components/variables.js';
+import {colorVar}  from '../../styled-components/variables.js';
 
 
 
