@@ -95,7 +95,7 @@ const problemsResults = (e) => {
                       <div className='mb-5'>
                       { props.logicGame.text === "" ? "" : <div className='col-10 mx-auto mb-3'>{props.logicGame.text}</div> }
                       { props.logicGame.img === "" ? "" :
-                        <img className="img-fluid col-10 mx-auto d-block" src={props.logicGame.img}/>
+                        <img className="img-fluid col-10 mx-auto d-block gameImg" src={props.logicGame.img}/>
                       } 
                       </div>
                       </> : 

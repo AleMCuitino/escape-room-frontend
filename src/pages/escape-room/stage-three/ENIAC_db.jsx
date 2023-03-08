@@ -1,6 +1,6 @@
 import Compass from '@/assets/helpers/compass.png'
 import Bracelet from '@/assets/helpers/bracelet.png'
-import LogicGame from '@/assets/games//stage3-logic.png'
+import LogicGame from '@/assets/games/EniacLogic.svg'
 import Wordle from '@/components/wordle/Wordle';
 
 
@@ -25,7 +25,7 @@ export const EniacDB =
       solution: "eniac",
       nextStage: "/trip/final",
       logicGame: {
-        text:"`El plano está firmado por las programadoras que han creado un algoritmo para controlar el flujo de energía en las entrañas de la máquina. En él podéis ver la red de componentes que requieren suministro energético. Para garantizar la eficiencia, la corriente debe llegar a todos los componentes sin pasar dos veces por el mismo y regresando al punto de origen, que es el círculo rojo con una A. Cada uno del resto de componentes está señalado con un letra ¿Podríais encontrar la sucesión de letras correcta? ` ",
+        text:"El plano está firmado por las programadoras que han creado un algoritmo para controlar el flujo de energía en las entrañas de la máquina. En él podéis ver la red de componentes que requieren suministro energético. Para garantizar la eficiencia, la corriente debe llegar a todos los componentes sin pasar dos veces por el mismo y regresando al punto de origen, que es el círculo rojo con una A. Cada uno del resto de componentes está señalado con un letra ¿Podríais encontrar la sucesión de letras correcta?",
         img:`${LogicGame}`,
         result: "arribalabirra"
       },

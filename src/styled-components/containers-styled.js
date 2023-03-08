@@ -10,8 +10,10 @@ export const ContainerBody = styled.section`
     width: 100%;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: 100%;
+    
+  /*  .gameImg{
+    max-width: ;
+   } */
     
     .mboard-timeline{
         margin-bottom: 2rem;

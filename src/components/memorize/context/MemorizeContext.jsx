@@ -48,7 +48,7 @@ const MemorizeProvider = ({ children }) => {
 		// Crea el juego
 		setTimeout(() => {
 			createBoard() 
-		}, 1600);
+		}, 1000);
 	};
 
 	function resetGame() {
