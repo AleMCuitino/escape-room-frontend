@@ -7,9 +7,9 @@ const GameOver = () => {
     const { gameOver, currAttempt, correctWord } = useContext(WordleContext)
     return (
         <TextGame className='gameOver'>
-            <h3>{gameOver.guessedWord ? "You correctly guessed" : "You feiled"}</h3>
+            <h3>{gameOver.guessedWord ? "¡Has encontrado la palabra!" : "Has fallado"}</h3>
             <h1>Correct: {correctWord}</h1>
-            {gameOver.guessedWord && (<h3> You guessed in {currAttempt.attempt} attempts</h3>)}
+            {gameOver.guessedWord && (<h3> Has acertado en {currAttempt.attempt} intentos</h3>)}
         </TextGame>
     )
 }
