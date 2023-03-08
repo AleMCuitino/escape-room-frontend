@@ -17,11 +17,11 @@ const CluesModal = (props) => {
           </Modal.Header>
           <Modal.Body>
 
-            { props.clue !== "" ? <img className='img-fluid mx-auto d-block' src={props.clue} />  : "" }
+            { props.clue !== "" ? <img className='img-fluid mx-auto d-block mb-3' src={props.clue} />  : "" }
 
             { props.text !== "" ?
             <>
-            <h4>{props.text}</h4>
+            <p className='text-center'>{props.text}</p>
             </>
              : "" }
            

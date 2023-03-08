@@ -83,7 +83,7 @@ const problemsResults = (e) => {
               {/* Texto introductorio */}
               { intro === true  ? 
                   <>
-                  <Paragraph className='col-10 col-sm-10 mb-5'>
+                  <Paragraph className='col-10 col-sm-10 mb-5 text-center'>
                     {props.initText}
                     <button  className="btn-next" onClick={ handleClick } >Continuar <img src={Next}/></button>
                   </Paragraph>
@@ -95,7 +95,7 @@ const problemsResults = (e) => {
                       <div className='mb-5'>
                       { props.logicGame.text === "" ? "" : <div className='col-10 mx-auto mb-3'>{props.logicGame.text}</div> }
                       { props.logicGame.img === "" ? "" :
-                        <img className="img-fluid col-10 mx-auto d-block" src={props.logicGame.img}/>
+                        <img className="img-fluid col-10 mx-auto d-block gameImg" src={props.logicGame.img}/>
                       } 
                       </div>
                       </> : 

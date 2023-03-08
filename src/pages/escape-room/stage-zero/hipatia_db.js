@@ -1,6 +1,6 @@
 import Papyrus from '@/assets/helpers/papyrus.png'
 import LogicGame from '@/assets/games/constellation-logic.png'
-import Hipatia from '@/assets/helpers/content/hipatia-pic.jpg'
+import Hipatia from "@/assets/games/hipatia.png"
 
 export const HipatiaDB = 
     {

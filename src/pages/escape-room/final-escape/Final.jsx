@@ -62,7 +62,7 @@ const Final = () => {
   return (
     
     
-     <div>
+     <>
       <ContainerText>
         <h3 title="congrats">¡Felicidades! </h3>
         <p className='text-final'>¡Habéis desbloqueado la máquina y regresado al presente! El dispositivo os informa que no hay hack que remediar, quien estaba detrás de este extraño viaje era Factoría F5, que quería poner a prueba vuestras capacidades!</p>
@@ -73,7 +73,7 @@ const Final = () => {
         </Link>
 
       </ContainerText>
-    </div>
+    </>
   )
 }
 

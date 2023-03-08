@@ -219,10 +219,12 @@ export const blink=keyframes`
 
 export const ContainerText = styled.span`
 
-  height: 100vh;
+  height: 100%;
   display: grid;
-  justify-content: space-evenly;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   place-items: center;
+  text-align: center;
   background-color: ${colorVar.secondary};
   color:white;
 
@@ -230,12 +232,15 @@ export const ContainerText = styled.span`
     h3 {
     width: 0;
     overflow: hidden;
-    white-space: nowrap;
-    font-size: 6rem;
+    white-space: normal;
+    font-size: 3rem;
     border-right: 0.05rem solid white;
     animation: ${typing} 3s steps(50) 0.4s 1 normal both, ${blink} 1s steps(1) infinite;
   }
 
+  .text-final{
+    max-width: 600px;
+  }
   
 
 `
