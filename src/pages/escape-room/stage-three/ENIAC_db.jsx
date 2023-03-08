@@ -1,6 +1,6 @@
 import Compass from '@/assets/helpers/compass.png'
 import Bracelet from '@/assets/helpers/bracelet.png'
-import LogicGame from '@/assets/games/EniacLogic.svg'
+import LogicGame from '@/assets/games/stage-three-logic.png'
 import Wordle from '@/components/wordle/Wordle';
 import Types from "@/assets/games/pikist.png"
 
