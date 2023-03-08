@@ -23,6 +23,7 @@ const StageTwo = () => {
     interactiveGame={<Puzzle/>}
     clues={LamarrDB.clue_components}
     solution={LamarrDB.solution}
+    nextStage={LamarrDB.nextStage}
     />
 
   )
