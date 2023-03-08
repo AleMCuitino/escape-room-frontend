@@ -32,9 +32,11 @@ const Waiting = () => {
   }
   function ready () {
     // getUsers();
-    let users = window.localStorage.getItem('usersReady')
+    const data = localStorage.getItem('usersReady')
 
-    if (users.ready == users.users) {
+    const dataP = JSON.parse(data)
+    
+    if (dataP.users === dataP.ready) {
       navigate("/start")
     }
   }
