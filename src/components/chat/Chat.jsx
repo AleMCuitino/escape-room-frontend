@@ -6,7 +6,7 @@ import { CssChatProvider } from './chat-styled'
 import { UserContext } from '../../contexts/UserContext';
 import { userUpdateParticiped } from '../../services/user.service';
 
-function Chat({getUsers}) {
+function Chat({ getUsers, ready }) {
 
 
 
@@ -33,7 +33,9 @@ function Chat({getUsers}) {
       if (data?.room == userStorage?.user?.room_id) {
 
         if (data.message == "READY") {
-          getUsers()
+          ready ?
+            ready() : null;
+          getUsers ? getUsers() : null;
           console.log(data)
           console.log("lanzaron el comando de activación")
         }
