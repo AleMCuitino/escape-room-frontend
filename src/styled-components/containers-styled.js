@@ -1,5 +1,5 @@
 
-import {colorVar}  from '@/styled-components/variables.js';
+import {colorVar}  from './variables';
 import { Modal } from 'react-bootstrap';
 import styled from "styled-components";
 
@@ -11,17 +11,17 @@ export const ContainerBody = styled.section`
     display: flex;
     align-items: center;
     overflow: hidden;
-  
+    height: 100%;
     
     .mboard-timeline{
         margin-bottom: 2rem;
     }
 
     @media (min-width: 768px){
-        height: 100vh;
+       /*  height: 100vh; */
         .mboard-timeline{
         margin-bottom:4rem;
-    }
+        }
 
     @media (max-height: 768px){
         height: 100%;
@@ -93,7 +93,6 @@ export const TitleLocation = styled.h1`
 
     animation: pulseLight 5s ease-in infinite alternate;
 
-    
     @media (min-width: 768px){
         text-align: left;
         font-size:20px;

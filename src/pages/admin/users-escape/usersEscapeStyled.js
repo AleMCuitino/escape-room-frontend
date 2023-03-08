@@ -6,8 +6,9 @@ z-index: 1;
         font-family: 'Poppins', sans-serif;
     }
     .add-users-button {
-        width: 25vw;
-        height: 5vh;
+        padding: 1rem 1.5rem;
+        width: fit-content;
+        height: 100%;
         color: #ffffff;
         background-color: #4211BA ;
         border: none;
@@ -18,6 +19,6 @@ z-index: 1;
         position: absolute;
         z-index: -1;
         top: 300px;
-        left:200px;
+        left:0;
     } 
 `

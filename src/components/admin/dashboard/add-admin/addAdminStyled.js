@@ -2,25 +2,19 @@ import styled from "styled-components";
 import { colorVar } from "../../../../styled-components/variables"
 
 export const FormSpace = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #FFFFFF;
     border: 2px solid ${colorVar.secondary};
-    max-height: 70vh;
-    width: 60vw;
     box-shadow: 0.5rem 0.5rem 0 0px #adb5bd;
+
     .form-space {
         font-family: 'Poppins', sans-serif;
-        width: 50vw;
         .user-box {
             font-family: 'Poppins', sans-serif;
-            width: 30vw;
+            width: 100%;
         }
         .mail-box {
             font-family: 'Poppins', sans-serif;
-            width: 35vw;  
+            width: 100%;  
         }
         .place-holder {
             font-family: 'Fira', monospace;
@@ -31,7 +25,29 @@ export const FormSpace = styled.div`
         border-color: ${colorVar.secondary};
         border-radius: 0px;
         border: none;
-        width: 50vw;
+        width: 100%;
     }
+
+    label{
+    font-size:1rem;
+    font-weight:600;
+    }
+    
+    
+    input,select{
+        border: 2px solid black;
+        padding: 1rem;
+        font-size: 1rem;
+        &::placeholder{
+            font-size: 1rem;
+        }
+        &:focus, &:active{
+            background:#ff470030;
+            outline: none;
+        }
+    }    
+
+
+
 }    
 `
