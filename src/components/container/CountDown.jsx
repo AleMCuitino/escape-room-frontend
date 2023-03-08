@@ -39,7 +39,7 @@ const CountDown = () => {
         }
     }
     useEffect(() => {
-        if(timer == '00:00'){
+        if(timer == '00:01'){
             navigate('/final')
         }
     }, [timer])
