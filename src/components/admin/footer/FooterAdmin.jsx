@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import IconGit from '@/assets/icons/github.png';
+import IconGit from '@/assets/icons/github.svg';
 import { FooterIcon } from './footerAdminStyled';
 import { Link } from 'react-router-dom';
 
@@ -14,13 +14,13 @@ function FooterAdmin() {
                     
                         <FooterIcon className='icon-git d-flex flex-column alig-items-center' as={Link} to="https://github.com/AleMCuitino/escape-room-frontend">
                             
-                            <img className='img-fluid d-flex justify-content-center' src={IconGit}></img>
+                            <img className='img-fluid d-flex justify-content-center' title="github" src={IconGit}></img>
                             <p className='mb-0'>Front-end</p>
                            
                         </FooterIcon>
                         <FooterIcon className='icon-git d-flex flex-column alig-items-center ' as={Link} to="https://github.com/fcegatti/escape-room-backend">
                            
-                            <img className='img-fluid d-flex' src={IconGit}></img>
+                            <img className='img-fluid d-flex' title="github" src={IconGit}></img>
                             <p className='mb-0'>Back-end</p>
                           
                         </FooterIcon>
