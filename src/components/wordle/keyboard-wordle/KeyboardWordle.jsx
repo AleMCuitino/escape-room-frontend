@@ -5,14 +5,15 @@ import { WordleContext} from "../../wordle/Wordle";
 
 
 function KeyboardWordle() {
-    const { onEnter, onDelete, onSelectLetter, disabledLetters } = useContext(WordleContext)
+    const { onEnter, onDelete, onSelectLetter, disabledLetters, focusWordle, setFocusWordle } = useContext(WordleContext)
 
     const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
     const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
     const keys3 = ["Z", "X", "C", "V", "B", "N", "M"];
 
     const handleKeyboard = useCallback((event) => {
-        if (event.key === "Enter"){
+        if (focusWordle) {        
+            if (event.key === "Enter"){
             onEnter();
         } else if (event.key === "Backspace") {
             onDelete();
@@ -32,7 +33,7 @@ function KeyboardWordle() {
                     onSelectLetter(key)
                 }
             });
-        }
+        }} 
     });
 
     useEffect(() => {

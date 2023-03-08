@@ -34,7 +34,7 @@ const EscapeRoom = () => {
 
 
     return (
-        <div>
+        <>
             <Navbar />
             <Container>
                 <h1 className='mt-5 mb-5'>{escapeRoom ? escapeRoom.escape.title + ' ' + `(${escapeRoom.escape.time} min)` : "title"}</h1>
@@ -74,7 +74,7 @@ const EscapeRoom = () => {
                 </Table>
             </Container>
             <Footer />
-        </div>
+        </>
     )
 }
 

@@ -8,6 +8,7 @@ import { AnswerProvider } from './context/answerContext';
 import { useNavigate } from 'react-router-dom';
 import Bubble from '../navigation/game/Bubble';
 import Chat from '../chat/Chat';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 
 const ContainerMain = (props) => {
@@ -18,8 +19,7 @@ const ContainerMain = (props) => {
   //limpiar el input al enviar una respuesta
   const [input , setInput ] = useState("");
 
-  // introducción al juego
-  const [ intro, setIntro] = useState(true);
+  const [intro, setIntro] = useLocalStorage('intro',true);
 
   //Juego Logico
   const [ logicGame , setLogicGame ] = useState(true);
@@ -39,22 +39,24 @@ const problemsResults = (e) => {
   //evita el refresh natural del formulario
   e.preventDefault();
 
-  if ( props.logicGame.result.toLowerCase() === logicResult )  {    
+  if ( props.logicGame.result.toLowerCase() === logicResult ) {    
 
       setLogicGame(false);
       props.clues[0].result = "yes";
      
-
-      if( props.solution.toLowerCase() === interactiveResult ){
+  if( props.interactiveGame === "" ){ 
+    navigate(props.nextStage);
+    setIntro(true);
+  }else if( props.solution.toLowerCase() === interactiveResult ){
 
           navigate(props.nextStage);
           props.clues[1].result = "yes";
-
+          setIntro(true);
       }
-
-  }
+    
   //limpiar el input
   setInput("")
+}
 }
 
 
@@ -91,9 +93,9 @@ const problemsResults = (e) => {
                     { logicGame ?
                       <>
                       <div className='mb-5'>
-                      { props.logicGame.text === "" ? "" : <p>{props.logicGame.text}</p> }
+                      { props.logicGame.text === "" ? "" : <div className='col-10 mx-auto mb-3'>{props.logicGame.text}</div> }
                       { props.logicGame.img === "" ? "" :
-                        <img className="img-fluid" src={props.logicGame.img}/>
+                        <img className="img-fluid col-10 mx-auto d-block" src={props.logicGame.img}/>
                       } 
                       </div>
                       </> : 
