@@ -21,6 +21,7 @@
   - [Support](#support)
   - [Authors](#authors)
   - [FAQs](#faqs)
+  - [About the project](#about-the-project)
   - [Tools](#tools)
   - [Methodology](#methodology)
 ***
@@ -33,22 +34,26 @@ Escape Room 404 is a virtual escape room designed by Factoria F5 to assess the c
 
 <table>
 <tr>
-<td><img src="./src/assets/screenshot001.png"></td>
-<td><img src="./src/assets/screenshot002.png"></td>
-<td><img src="./src/assets/screenshot003.png"></td>
-<td><img src="./src/assets/screenshot004.png"></td>
+<td><img src="./src/assets/screenshots/screenshot001.png"></td>
+<td><img src="./src/assets/screenshots/screenshot002.png"></td>
+<td><img src="./src/assets/screenshots/screenshot003.png"></td>
+<td><img src="./src/assets/screenshots/screenshot004.png"></td>
 </tr>
 <tr>
-<td><img src="./src/assets/screenshot005.png"></td>
-<td><img src="./src/assets/screenshot006.png"></td>
-<td><img src="./src/assets/screenshot007.png"></td>
-<td><img src="./src/assets/screenshot008.png"></td>
+<td><img src="./src/assets/screenshots/screenshot005.png"></td>
+<td><img src="./src/assets/screenshots/screenshot006.png"></td>
+<td><img src="./src/assets/screenshots/screenshot007.png"></td>
+<td><img src="./src/assets/screenshots/screenshot008.png"></td>
 </tr>
 <tr>
-<td><img src="./src/assets/screenshot009.png"></td>
-<td><img src="./src/assets/screenshot010.png"></td>
-<td><img src="./src/assets/screenshot011.png"></td>
-<td><img src="./src/assets/screenshot012.png"></td>
+<td><img src="./src/assets/screenshots/screenshot009.png"></td>
+<td><img src="./src/assets/screenshots/screenshot010.png"></td>
+<td><img src="./src/assets/screenshots/screenshot011.png"></td>
+<td><img src="./src/assets/screenshots/screenshot012.png"></td>
+</tr>
+<tr>
+<td><img src="./src/assets/screenshots/screenshot013.png"></td>
+<td><img src="./src/assets/screenshots/screenshot014.png"></td>
 </tr>
 </table>
 
@@ -172,7 +177,7 @@ To install and run the frontend of Escape Room 404, please follow the steps belo
 ## Deployment
 
   
-[Visit our link](https://)
+[Visit our link](https://escape-room-backend-mcprj.ondigitalocean.app/api)
 
 
 ***
@@ -200,19 +205,29 @@ To handle any enquiries contact
 
 We'll fill this field when you ask something
 
+## About the project
+
+This project was developed as the final presentation of the P5.2022-23 class of the Full Stack bootcamp at Factoria F5.
+
 
 ## Tools
+
+- Figma
+- Notion
+- GitHub
+- Digital Ocean
+
 
 <p align="center">
 <a href="https://www.figma.com"><img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"></a>
 <a href="https://www.notion.so"><img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=Notion&logoColor=white"></a>
 <a href="https://github.com"><img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=GitHub&logoColor=white"></a>
+<a href="https://www.digitalocean.com"><img src="https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=DigitalOcean&logoColor=white"></a>
 </p>
 
 ## Methodology
 
 * Agile and SCRUM.
-* Mob programming.
 * Pair programming.
 
 
