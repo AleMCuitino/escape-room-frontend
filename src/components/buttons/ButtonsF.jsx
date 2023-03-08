@@ -16,15 +16,15 @@ const ButtonsF = () => {
     <>
 
         <div className=' d-flex justify-content-between'>
-            <Link to="/trip/stage-one"> <ButtonF src={F1}  alt=""  /></Link>
-            <Link to="/trip/stage-one"> <ButtonF src={F2}  alt=""  /></Link>
-            <Link to="/trip/stage-one"> <ButtonF src={F3}  alt=""  /></Link>
-            <Link to="/trip/stage-one"> <ButtonF src={F4}  alt=""  /></Link>
+            <Link to="/trip/stage-zero"> <ButtonF src={F1}  alt=""  /></Link>
+            <Link to="/trip/stage-zero"> <ButtonF src={F2}  alt=""  /></Link>
+            <Link to="/trip/stage-zero"> <ButtonF src={F3}  alt=""  /></Link>
+            <Link to="/trip/stage-zero"> <ButtonF src={F4}  alt=""  /></Link>
         </div>
         <div className=' d-flex justify-content-around'>
-            <Link to="/trip/stage-one"> <ButtonF src={F5}  alt=""  /></Link>
-            <Link to="/trip/stage-one"> <ButtonF src={F6}  alt=""  /></Link>
-            <Link to="/trip/stage-one"> <ButtonF src={F7}  alt=""  /></Link>
+            <Link to="/trip/stage-zero"> <ButtonF src={F5}  alt=""  /></Link>
+            <Link to="/trip/stage-zero"> <ButtonF src={F6}  alt=""  /></Link>
+            <Link to="/trip/stage-zero"> <ButtonF src={F7}  alt=""  /></Link>
         </div>
 
     </>
