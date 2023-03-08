@@ -1,3 +1,4 @@
+// import { BoxArrowRight } from 'react-bootstrap-icons';
 import Container from 'react-bootstrap/Container';
 import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
@@ -19,9 +20,9 @@ function NavbarAdmin() {
                     </div>
                     <Navbar.Collapse className="d-flex justify-content-end" id="responsive-navbar-nav">
                         <Nav className='gap-3'>
-                            {/* <Link to='/login'><img src={logout}></img></Link> */}
-                            {/* <Link to='/mi-admin'><img src={Prision}></img></Link> */}
-                            {/* <Link to='/crear-usuario-admin'><img src={User}></img></Link> */}
+                            {/* <Link to='/login'><BoxArrowRight /></Link>  */}
+                            <Link to='/mi-admin'><img src={Prision}></img></Link>
+                            <Link to='/crear-usuario-admin'><img src={User}></img></Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
