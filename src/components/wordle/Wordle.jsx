@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import "./Wordle.css";
+import { WordleMain } from "./wordleStyled.js";
 import Board from "../../components/wordle/board-wordle/BoardWordle";
 import Keyboard from "./keyboard-wordle/KeyboardWordle";
 import { createContext, useState } from "react";
@@ -69,10 +69,7 @@ function Wordle() {
     };
 
     return (
-        <div className="wordle">
-            <nav>
-                <h3>Wordle Board</h3>
-            </nav>
+        <WordleMain>
             <WordleContext.Provider
                 value={{ 
                     board, 
@@ -94,7 +91,7 @@ function Wordle() {
                     {gameOver.gameOver ? <GameOver /> : <Keyboard />}
                 </div>
             </WordleContext.Provider>
-        </div>
+        </WordleMain>
     )
 }
 

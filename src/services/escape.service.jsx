@@ -28,6 +28,17 @@ export const getEscapeById = (id) => {
     return axios.get(baseUrl + "/escape/" + id, config);
 };
 
+export const getUsersInEscapeById = (id) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.get(baseUrl + "/get-users-in-rooms/" + id, config);
+};
+
 export const createEscape = (data) => {
 
     const config = {
@@ -37,6 +48,18 @@ export const createEscape = (data) => {
     };
 
     return axios.post(baseUrl + "/escape",data, config);
+}
+
+
+export const updateEscape = (id,data) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.put(baseUrl + "/escape/" + id,data, config);
 }
 
 export const deleteEscapes = (id) => {
@@ -50,3 +73,26 @@ export const deleteEscapes = (id) => {
     return axios.delete(baseUrl + "/escape/" + id, config);
 
 };
+
+export const addParticipants = (data) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.post(baseUrl + "/user/assign",data, config);
+
+};
+
+export const sendEmailsToUsersInRooms = (id) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.get(baseUrl + "/send-emails/" + id, config);
+}

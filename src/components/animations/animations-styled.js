@@ -91,7 +91,7 @@ export const Glitch= styled.h1`
   width: 100%;
   margin: 0 auto;
   color: #fff;
-  font-size: 100px;
+  font-size: 80px;
   font-family: "Exo", sans-serif;
   font-weight: 600;
   text-align: center;
@@ -178,5 +178,25 @@ background-repeat: no-repeat;
 box-sizing: border-box;
 animation: ${rotationBack}  4s linear infinite reverse;
 }
+
+`
+export const ContainerBg = styled.div`
+    background-color: ${colorVar.secondary};
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    align-items:center;
+
+`
+
+
+export const VideoStyle = styled.video`
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
 `

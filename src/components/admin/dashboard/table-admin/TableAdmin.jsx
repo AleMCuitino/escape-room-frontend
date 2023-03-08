@@ -2,7 +2,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getEscapes, deleteEscapes } from '../../../../services/escape.service';
+import { getEscapes, deleteEscapes, sendEmailsToUsersInRooms } from '../../../../services/escape.service';
 
 function TableAdmin() {
 
@@ -55,11 +55,42 @@ function TableAdmin() {
                     });
                     getEscapesTable();
                 } else {
-                    
+
                 }
             });
 
 
+    }
+
+    const sendEmailsToUsers = async (id) => {
+        try {
+            const { data } = await sendEmailsToUsersInRooms(id);
+            swal({
+                title: `Se enviaron las invitaciones`,
+                icon: "success",
+            })
+        }
+
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleSendEmails = (id) => {
+        swal({
+            title: `¿Estás seguro?`,
+            text: 'Estás a punto de enviar un correo con el acceso a todos los usuarios de este Escape Room',
+            icon: "info",
+            buttons: [true, 'Estoy seguro'],
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // console.log(id)
+                    sendEmailsToUsers(id);
+                } else {
+
+                }
+            });
     }
 
 
@@ -74,30 +105,34 @@ function TableAdmin() {
                 </tr>
             </thead>
             <tbody>
-                { 
-                    escapes ? escapes.map((item) => {
+                {
+                    escapes?.length > 0 ? escapes.map((item) => {
                         return <tr key={item.id}>
                             <td>
                                 <div className='d-flex justify-content-between'>
                                     <div>
-                                        <Link to={`/escape-admin/${item.id}`} ><p>{item.title}</p></Link>
+                                        <Link to={`/add-participants/${item.id}`} ><p>{item.title}</p></Link>
                                     </div>
                                     <div className='buttons'>
-                                        <Button variant="light">Editar</Button>{' '}
+                                        <Link to={`/escape-admin/${item.id}`} ><Button variant="light">Editar</Button></Link>
                                         <Button variant="warning" onClick={() => handleDelete(item.id, item.title)}>Eliminar</Button>{' '}
                                     </div>
                                 </div>
                             </td>
                             <td>
                                 <div className='button-active'>
-                                    <Button variant="light">Activar</Button>{' '}
+                                    <Button variant="light" onClick={() => handleSendEmails(item.id)}>Activar</Button>
                                 </div>
                             </td>
                             <td>{item.status}</td>
                         </tr>
                     })
 
-                        : 'no hay escaperoms'
+                        : <tr>
+                            <td>
+                                No hay ningún Escape Room
+                            </td>
+                        </tr>
                 }
 
             </tbody>

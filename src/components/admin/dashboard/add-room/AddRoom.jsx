@@ -5,10 +5,10 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { SpaceAdd } from './addRoomStyled';
 import { useForm } from "react-hook-form";
-import { createEscape } from '../../../../services/escape.service';
+import { createEscape, updateEscape } from '../../../../services/escape.service';
 
 
-function AddRoom() {
+function AddRoom({ update, idEscape }) {
 
     const { register, handleSubmit } = useForm();
 
@@ -29,20 +29,41 @@ function AddRoom() {
         }
     }
 
+    const handleUpdateEscape = async (formData) => {
+
+        try {
+            const { data } = await updateEscape(idEscape, formData);
+            console.log(data)
+            window.location.reload()
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
     const onSubmit = data => swal({
-        title: `¿Estás seguro de crear un nuevo escape room?`,
+        title: update ? `¿Estás seguro de editar este escape room?` : `¿Estás seguro de crear un nuevo escape room?`,
         icon: "info",
         buttons: true,
         dangerMode: true,
     })
         .then((willDelete) => {
             if (willDelete) {
-                handleCreateEscape(data);
-                swal(`Has creado un nuevo escape room`, {
-                    icon: "success",
-                });
+                if (update) {
+                    handleUpdateEscape(data);
+                    swal(`Se ha editado el escape room`, {
+                        icon: "success",
+                    });
+                }
+                else {
+
+                    handleCreateEscape(data);
+                    swal(`Has creado un nuevo escape room`, {
+                        icon: "success",
+                    });
+                }
             } else {
-                
+
             }
         });
 
@@ -71,7 +92,7 @@ function AddRoom() {
                     </Form.Group>
                 </div>
                 <Button className='button-add mt-3 mb-3' type="submit">
-                    Añadir Escape Room
+                    {update? 'Actualizar escape room' : 'Añadir Escape Room'}
                 </Button>
             </Form>
         </SpaceAdd>

@@ -24,7 +24,7 @@ export const ContainerBody = styled.section`
     }
 
     @media (max-height: 768px){
-        height: fit-content;
+        height: 100%;
         overflow: auto;
     }
 
@@ -80,14 +80,18 @@ export const TitleLocation = styled.h1`
     background-color:${colorVar.digital2};
     max-width: 600px;           
     min-height:40px; 
-    border: ${colorVar.digital} 2px solid;
     border-radius: 10px;
     font-size:16px;
     align-items: center;
     padding: 20px;
     text-align:center;
     justify-content: center;
-    animation: pulseLight 20s infinite alternate;
+
+    backdrop-filter: blur(5px);
+    border: 1px solid rgb(0 255 255 / 18%);
+    box-shadow: 0 8px 32px 0 rgb(29 170 169 / 37%);
+
+    animation: pulseLight 5s ease-in infinite alternate;
 
     
     @media (min-width: 768px){
@@ -102,25 +106,14 @@ export const TitleLocation = styled.h1`
 
     @keyframes pulseLight {
 
-        20%{
-            background-color:${colorVar.digital};
-            color:${colorVar.secondary};
-        }
-        40%{
-            background-color:${colorVar.digital2};
-            color:${colorVar.digital};
-        }
-        60%{
-            background-color:${colorVar.digital};
-            color:${colorVar.secondary};
-        }
-        80%{
-            background-color:${colorVar.digital2};
-            color:${colorVar.digital};
-        }
+       70%{
+        background-color:${colorVar.digital2};
+        color:${colorVar.digital};
+       }
+
         100%{
-            background-color:${colorVar.digital};
-            color:${colorVar.secondary};
+            background-color:#33c8ce73;
+            box-shadow:0px 2px 32px 0 rgb(24 199 193 / 95%)
         }
 
     }
@@ -149,10 +142,38 @@ export const Paragraph= styled.p`
         font-weight: bolder;
         padding-top: .6rem;
         text-align: right;
+        max-width: fit-content;
+        margin-left: auto;
 
         img{
             max-width: 20px;
         }
+
+        &:hover{
+            filter: drop-shadow(2px 0px 0px red);
+
+            animation-name: bounce-shakeX;
+     
+            animation-duration: 1s;
+     
+}
+
+    @keyframes bounce-shakeX{
+        0% {transform: translateX(-50%);}
+        12% {transform: translateX(50%);}
+        24% {transform: translateX(-20%);
+            filter: drop-shadow(2px 0px 0px ${colorVar.digital});}
+        36% {transform: translateX(20%);}
+        48% {transform: translateX(-10%);
+            filter: drop-shadow(2px 0px 0px red);}
+        60% {transform: translateX(10%);}
+        72% {transform: translateX(-5%);}
+        84% {transform: translateX(5%);
+            filter: drop-shadow(2px 0px 0px ${colorVar.digital});}
+        96% {transform: translateX(0%);}
+        100% {transform: translateX(0%);
+            filter: drop-shadow(2px 0px 0px red);}
+    }
     }
 
     @media (min-width: 768px){
@@ -164,23 +185,18 @@ export const Paragraph= styled.p`
     }
     
     `
-export const ContainerAnswer= styled.div`
-    display: flex;
-    align-items:center;
-    `
-    export const FormAnswer= styled.form`
 
-    display: flex;
-    
-    max-width: 600px;         
+export const FormAnswer= styled.form`
+
+    display: flex;         
     border: ${colorVar.digital} 2px solid;
     border-radius: 10px;
     background-color:${colorVar.secondary};
     color:${colorVar.digital};
-    font-size:20px;          
+            
     align-items: center;
     margin: 0;
-    font-size:20px;
+
     padding: 1rem;
     margin-top: -2.5rem;
     position: relative;
@@ -190,7 +206,7 @@ export const ContainerAnswer= styled.div`
         outline: none;
         color:${colorVar.digital};
         background-color:${colorVar.secondary};
-
+  
             ::placeholder {       
             color:${colorVar.digital};
             }
@@ -210,7 +226,6 @@ export const Submit = styled.button`
     display: flex;
     color:${colorVar.digital};
     background-color:${colorVar.digital2};         
-    height:40px; 
     border: ${colorVar.digital} 2px solid;
     border-radius: 10px;
     font-size:20px;
@@ -249,6 +264,8 @@ export const ClueButton = styled.img`
     margin-bottom: 2rem;
     cursor:pointer;
     transition: transform .5s ease-in-out, filter .2s ease-in-out;
+
+    ${(props) => props.result === "yes" ? "filter: saturate(0)" : "" };
 
     &:hover{
         transform: rotate(15deg) scale(1.3);
