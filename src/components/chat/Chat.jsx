@@ -4,31 +4,42 @@ import { sendMessage } from '../../services/chat.service';
 import ChatIcon from '@/assets/icons/messaging.png'
 import { CssChatProvider } from './chat-styled'
 import { UserContext } from '../../contexts/UserContext';
+import { userUpdateParticiped } from '../../services/user.service';
 
 function Chat() {
 
+
+
   const { userStorage, setUserStorage } = useContext(UserContext)
-
-  //mostrar un mensaje del chat
   const [chatHistory, setChatHistory] = useState([]);
-
-  //limpiar el input al enviar una mensaje del chat
   const [inputChat, setInputChat] = useState("");
+
+  const userParticiped = async (id) => {
+    const formData = {
+      participed: true,
+    };
+    const { data } = await userUpdateParticiped(formData, id);
+    console.log(data)
+  };
 
   useEffect(() => {
     Pusher.logToConsole = true;
-
     const pusher = new Pusher('a4b971091d67d3ac2bf1', {
       cluster: 'eu',
     });
-
     const channel = pusher.subscribe('my-channel');
 
     channel.bind('my-event', function (data) {
-      if (data?.room == userStorage.user.room_id) {
+      if (data?.room == userStorage?.user?.room_id) {
+
+        if (data.message == "READY") {
+
+          console.log(data)
+          console.log("lanzaron el comando de activación")
+        }
         setChatHistory(prevData => {
           // Filtrar los mensajes duplicados
-          const messageSet = new Set(prevData.map(m => m.message));
+          const messageSet = new Set(prevData.map(m => m?.message));
           if (messageSet.has(data.message)) {
             return prevData;
           }
@@ -55,6 +66,10 @@ function Chat() {
     const formData = {
       message: message,
     };
+    if (message == "READY") {
+
+      userParticiped(userStorage?.user?.id)
+    }
     handleSend(formData);
 
     //limpiar el input del chat
