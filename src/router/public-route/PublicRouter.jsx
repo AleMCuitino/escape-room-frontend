@@ -30,8 +30,7 @@ function PublicRouter() {
 
                 {/*   Niveles del Juego */}
                 <Route path="/stage-one" element={<StageOne/>} /> {/*//* Ada Lovelace */}
-                <Route path="/stage-two" element={<StageTwo/>} /> {/*//* Hedy Lamarr */}
-               
+
                 
                 {/* Zona de administrador */}
                 <Route path="/login" element ={<LoginAdmin/>}/>
