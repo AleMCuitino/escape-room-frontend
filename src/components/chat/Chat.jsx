@@ -33,8 +33,8 @@ function Chat({getUsers, ready}) {
       if (data?.room == userStorage?.user?.room_id) {
 
         if (data.message == "READY") {
-          getUsers()
           ready()
+          getUsers()
           console.log(data)
           console.log("lanzaron el comando de activación")
         }

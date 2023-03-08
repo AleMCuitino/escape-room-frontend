@@ -30,7 +30,8 @@ const Waiting = () => {
     })
     setParticipantsReady()
   }
-  const ready = () => {
+  function ready () {
+    getUsers();
     if (usersReady.ready == usersReady.users) {
       navigate("/start")
     }
@@ -38,7 +39,7 @@ const Waiting = () => {
 
   useEffect(() => {
     getUsers();
-    ready();
+    // ready();
   }, [])
 
 
@@ -66,7 +67,7 @@ const Waiting = () => {
           <p className='d-flex justify-content-center my-4'> {usersReady ? usersReady.ready : "..."} de {usersReady ? usersReady.users : '...'} partipantes </p>
 
           <div className='col-12 '>
-            <Chat getUsers={getUsers} ready={ready} />
+            <Chat ready={ready} getUsers={getUsers}  />
           </div>
         </div>
       </ContainerBody>
