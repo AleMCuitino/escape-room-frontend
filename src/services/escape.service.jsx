@@ -106,3 +106,17 @@ export const getUsersInRoom = (id) => {
 
     return axios.get(baseUrl + "/users-room/" + id, config);
 }
+
+
+export const updateRoom = (id,data) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.put(baseUrl + "/users-room/" + id,data, config);
+}
+
+
