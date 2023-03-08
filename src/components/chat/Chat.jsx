@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Pusher from 'pusher-js';
 import { sendMessage } from '../../services/chat.service';
 import ChatIcon from '@/assets/icons/messaging.png'
 import { CssChatProvider } from './chat-styled'
+import { UserContext } from '../../contexts/UserContext';
 
 function Chat() {
 
+  const { userStorage, setUserStorage } = useContext(UserContext)
+
   //mostrar un mensaje del chat
   const [chatHistory, setChatHistory] = useState([]);
-    
+
   //limpiar el input al enviar una mensaje del chat
-  const [inputChat , setInputChat ] = useState("");
+  const [inputChat, setInputChat] = useState("");
 
   useEffect(() => {
     Pusher.logToConsole = true;
@@ -22,15 +25,17 @@ function Chat() {
     const channel = pusher.subscribe('my-channel');
 
     channel.bind('my-event', function (data) {
-      setChatHistory(prevData => {
-        // Filtrar los mensajes duplicados
-        const messageSet = new Set(prevData.map(m => m.message));
-        if (messageSet.has(data.message)) {
-          return prevData;
-        }
-        // Agregar el nuevo mensaje al final del array
-        return [...prevData, { message: data.message, user: data.user }];
-      });
+      if (data?.room == userStorage.user.room_id) {
+        setChatHistory(prevData => {
+          // Filtrar los mensajes duplicados
+          const messageSet = new Set(prevData.map(m => m.message));
+          if (messageSet.has(data.message)) {
+            return prevData;
+          }
+          // Agregar el nuevo mensaje al final del array
+          return [...prevData, { message: data.message, user: data.user }];
+        });
+      }
     });
   }, []);
 
@@ -60,29 +65,29 @@ function Chat() {
   return (
     <CssChatProvider className='col-12 col-md-6'>
       <div className='d-flex align-items-center mb-3'>
-        <img src={ChatIcon} alt="chat" className='d-none d-md-block img-fluid me-4'/>
+        <img src={ChatIcon} alt="chat" className='d-none d-md-block img-fluid me-4' />
         <div className='chat-window'>
-            {chatHistory.map((item, index) => {
-              return (
-                
-                  <small className='mb-0 d-block' key={index}>
-                    <strong className='me-2'>{item.user}:</strong>{item.message}
-                  </small>
-              
-              );
-            })}
-          </div>
+          {chatHistory.map((item, index) => {
+            return (
+
+              <small className='mb-0 d-block' key={index}>
+                <strong className='me-2'>{item.user}:</strong>{item.message}
+              </small>
+
+            );
+          })}
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className='d-flex'>
-        
+
         <input
-        value={inputChat}  
-        className="flex-fill"
-        type="text"
-        placeholder="Message"
-        onChange={handleMessage} />
-        
+          value={inputChat}
+          className="flex-fill"
+          type="text"
+          placeholder="Message"
+          onChange={handleMessage} />
+
       </form>
     </CssChatProvider>
   );
