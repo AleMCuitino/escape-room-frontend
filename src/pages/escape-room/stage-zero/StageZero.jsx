@@ -22,6 +22,7 @@ const StageZero = () => {
     clues={HipatiaDB.clue_components}
     solution={HipatiaDB.solution}
     nextStage={HipatiaDB.nextStage}
+    interactiveGame={HipatiaDB.interactiveGame}
     />
 
   )

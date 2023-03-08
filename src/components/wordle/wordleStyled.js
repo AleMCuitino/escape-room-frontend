@@ -1,26 +1,10 @@
 import styled from "styled-components";
+import {colorVar}  from '@/styled-components/variables.js';
 
 export const WordleMain = styled.div`
-    text-align: center;
-    background-color: #121212;
-    width: 100%;
-    height: 100%;
-    /* display: flex; */
-    color: white;
-
-body {
-    padding: 0%;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .game {
-    width: 100vw;
-    height: calc(100vh - 170px);
     display: flex;
     align-items: center;
-    padding-top: 50px;
     flex-direction: column;
     width: 100%;
     height: 100%;
@@ -28,15 +12,24 @@ body {
 }
 
 .board {
-    width: 20vw;
-    height: 50vh;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
+    
+    .letter {
+        border: ${colorVar.digital} 2px solid;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgb(0 255 255 / 18%);
+        box-shadow: 0 8px 32px 0 rgb(29 170 169 / 37%);
+        }   
+}
+
+.board-focus {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px 0 rgb(255 255 255 / 25%);
 }
 
 .row {
-    flex: 10%;
     display: flex;
     flex-direction: row;
     margin: 1px;
@@ -45,6 +38,7 @@ body {
 .letter {
     flex: 10%;
     height: 5vh;
+    width: 5vw;
     border: 2px solid grey;
     margin: 2px;
     display: grid;
@@ -71,6 +65,7 @@ body {
     width: 70vw;
     height: 30vh;
     margin-top: 10vh;
+    display: none;
 }
 
 .line1 {
