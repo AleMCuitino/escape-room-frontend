@@ -21,6 +21,7 @@
   - [Support](#support)
   - [Authors](#authors)
   - [FAQs](#faqs)
+  - [About the project](#about-the-project)
   - [Tools](#tools)
   - [Methodology](#methodology)
 ***
@@ -200,19 +201,29 @@ To handle any enquiries contact
 
 We'll fill this field when you ask something
 
+## About the project
+
+This project was developed as the final presentation of the P5.2022-23 class of the Full Stack bootcamp at Factoria F5.
+
 
 ## Tools
+
+- Figma
+- Notion
+- GitHub
+- Digital Ocean
+
 
 <p align="center">
 <a href="https://www.figma.com"><img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=Figma&logoColor=white"></a>
 <a href="https://www.notion.so"><img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=Notion&logoColor=white"></a>
 <a href="https://github.com"><img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=GitHub&logoColor=white"></a>
+<a href="https://www.digitalocean.com"><img src="https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=DigitalOcean&logoColor=white"></a>
 </p>
 
 ## Methodology
 
 * Agile and SCRUM.
-* Mob programming.
 * Pair programming.
 
 
