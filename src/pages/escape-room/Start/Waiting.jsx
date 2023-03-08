@@ -1,20 +1,48 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ContainerBody, Text, Hour, Rotate } from '../../../components/buttons/start-styled'
-import { Link } from 'react-router-dom';
-import  Hourglass  from '@/assets/buttons/Hourglass.svg';
+import { Link, useNavigate } from 'react-router-dom';
+import Hourglass from '@/assets/buttons/Hourglass.svg';
+import Chat from '../../../components/chat/Chat';
+import { getUsersInRoom } from '../../../services/escape.service';
+import { UserContext } from '../../../contexts/UserContext';
+import { set } from 'react-hook-form';
 
 
 const Waiting = () => {
 
+  const { userStorage, setUserStorage } = useContext(UserContext)
+  const [participants, setParticipants] = useState(null)
+  const [participantsReady, setParticipantsReady] = useState(null)
+
+  const navigate = useNavigate();
+
+  const getUsers = async () => {
+    const { data } = await getUsersInRoom(userStorage?.user?.room_id);
+    setParticipants(data?.users)
+
+    setParticipantsReady(data?.users.filter((participant) => {
+      return participant.participed === true;
+    }))
+
+    if(participants?.length === participantsReady?.length){
+      navigate("/start")
+    }
+  }
+
+  useEffect(() => {
+    getUsers();
+  }, [])
+
+  
 
 
 
   return (
     <div>
 
-        <ContainerBody >
+      <ContainerBody >
 
-          <div className='container vh-100 d-flex flex-column '>
+        <div className='container vh-100 d-flex flex-column '>
 
               <Text > 
                   <h3 title="hacking">¡Factoría F5 ha sido hackeada...!</h3>
@@ -27,10 +55,13 @@ const Waiting = () => {
                   <Rotate  src={Hourglass} alt="hour" title="hour" /> 
               </Hour>
 
-              <p className= 'd-flex justify-content-center my-4'> 1 de 4 partipantes </p> 
-              
+          <p className='d-flex justify-content-center my-4'> {participantsReady? participantsReady.length : "..."} de {participants?.length} partipantes </p>
+
+          <div className='col-12 '>
+            <Chat getUsers={getUsers} />
           </div>
-        </ContainerBody>
+        </div>
+      </ContainerBody>
     </div>
   )
 }

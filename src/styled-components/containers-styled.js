@@ -12,9 +12,10 @@ export const ContainerBody = styled.section`
     align-items: center;
 
     
-  /*  .gameImg{
-    max-width: ;
-   } */
+ .gameImg{
+    max-height: 500px ;
+    object-fit: contain;
+   } 
     
     .mboard-timeline{
         margin-bottom: 2rem;

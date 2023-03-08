@@ -52,7 +52,7 @@ export const Hour= styled.div`
 display: flex;
 width: 100%;
 justify-content: center;
-margin-top: 200px;
+margin-top: 100px;
 color: white;
 
 

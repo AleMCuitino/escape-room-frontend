@@ -6,7 +6,6 @@ import '@/components/puzzle/index.css'
 function Puzzle() {
   const [imgUrl, setImgUrl] = useState(imgURL)
 
-  // console.log("Puzzle is mounted");
 
   return (
     <div className="App">
