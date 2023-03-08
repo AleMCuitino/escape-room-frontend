@@ -83,7 +83,7 @@ const problemsResults = (e) => {
               {/* Texto introductorio */}
               { intro === true  ? 
                   <>
-                  <Paragraph className='col-10 col-sm-10 mb-5'>
+                  <Paragraph className='col-10 col-sm-10 mb-5 text-center'>
                     {props.initText}
                     <button  className="btn-next" onClick={ handleClick } >Continuar <img src={Next}/></button>
                   </Paragraph>

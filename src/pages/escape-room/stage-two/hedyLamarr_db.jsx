@@ -1,6 +1,7 @@
 import Star from '@/assets/helpers/star.png'
 import Play from '@/assets/helpers/play.png'
 import LogicGame from '@/assets/games/lamarr-logic.png'
+import Addition from '@/assets/games/addition.png'
 import Puzzle from '@/components/puzzle/Puzzle';
 
 
@@ -11,7 +12,7 @@ export const LamarrDB =
       introduction: "¡Habéis resuelto la prueba con éxito! Y también tenido el honor de visitar el estudio de Charles Babbagge y Ada Lovelace, ¡la primera programadora de la historia! Pero ahora os encontráis en lo que parece el camerino de una actriz. Según el dispositivo, os encontráis en Hollywood y es el año 1942. Mientras os preguntáis por qué en esa época y lugar, descubrís que quizás el camerino no pertenezca a una actriz cualquiera, ya que en su espejo hay escrito en lápiz labial un acertijo matemático...",
       clue_components: [ {
         problem: 1,
-        clue: "",
+        clue: `${Addition}`,
         text:"Ingresa la contraseña con el formato X+X+X",
         img: `${Star}`,
         result: false,   

@@ -10,6 +10,7 @@ export const ContainerBody = styled.section`
     width: 100%;
     display: flex;
     align-items: center;
+
     
   /*  .gameImg{
     max-width: ;
@@ -20,7 +21,7 @@ export const ContainerBody = styled.section`
     }
 
     @media (min-width: 768px){
-       /*  height: 100vh; */
+      height: 100%;
         .mboard-timeline{
         margin-bottom:4rem;
         }
