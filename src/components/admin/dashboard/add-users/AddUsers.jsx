@@ -80,14 +80,14 @@ function AddUsers({id}) {
     
 
     return (
-        <FormSpace>
+        <FormSpace className='col-12 col-md-10 col-lg-8 mx-auto'>
             <Form className="form-space" onSubmit={handleFormSubmit}>
-                <div className='mt-4 gap-3 d-flex'>
-                    <Form.Group className="user-box mb-3" controlId="formBasicEmail">
+                <div className='row mb-3'>
+                    <Form.Group className="col-6" controlId="formBasicEmail">
                         <Form.Label>Participante</Form.Label>
                         <Form.Control type="text" placeholder="Nombre Ejemplo Ejemplar" required {...register("name")}/>
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formGridState">
+                    <Form.Group className="col-6" controlId="formGridState">
                         <Form.Label>Sala</Form.Label>
                         <Form.Select  required {...register("room_id")}>
                             {
@@ -100,11 +100,11 @@ function AddUsers({id}) {
                         </Form.Select>
                     </Form.Group>
                 </div>
-                <Form.Group className="mail-box mb-5" controlId="formBasicEmail">
+                <Form.Group className="col-12 mb-4" controlId="formBasicEmail">
                     <Form.Label>Correo Electrónico</Form.Label>
                     <Form.Control type="email" placeholder="Ingresar correo electrónico" required {...register("email")} />
                 </Form.Group>
-                <Button className='button-add-users mb-5' variant="primary" type="submit">
+                <Button className='button-add-users mb-2 p-3' variant="primary" type="submit">
                     Añadir participante 
                 </Button>
             </Form>

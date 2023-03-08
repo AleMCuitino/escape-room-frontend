@@ -33,7 +33,17 @@ export const CssTableProvider = styled.div`
     width: 100%; 
     button{
         margin-right: 1rem;
+        line-height: 0;
+        height: auto;
+
+        svg{
+            max-width: 20px;
+            height: auto;
+             line-height: 0;
+        }
     }
+
+
 }
 
 
@@ -45,7 +55,11 @@ export const CssTableProvider = styled.div`
     border-radius: 0;
     padding: 0.5rem;
     border: none;
-    font-size: .8rem;
+    font-size: .8rem; 
+    :hover{
+        background: #FF4700;
+        color:white;
+    }
 
  }   
 

@@ -51,9 +51,9 @@ function UsersEscape() {
     }, [])
 
     return (
-        <div>
+        <>
             <Navbar />
-            <MainUsers className='container'>
+            <MainUsers className='container h-100'>
                 <h1 className='mt-5'>{escapeRoom?.escape?.title}</h1>
                 <Table striped bordered hover>
                     <thead>
@@ -89,7 +89,7 @@ function UsersEscape() {
                 </section>
             </MainUsers>
             <Footer />
-        </div>
+        </>
     );
 }
 
