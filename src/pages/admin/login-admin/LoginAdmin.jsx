@@ -7,7 +7,8 @@ import LogoEscape from "@/assets/logotype/logo404.svg";
 import LogoFactoria from "@/assets/logotype/factoria.svg";
 import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo } from "./loginStyled";
 import { UserContext } from "../../../contexts/UserContext";
-import Footer from "../../../components/admin/footer/FooterAdmin"
+import Footer from "../../../components/admin/footer/FooterAdmin";
+import Music from "../../../assets/sounds/escape-room-8bit.mp3";
 
 const LoginAdmin = () => {
 
@@ -56,7 +57,14 @@ const LoginAdmin = () => {
     };
 
     return (
+
+        
         <ContainerLogin>
+
+
+            <audio src={Music} autoPlay autobuffer> </audio>
+            
+
             <FactoriaLogo>
                 <img src={LogoFactoria}></img>
             </FactoriaLogo>
