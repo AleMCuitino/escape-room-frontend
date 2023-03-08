@@ -122,9 +122,9 @@ function TableAdmin() {
                                         
                                         <div className='buttons hover-actions'>
                                         
-                                            <Link to={`/escape-admin/${item.id}`} ><Button variant="light" ><span>Editar </span><IconEdit/></Button></Link>
-                                            <Button variant="warning" onClick={() => handleDelete(item.id, item.title)}><span>Eliminar </span> <IconDelete/></Button>
-                                            <Button variant="light" onClick={() => handleSendEmails(item.id)}><span>Activar </span> <IconSend/></Button>
+                                            <Link to={`/escape-admin/${item.id}`} ><Button variant="light" ><span className='d-none d-md-inline'>Editar </span><IconEdit/></Button></Link>
+                                            <Button variant="warning" onClick={() => handleDelete(item.id, item.title)}><span className='d-none d-md-inline'>Eliminar </span> <IconDelete/></Button>
+                                            <Button variant="light" onClick={() => handleSendEmails(item.id)}><span className='d-none d-md-inline'>Activar </span> <IconSend/></Button>
                                         
                                             {' '}
                                         </div>

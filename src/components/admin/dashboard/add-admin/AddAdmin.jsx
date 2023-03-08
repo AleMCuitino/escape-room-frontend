@@ -57,7 +57,7 @@ function AddAdmin() {
     }
 
     return (
-        <FormSpace>
+        <FormSpace className="col-12 col-md-10 col-lg-9 mx-auto">
             <Form className="form-space m-5" onSubmit={handleFormSubmit}>
                 <Form.Group className="mb-4" controlId="formBasicEmail">
                     <Form.Label>Rol de usuario</Form.Label>
@@ -81,7 +81,7 @@ function AddAdmin() {
                     <Form.Label>Confirmar contraseña</Form.Label>
                     <Form.Control className="place-holder" min={6} type="password" placeholder="Confirmar nueva contraseña" required {...register("password_confirmation")} />
                 </Form.Group>
-                <Button className="button-add-admin mt-2 mb-2" variant="primary" type="submit">
+                <Button className="button-add-admin mt-2 mb-2 p-3" variant="primary" type="submit">
                     Añadir usuario
                 </Button>
             </Form>

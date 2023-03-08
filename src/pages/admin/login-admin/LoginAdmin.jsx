@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { login } from "../../../services/user.service";
 import swal from 'sweetalert';
 
@@ -17,6 +17,10 @@ const LoginAdmin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
+    const audioPlayer = useRef();
+
+
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
@@ -62,7 +66,7 @@ const LoginAdmin = () => {
         
         <ContainerLogin>
 
-            <audio src={Music} autoPlay autobuffer> </audio>
+            <audio ref={audioPlayer} src={Music} volume autoPlay > </audio>
             
 
             <FactoriaLogo>
