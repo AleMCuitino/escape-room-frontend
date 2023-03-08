@@ -18,8 +18,6 @@ function Board({ imgUrl }) {
       console.error(`Failed to load image from URL: ${imgUrl}`);
     };
   }, [imgUrl]);
-  
-  console.log('is started:', isStarted)
 
   const shuffleTiles = () => {
     const shuffledTiles = shuffle(tiles)
