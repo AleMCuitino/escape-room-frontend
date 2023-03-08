@@ -19,6 +19,8 @@ function Wordle() {
         guessedWord: false
     })
 
+    const [focusWordle, setFocusWordle] = useState(false);
+
     // const correctWord = "PASTA";
 
     useEffect(() => {
@@ -83,10 +85,13 @@ function Wordle() {
                     disabledLetters,
                     setDisabledLetters, 
                     gameOver,
-                    setGameOver 
+                    setGameOver,
+                    focusWordle,
+                    setFocusWordle 
                     }}
             >
-                <div className='game'>
+                <div className='game col-6 mx-auto mb-4'>
+                    <h6>Haz click a continuación:</h6>
                     <Board />
                     {gameOver.gameOver ? <GameOver /> : <Keyboard />}
                 </div>
