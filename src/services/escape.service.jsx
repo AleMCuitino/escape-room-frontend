@@ -96,3 +96,27 @@ export const sendEmailsToUsersInRooms = (id) => {
 
     return axios.get(baseUrl + "/send-emails/" + id, config);
 }
+
+export const getUsersInRoom = (id) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.get(baseUrl + "/users-room/" + id, config);
+}
+
+
+export const updateRoom = (id,data) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+
+    return axios.put(baseUrl + "/users-room/" + id,data, config);
+}
+
+

@@ -34,12 +34,17 @@ const EscapeRoom = () => {
 
 
     return (
-        <div>
+        <>
             <Navbar />
-            <Container>
-                <h1 className='mt-5 mb-5'>{escapeRoom ? escapeRoom.escape.title + ' ' + `(${escapeRoom.escape.time} min)` : "title"}</h1>
-                <AddRoom  update={true} idEscape={escapeRoom?.escape?.id}/>
-                <Table striped className='mt-5 mb-5'>
+            <Container className='h-100'>
+                <h1 className='mt-5 mb-5 text-center'>{escapeRoom ? escapeRoom.escape.title + ' ' + `(${escapeRoom.escape.time} min)` : "title"}</h1>
+                <div className="col-12 col-md-10 col-lg-8 mx-auto">
+
+                <AddRoom  update={true} idEscape={escapeRoom?.escape?.id} />
+                </div>
+                <div className="col-12 col-md-10 col-lg-8 mx-auto">
+
+                <Table striped className='mt-5 mb-5 '>
                     <thead>
                         <tr>
                             <th>ID salas</th>
@@ -72,9 +77,10 @@ const EscapeRoom = () => {
 
                     </tbody>
                 </Table>
+                </div>
             </Container>
             <Footer />
-        </div>
+        </>
     )
 }
 

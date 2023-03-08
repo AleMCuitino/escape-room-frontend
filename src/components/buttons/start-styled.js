@@ -6,8 +6,9 @@ export const ContainerBody = styled.section`
     color: white;
     background-color: #020100;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
+    flex-direction: column;
 
 
     `    
@@ -16,9 +17,9 @@ export const ContainerButtons = styled.section`
 
     display: flex;
     flex-direction: column;
-    height: 50vh; 
+    height: 100%; 
     justify-content: center; 
-    gap:60px;
+    gap:20px;
     `
 
 export const ButtonF = styled.img`
@@ -29,11 +30,11 @@ export const ButtonF = styled.img`
 export const Text = styled.div`
 
 max-width: auto;
-margin-top: 100px;
+margin-top: 60px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-gap:70px;
+gap:50px;
 
 `
 
@@ -51,7 +52,7 @@ export const Hour= styled.div`
 display: flex;
 width: 100%;
 justify-content: center;
-margin-top: 200px;
+margin-top: 100px;
 color: white;
 
 
@@ -71,4 +72,6 @@ export const Rotate= styled.img`
 
 transform-origin: center;
 animation: ${rotate1} 8s linear infinite;
+
+
 `

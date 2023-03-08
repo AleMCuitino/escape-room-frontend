@@ -4,9 +4,7 @@ import Wordle from '@/components/wordle/Wordle';
 function Home() {
     return (
         <div>
-            <Wordle />
-            {/* <Memorize />            
-            <Puzzle /> */}
+           
         </div>
     )
 }

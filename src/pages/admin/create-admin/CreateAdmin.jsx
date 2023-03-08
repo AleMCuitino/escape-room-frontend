@@ -10,10 +10,10 @@ import Footer from '@/components/admin/footer/FooterAdmin';
 const CreateAdmin = () => {
 
     return (
-        <div>
+        <>
             <Navbar />
             <CreateSpace className='container'>
-                <h1 className='mt-5 mb-5'>Crear usuario administrador</h1>
+                <h1 className='mt-5 mb-5 text-center'>Crear usuario administrador</h1>
                 <AddAdmin />
                 <div className='flower'>
                     <img src={Flower2}></img>
@@ -23,7 +23,7 @@ const CreateAdmin = () => {
                 </div>
             </CreateSpace>
             <Footer />
-        </div>
+        </>
     )
 }
 

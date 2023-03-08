@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { login } from "../../../services/user.service";
 import swal from 'sweetalert';
 
@@ -9,6 +9,7 @@ import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo
 import { UserContext } from "../../../contexts/UserContext";
 import Footer from "../../../components/admin/footer/FooterAdmin";
 import Music from "../../../assets/sounds/escape-room-8bit.mp3";
+import { ReactComponent as  SVGIcon } from "@/assets/icons/formarrow.svg"
 
 const LoginAdmin = () => {
 
@@ -16,6 +17,8 @@ const LoginAdmin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
+    const audioPlayer = useRef();
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
@@ -61,13 +64,16 @@ const LoginAdmin = () => {
         
         <ContainerLogin>
 
-
-            <audio src={Music} autoPlay autobuffer> </audio>
+            <audio ref={audioPlayer} src={Music} volume autoPlay > </audio>
             
 
             <FactoriaLogo>
-                <img src={LogoFactoria}></img>
+                <div className="container">
+                    <img src={LogoFactoria}></img>
+
+                </div>
             </FactoriaLogo>
+            <div className="container">
             <LoginMain>
                 <GameLogo>
                     <img src={LogoEscape}></img>
@@ -75,11 +81,12 @@ const LoginAdmin = () => {
                 <ToAction>
                     Por favor, ingresa tus credenciales para acceder a tu cuenta
                 </ToAction>
-                <StyledForm>
+                <StyledForm className="col-12 col-md-10 col-lg-6">
                     <div>
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="">Correo electrónico</label>
                             <input 
+                                className="mb-3"
                                 type="email"
                                 id="email" 
                                 placeholder="name@example.com" 
@@ -89,17 +96,20 @@ const LoginAdmin = () => {
                             />
                             <label htmlFor="" >Contraseña</label>
                             <input 
+                                className="mb-4"
                                 type="password" 
                                 id="password"
                                 placeholder="**********" 
                                 onChange={handlePasswordChange}
                                 required 
                             />
-                                <button type="submit">Ingresar </button>
+                                <button type="submit">Ingresar <SVGIcon/> </button>
                         </form>
                     </div>
                 </StyledForm>
             </LoginMain>
+
+            </div>
             <Footer />
         </ContainerLogin >
     );
