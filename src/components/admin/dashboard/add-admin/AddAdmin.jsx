@@ -15,7 +15,7 @@ function AddAdmin() {
     };
 
     const onSubmit = data => swal({
-        title: 'Estas agregando un nuevo administrador:',
+        title: 'Se está añadiendo una persona con rol de admin:',
         text: `Correo: ${data.email},     Contraseña: ${data.password} `,
         icon: "info",
         buttons: [true, 'Continuar'],
@@ -32,7 +32,7 @@ function AddAdmin() {
 
         try {
             const { data } = await register_admin(formData);
-            swal(`Añadiste correctamente al nuevo administrador`, {
+            swal(`Se añadió con éxito una nueva administradora`, {
                 icon: "success",
             });
             window.location.reload()
@@ -62,7 +62,7 @@ function AddAdmin() {
                 <Form.Group className="mb-4" controlId="formBasicEmail">
                     <Form.Label>Rol de usuario</Form.Label>
                     <Form.Select className="place-holder" required aria-label="Rol" >
-                        <option value="1">Administardor</option>
+                        <option value="1">Admin</option>
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-4" controlId="formBasicEmail">
@@ -82,7 +82,7 @@ function AddAdmin() {
                     <Form.Control className="place-holder" min={6} type="password" placeholder="Confirmar nueva contraseña" required {...register("password_confirmation")} />
                 </Form.Group>
                 <Button className="button-add-admin mt-2 mb-2 p-3" variant="primary" type="submit">
-                    Añadir usuario
+                    Añadir
                 </Button>
             </Form>
         </FormSpace>

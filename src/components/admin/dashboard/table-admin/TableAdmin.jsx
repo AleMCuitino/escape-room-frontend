@@ -41,12 +41,8 @@ function TableAdmin() {
     }
 
     const handleDelete = (id, title) => {
-
-        console.log(id)
-        console.log(title)
-
         swal({
-            title: `¿Estás seguro de eliminar este escape room ${title}?`,
+            title: `¿Confirma que desea eliminar este escape room ${title}?`,
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -54,7 +50,7 @@ function TableAdmin() {
             .then((willDelete) => {
                 if (willDelete) {
                     deleteEscapeTable(id)
-                    swal(`Eliminaste el escape room ${title}`, {
+                    swal(`Ha eliminado el escape room ${title}`, {
                         icon: "success",
                     });
                     getEscapesTable();
@@ -82,14 +78,13 @@ function TableAdmin() {
 
     const handleSendEmails = (id) => {
         swal({
-            title: `¿Estás seguro?`,
-            text: 'Estás a punto de enviar un correo con el acceso a todos los usuarios de este Escape Room',
+            title: `¿Desea confirmar?`,
+            text: 'Está a punto de enviar un correo con el acceso a todas las personas añadidas a este Escape Room',
             icon: "info",
-            buttons: [true, 'Estoy seguro'],
+            buttons: [true, 'De acuerdo'],
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    // console.log(id)
                     sendEmailsToUsers(id);
                 } else {
 
@@ -137,7 +132,7 @@ function TableAdmin() {
 
                             : <tr>
                                 <td>
-                                    No hay ningún Escape Room
+                                    No hay ningún escape room
                                 </td>
                             </tr>
                     }

@@ -13,7 +13,6 @@ function AddUsers({id}) {
 
         try {
             const { data } = await getEscapeById(idEscape);
-            console.log(escapeRoom?.escape?.rooms)
             setEscapeRoom(data);
         }
         catch (error) { 
@@ -37,9 +36,8 @@ function AddUsers({id}) {
     };
 
     const onSubmit = (data) =>{
-        console.log("info del formualrio de añadir", data)
         swal({
-            title: `Estás añadiendo al usuario ${data.name}, a la sala ${data.room_id}`,
+            title: `Estás añadiendo a ${data.name} a la sala ${data.room_id}`,
             icon: "info",
             buttons:[true, 'Continuar'],
         })
@@ -57,8 +55,7 @@ function AddUsers({id}) {
 
         try {
             const { data } = await addParticipants(formData);
-            console.log('data fetch', data)
-            swal(`Añadiste correctamente al usuario`, {
+            swal(`Añadiste correctamente a`, {
                 icon: "success",
             });
             window.location.reload()

@@ -42,7 +42,7 @@ function AddRoom({ update, idEscape }) {
     }
 
     const onSubmit = data => swal({
-        title: update ? `¿Estás seguro de editar este escape room?` : `¿Estás seguro de crear un nuevo escape room?`,
+        title: update ? `¿Confirma que desea editar este escape room?` : `¿Confirma que desea crear un nuevo escape room?`,
         icon: "info",
         buttons: true,
         dangerMode: true,
@@ -58,7 +58,7 @@ function AddRoom({ update, idEscape }) {
                 else {
 
                     handleCreateEscape(data);
-                    swal(`Has creado un nuevo escape room`, {
+                    swal(`Se ha creado un nuevo escape room`, {
                         icon: "success",
                     });
                 }
@@ -93,7 +93,7 @@ function AddRoom({ update, idEscape }) {
                     </div>
               
                 <Button className='w-100 button-add p-3 mb-3' type="submit">
-                    {update? 'Actualizar escape room' : 'Añadir Escape Room'}
+                    {update? 'Actualizar escape room' : 'Añadir escape room'}
                 </Button>
             </Form>
         </SpaceAdd>
