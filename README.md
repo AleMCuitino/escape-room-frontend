@@ -23,7 +23,6 @@
   - [FAQs](#faqs)
   - [Tools](#tools)
   - [Methodology](#methodology)
-  - [Design](#design)
 ***
 ## General Information
 Escape Room 404 is a virtual escape room designed by Factoria F5 to assess the competencies of candidates during their selection process. 
@@ -216,27 +215,6 @@ We'll fill this field when you ask something
 * Mob programming.
 * Pair programming.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/116794919/220713053-3dc7d8ad-a6dd-46ad-ae35-46396f5e0e95.png" width="300" alt="TRIBE.FLY"></p>
-<p align="center">
 
-<p align="center"><img src="https://user-images.githubusercontent.com/116546624/220708465-4602d358-c8ab-4379-946e-2df420261c0c.jpg" width="50" alt="LOGO"></p>
-<p align="center">
-
-
-  
-  
-## Design
-
-<p align="center">
-
-<img src="https://user-images.githubusercontent.com/116794919/220887955-63f4f80e-004c-41d3-903e-d12cec5addbe.png" width="300px">
-
-<img src="https://user-images.githubusercontent.com/116794919/220888272-f1525d2a-603e-423e-99e7-3061ab3ee676.png" width="300px">
-
-<img src="https://user-images.githubusercontent.com/116794919/220888674-7d0366ea-2029-42df-93f8-a653b4d48db6.png" width="300px">
-
-<img src="https://user-images.githubusercontent.com/116794919/220888998-4fe8a857-d23e-4cfc-a251-15cecebd51bc.png" width="300px">
-
- 
 
 
