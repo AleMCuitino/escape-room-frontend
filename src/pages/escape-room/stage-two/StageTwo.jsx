@@ -1,8 +1,7 @@
 import React from 'react';
 import ContainerMain from '@/components/container/ContainerMain';
-import Puzzle from '@/components/puzzle/Puzzle';
 import BgLamarr from '@/assets/images/lamarr.png';
-import {LamarrDB} from '@/pages/escape-room/stage-two/hedyLamarr_db.js';
+import {LamarrDB} from '@/pages/escape-room/stage-two/hedyLamarr_db.jsx';
 
 /*
 ** HEDY LAMARR
@@ -20,7 +19,7 @@ const StageTwo = () => {
     locationYear={LamarrDB.location_year}
     locationCity={LamarrDB.location_city}
     logicGame={LamarrDB.logicGame}
-    interactiveGame={<Puzzle/>}
+    interactiveGame={LamarrDB.interactiveGame}
     clues={LamarrDB.clue_components}
     solution={LamarrDB.solution}
     nextStage={LamarrDB.nextStage}

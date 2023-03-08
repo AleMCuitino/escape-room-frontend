@@ -1,12 +1,7 @@
 import Star from '@/assets/helpers/star.png'
 import Play from '@/assets/helpers/play.png'
-
-
 import LogicGame from '@/assets/games/lamarr-logic.png'
-
-
-
-
+import Puzzle from '@/components/puzzle/Puzzle';
 
 
 export const LamarrDB = 
@@ -30,10 +25,11 @@ export const LamarrDB =
       solution: "Lamarr",
       nextStage: "/trip/stage-three",
       logicGame: {
-        text:"La suma de 3 números pares consecutivos es 1242. ¿Cuáles son esos números?",
+        text:"",
         img:`${LogicGame}`,
         result: "412+414+416",
       },
+      interactiveGame: <Puzzle/>,
       help: [
         {
             problem:1,

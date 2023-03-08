@@ -18,10 +18,10 @@ export const ContainerBody = styled.section`
     }
 
     @media (min-width: 768px){
-        height: 100vh;
+       /*  height: 100vh; */
         .mboard-timeline{
         margin-bottom:4rem;
-    }
+        }
 
     @media (max-height: 768px){
         height: 100%;
@@ -93,7 +93,6 @@ export const TitleLocation = styled.h1`
 
     animation: pulseLight 5s ease-in infinite alternate;
 
-    
     @media (min-width: 768px){
         text-align: left;
         font-size:20px;
