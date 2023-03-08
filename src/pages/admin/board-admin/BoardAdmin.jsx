@@ -11,16 +11,16 @@ import Footer from '@/components/admin/footer/FooterAdmin';
 const BoardAdmin = () => {
 
     return (
-        <div>
+        <>
             <Navbar />
             <Board className='container'>
                 <section className='row justify-content-start'>
-                    <div className='col-7'>
-                        <h1 className='pt-5'>Escape Rooms</h1>
+                    <h1 className='pt-5 mb-4'>Escape Rooms</h1>
+                    <div className='col-12 col-lg-7 mb-4 order-0 order-md-1 pt-0 pt-md-5'>
                         <TableAdmin />
                     </div>
-                    <div className='col-5'>
-                        <h2 className='fs-4 pt-5'>Añadir un Escape Room</h2>
+                    <div className='col-12 col-lg-5 order-1 order-md-0'>
+                        <h2 className='fs-4'>Añadir un Escape Room</h2>
                         <div className='add-form'>
                             <AddRoom />
                         </div>
@@ -34,7 +34,7 @@ const BoardAdmin = () => {
                 </div>
             </Board>
             <Footer />
-        </div>
+        </>
     )
 }
 
