@@ -3,6 +3,10 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getEscapes, deleteEscapes, sendEmailsToUsersInRooms } from '../../../../services/escape.service';
+import { CssTableProvider } from './tableAdminStyled';
+import { ReactComponent as IconEdit } from '@/assets/icons/edit.svg';
+import { ReactComponent as IconDelete } from '@/assets/icons/delete.svg';
+import { ReactComponent as IconSend } from '@/assets/icons/send.svg';
 
 function TableAdmin() {
 
@@ -96,47 +100,52 @@ function TableAdmin() {
 
 
     return (
-        <Table striped>
-            <thead>
-                <tr>
-                    <th>Edición Escape-room</th>
-                    <th>Acción</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    escapes?.length > 0 ? escapes.map((item) => {
-                        return <tr key={item.id}>
-                            <td>
-                                <div className='d-flex justify-content-between'>
-                                    <div>
-                                        <Link to={`/add-participants/${item.id}`} ><p>{item.title}</p></Link>
-                                    </div>
-                                    <div className='buttons'>
-                                        <Link to={`/escape-admin/${item.id}`} ><Button variant="light">Editar</Button></Link>
-                                        <Button variant="warning" onClick={() => handleDelete(item.id, item.title)}>Eliminar</Button>{' '}
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div className='button-active'>
-                                    <Button variant="light" onClick={() => handleSendEmails(item.id)}>Activar</Button>
-                                </div>
-                            </td>
-                            <td>{item.status}</td>
-                        </tr>
-                    })
+        <CssTableProvider>
 
-                        : <tr>
-                            <td>
-                                No hay ningún Escape Room
-                            </td>
-                        </tr>
-                }
 
-            </tbody>
-        </Table>
+            <Table className='bg-white showTable' striped>
+                <thead>
+                    <tr>
+                        <th>Escape-room</th>
+                
+                        <th className='status'>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        escapes?.length > 0 ? escapes.map((item) => {
+                            return <tr key={item.id}>
+                                <td className='rooms'>
+                                    <div className='d-flex align-items-center justify-content-between'>
+                                        
+                                            <Link to={`/add-participants/${item.id}`} >{item.title}</Link>
+                                        
+                                        <div className='buttons hover-actions'>
+                                        
+                                            <Link to={`/escape-admin/${item.id}`} ><Button variant="light" ><span>Editar </span><IconEdit/></Button></Link>
+                                            <Button variant="warning" onClick={() => handleDelete(item.id, item.title)}><span>Eliminar </span> <IconDelete/></Button>
+                                            <Button variant="light" onClick={() => handleSendEmails(item.id)}><span>Activar </span> <IconSend/></Button>
+                                        
+                                            {' '}
+                                        </div>
+                                    </div>
+                                </td>
+                            
+                                <td className='status'>{item.status}</td>
+                            </tr>
+                        })
+
+                            : <tr>
+                                <td>
+                                    No hay ningún Escape Room
+                                </td>
+                            </tr>
+                    }
+
+                </tbody>
+            </Table>
+
+        </CssTableProvider>
     );
 }
 

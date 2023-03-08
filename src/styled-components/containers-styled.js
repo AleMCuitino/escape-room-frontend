@@ -11,7 +11,7 @@ export const ContainerBody = styled.section`
     display: flex;
     align-items: center;
     overflow: hidden;
-  
+    height: 100%;
     
     .mboard-timeline{
         margin-bottom: 2rem;

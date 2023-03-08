@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { colorVar } from "../../../styled-components/variables"
 
 export const Board = styled.section`
+
+height: 100%;
 z-index: 1;
     h1 {
         font-family: 'Poppins', sans-serif;
@@ -17,12 +19,18 @@ z-index: 1;
     .flower {
         position: absolute;
         z-index: -1;
-        top: 400px;
-        left:-60px;
+        top: 25%;
+        left:0;
+        opacity: .5;
     }
     .flower1 {
         position: absolute;
         z-index: -1;
-        left:1400px;
+        right:0;
+        bottom:-7rem;
+    }
+
+    .showTable{
+        border: 2px solid black;
     }
 `

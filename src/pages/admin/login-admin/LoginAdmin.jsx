@@ -9,6 +9,7 @@ import { FactoriaLogo, ContainerLogin, LoginMain, ToAction, StyledForm, GameLogo
 import { UserContext } from "../../../contexts/UserContext";
 import Footer from "../../../components/admin/footer/FooterAdmin";
 import Music from "../../../assets/sounds/escape-room-8bit.mp3";
+import { ReactComponent as  SVGIcon } from "@/assets/icons/formarrow.svg"
 
 const LoginAdmin = () => {
 
@@ -61,13 +62,16 @@ const LoginAdmin = () => {
         
         <ContainerLogin>
 
-
             <audio src={Music} autoPlay autobuffer> </audio>
             
 
             <FactoriaLogo>
-                <img src={LogoFactoria}></img>
+                <div className="container">
+                    <img src={LogoFactoria}></img>
+
+                </div>
             </FactoriaLogo>
+            <div className="container">
             <LoginMain>
                 <GameLogo>
                     <img src={LogoEscape}></img>
@@ -75,11 +79,12 @@ const LoginAdmin = () => {
                 <ToAction>
                     Por favor, ingresa tus credenciales para acceder a tu cuenta
                 </ToAction>
-                <StyledForm>
+                <StyledForm className="col-12 col-md-10 col-lg-6">
                     <div>
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="">Correo electrónico</label>
                             <input 
+                                className="mb-3"
                                 type="email"
                                 id="email" 
                                 placeholder="name@example.com" 
@@ -89,17 +94,20 @@ const LoginAdmin = () => {
                             />
                             <label htmlFor="" >Contraseña</label>
                             <input 
+                                className="mb-4"
                                 type="password" 
                                 id="password"
                                 placeholder="**********" 
                                 onChange={handlePasswordChange}
                                 required 
                             />
-                                <button type="submit">Ingresar </button>
+                                <button type="submit">Ingresar <SVGIcon/> </button>
                         </form>
                     </div>
                 </StyledForm>
             </LoginMain>
+
+            </div>
             <Footer />
         </ContainerLogin >
     );
