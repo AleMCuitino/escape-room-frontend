@@ -2,14 +2,7 @@ import React, { useContext } from 'react'
 import MemorizeContext from '../context/MemorizeContext';
 import { MemorizeCard } from '@/styled-components/memorizeStyled'
 
-/*
-Cartas del juego de memorize
-    tienen que tener una vista frontal
-    tienen que tener una vista tracera
-    tienen que mostrar letras
-    se tienen que duplicar
-    se tienene que barajar
-*/
+
 
 const Memorize_card = (props) => {
 

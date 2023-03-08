@@ -10,15 +10,19 @@ export const ContainerBody = styled.section`
     width: 100%;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: 100%;
+
+    
+ .gameImg{
+    max-height: 500px ;
+    object-fit: contain;
+   } 
     
     .mboard-timeline{
         margin-bottom: 2rem;
     }
 
     @media (min-width: 768px){
-       /*  height: 100vh; */
+      height: 100%;
         .mboard-timeline{
         margin-bottom:4rem;
         }
