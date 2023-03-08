@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavAdmin } from "./navbarAdminStyled";
-import Logout from "@/assets/icons/logout.svg";
-import Prision from "@/assets/icons/prision.svg";
-import User from "@/assets/icons/user.svg";
+import Logout from "../../../assets/icons/logout.svg";
+import Prision from "../../../assets/icons/prision.svg";
+import User from "../../../assets/icons/user.svg";
 import { useContext } from 'react';
 import { UserContext } from '../../../contexts/UserContext';
 

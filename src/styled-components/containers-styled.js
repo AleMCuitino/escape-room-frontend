@@ -1,5 +1,5 @@
 
-import {colorVar}  from '@/styled-components/variables.js';
+import {colorVar}  from './variables';
 import { Modal } from 'react-bootstrap';
 import styled from "styled-components";
 

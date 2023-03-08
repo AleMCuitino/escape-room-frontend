@@ -1,6 +1,6 @@
 
 import styled, {keyframes} from "styled-components";
-import {colorVar}  from '@/styled-components/variables.js';
+import {colorVar}  from '../../styled-components/variables.js';
 
 
 
@@ -217,7 +217,7 @@ export const blink=keyframes`
   }
 `
 
-export const ContainerText = styled.p`
+export const ContainerText = styled.span`
 
   height: 100vh;
   display: grid;
@@ -227,7 +227,7 @@ export const ContainerText = styled.p`
   color:white;
 
 
-    h1 {
+    h3 {
     width: 0;
     overflow: hidden;
     white-space: nowrap;
