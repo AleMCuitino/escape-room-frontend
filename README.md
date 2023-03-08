@@ -1,5 +1,6 @@
 # Escape Room 404 - Factoría F5
 ![Escape Room 404](./src/assets/logotype/logo404.svg)
+![Factoría F5](src/assets/logotype/logo-factoria.png)
 ![Factoría F5](src/assets/logotype/factoria.svg)
 
 ***
@@ -22,6 +23,7 @@
   - [FAQs](#faqs)
   - [Tools](#tools)
   - [Methodology](#methodology)
+  - [Design](#design)
 ***
 ## General Information
 Escape Room 404 is a virtual escape room designed by Factoria F5 to assess the competencies of candidates during their selection process. 
@@ -92,6 +94,8 @@ The project was developed with the following technologies
 - Styled-Components
 - Sweetalert
 - Vite-Plugin-Svgr
+- Babel
+- Jest
 
 <p align="center">
 <img src= "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
@@ -106,6 +110,8 @@ The project was developed with the following technologies
 <img src= "https://img.shields.io/badge/styled--components-%23DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white">
 <img src= "https://img.shields.io/badge/sweetalert-%23EE3545.svg?style=for-the-badge&logo=sweetalert&logoColor=white">
 <img src= "https://img.shields.io/badge/vite--plugin--svgr-%23222222.svg?style=for-the-badge&logo=svg&logoColor=white">
+<img src= "https://img.shields.io/badge/babel-%23F9DC3E.svg?style=for-the-badge&logo=babel&logoColor=black">
+<img src= "https://img.shields.io/badge/jest-%23C21325.svg?style=for-the-badge&logo=jest&logoColor=white">
 
 
 ***
@@ -210,7 +216,7 @@ We'll fill this field when you ask something
 * Mob programming.
 * Pair programming.
 
-<!-- <p align="center"><img src="https://user-images.githubusercontent.com/116794919/220713053-3dc7d8ad-a6dd-46ad-ae35-46396f5e0e95.png" width="300" alt="TRIBE.FLY"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/116794919/220713053-3dc7d8ad-a6dd-46ad-ae35-46396f5e0e95.png" width="300" alt="TRIBE.FLY"></p>
 <p align="center">
 
 <p align="center"><img src="https://user-images.githubusercontent.com/116546624/220708465-4602d358-c8ab-4379-946e-2df420261c0c.jpg" width="50" alt="LOGO"></p>
@@ -232,5 +238,5 @@ We'll fill this field when you ask something
 <img src="https://user-images.githubusercontent.com/116794919/220888998-4fe8a857-d23e-4cfc-a251-15cecebd51bc.png" width="300px">
 
  
- -->
+
 
