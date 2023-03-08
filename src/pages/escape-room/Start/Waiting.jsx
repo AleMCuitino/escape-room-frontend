@@ -31,8 +31,10 @@ const Waiting = () => {
     setParticipantsReady()
   }
   function ready () {
-    getUsers();
-    if (usersReady.ready == usersReady.users) {
+    // getUsers();
+    let users = window.localStorage.getItem('usersReady')
+
+    if (users.ready == users.users) {
       navigate("/start")
     }
   }
@@ -41,7 +43,7 @@ const Waiting = () => {
     getUsers();
     // ready();
   }, [])
-
+ 
 
 
 
