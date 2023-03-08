@@ -24,3 +24,13 @@ export const register_admin = (data) => {
 
     return axios.post(baseUrl + "/register_admin", data, config);
 };
+
+export const userUpdateParticiped = (data,id) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    return axios.put(baseUrl + "/users/participed/"+id, data, config);
+
+}
