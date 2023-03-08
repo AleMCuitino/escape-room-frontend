@@ -9,7 +9,7 @@ describe("Show congratulations", () => {
                 <Final />
             </Router>
         );
-        const titleElement = sut.getByText("Felicitaciones!");
+        const titleElement = sut.getByTitle("congrats");
         expect(titleElement).toBeInTheDocument();
     });
 });

@@ -64,9 +64,9 @@ const Final = () => {
     
      <div>
       <ContainerText>
-        <p>¡Felicidades! </p>
-        <p>¡Habéis desbloqueado la máquina y regresado al presente! El dispositivo os informa que no hay hack que remediar, quien estaba detrás de este extraño viaje era Factoría F5, que quería poner a prueba vuestras capacidades!</p>
-        <p>Esperamos que hayáis disfrutado la experiencia y ¡gracias por participar!</p>
+        <h3 title="congrats">¡Felicidades! </h3>
+        <p className='text-final'>¡Habéis desbloqueado la máquina y regresado al presente! El dispositivo os informa que no hay hack que remediar, quien estaba detrás de este extraño viaje era Factoría F5, que quería poner a prueba vuestras capacidades!</p>
+        <p className='text-final'>Esperamos que hayáis disfrutado la experiencia y ¡gracias por participar!</p>
 
         <Link to="https://docs.google.com/forms/d/e/1FAIpQLSf46_HCcQi7L0jyGAnQ7hxvVekzY55hd0c3KoXlNheb_GJ6vQ/viewform?embedded=true">
           <Submit> Comparte tu experiencia </Submit>
