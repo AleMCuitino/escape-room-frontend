@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
-const user = JSON.parse(localStorage.getItem('user')) ?  JSON.parse(localStorage.getItem('user')) : '';
+const user = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : '.';
 
 const token = user.token;
 

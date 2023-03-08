@@ -3,6 +3,7 @@ import styled, {keyframes} from "styled-components";
 import {colorVar}  from '@/styled-components/variables.js';
 
 
+
 const effect = keyframes`
 0% {
   clip: rect(71px, 9999px, 50px, 0);
@@ -91,7 +92,7 @@ export const Glitch= styled.h1`
   width: 100%;
   margin: 0 auto;
   color: #fff;
-  font-size: 100px;
+  font-size: 80px;
   font-family: "Exo", sans-serif;
   font-weight: 600;
   text-align: center;
@@ -180,3 +181,66 @@ animation: ${rotationBack}  4s linear infinite reverse;
 }
 
 `
+export const ContainerBg = styled.div`
+    background-color: ${colorVar.secondary};
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    align-items:center;
+
+`
+
+
+export const VideoStyle = styled.video`
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+`
+export const typing =keyframes`
+ 0%
+  {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+`
+
+export const blink=keyframes`
+50% {
+    border-color: transparent;
+  }
+`
+
+export const ContainerText = styled.p`
+
+  height: 100vh;
+  display: grid;
+  justify-content: space-evenly;
+  place-items: center;
+  background-color: ${colorVar.secondary};
+  color:white;
+
+
+    h1 {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 6rem;
+    border-right: 0.05rem solid white;
+    animation: ${typing} 3s steps(50) 0.4s 1 normal both, ${blink} 1s steps(1) infinite;
+  }
+
+  
+
+`
+
+
+
+
+
