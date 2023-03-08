@@ -11,8 +11,8 @@ import { set } from 'react-hook-form';
 const Waiting = () => {
 
   const { userStorage, setUserStorage } = useContext(UserContext)
-  const [participants, setParticipants] = useState(null)
-  const [participantsReady, setParticipantsReady] = useState(null)
+  const [participants, setParticipants] = useState([{},{}])
+  const [participantsReady, setParticipantsReady] = useState([{},{}])
 
   const navigate = useNavigate();
 
@@ -21,10 +21,11 @@ const Waiting = () => {
     setParticipants(data?.users)
 
     setParticipantsReady(data?.users.filter((participant) => {
-      return participant.participed === true;
+      return participant.participed == true;
     }))
-
-    if(participants?.length === participantsReady?.length){
+  }
+  const ready = () =>{
+    if(participants?.length == participantsReady?.length){
       navigate("/start")
     }
   }
@@ -58,7 +59,7 @@ const Waiting = () => {
           <p className='d-flex justify-content-center my-4'> {participantsReady? participantsReady.length : "..."} de {participants?.length} partipantes </p>
 
           <div className='col-12 '>
-            <Chat getUsers={getUsers} />
+            <Chat getUsers={getUsers} ready={ready}/>
           </div>
         </div>
       </ContainerBody>
