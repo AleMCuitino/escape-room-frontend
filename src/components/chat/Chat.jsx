@@ -44,7 +44,7 @@ function Chat({getUsers}) {
             return prevData;
           }
           // Agregar el nuevo mensaje al final del array
-          return [...prevData, { message: data.message, user: data.user }];
+          return [ { message: data.message, user: data.user }, ...prevData];
         });
       }
     });
