@@ -12,7 +12,7 @@ const Waiting = () => {
 
   const { userStorage, setUserStorage } = useContext(UserContext)
   const [participants, setParticipants] = useState([{},{}])
-  const [participantsReady, setParticipantsReady] = useState([{},{}])
+  const [participantsReady, setParticipantsReady] = useState([{}])
 
   const navigate = useNavigate();
 
