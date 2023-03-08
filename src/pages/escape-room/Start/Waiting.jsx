@@ -6,12 +6,14 @@ import Chat from '../../../components/chat/Chat';
 import { getUsersInRoom } from '../../../services/escape.service';
 import { UserContext } from '../../../contexts/UserContext';
 import { set } from 'react-hook-form';
+import { useLocalStorage } from '../../../hooks/useLocalStorage';
 
 
 const Waiting = () => {
 
   const { userStorage, setUserStorage } = useContext(UserContext)
-  const [participants, setParticipants] = useState([{},{}])
+  const [usersReady, setUsersReady] = useLocalStorage('usersReady', '')
+  const [participants, setParticipants] = useState([{}, {}])
   const [participantsReady, setParticipantsReady] = useState([{}])
 
   const navigate = useNavigate();
@@ -19,22 +21,27 @@ const Waiting = () => {
   const getUsers = async () => {
     const { data } = await getUsersInRoom(userStorage?.user?.room_id);
     setParticipants(data?.users)
-
-    setParticipantsReady(data?.users.filter((participant) => {
+    let readyUsers = data?.users.filter((participant) => {
       return participant.participed == true;
-    }))
+    })
+    setUsersReady({
+      users: data?.users?.length,
+      ready: readyUsers?.length
+    })
+    setParticipantsReady()
   }
-  const ready = () =>{
-    if(participants?.length == participantsReady?.length){
+  const ready = () => {
+    if (usersReady.ready == usersReady.users) {
       navigate("/start")
     }
   }
 
   useEffect(() => {
     getUsers();
+    ready();
   }, [])
 
-  
+
 
 
 
@@ -45,21 +52,21 @@ const Waiting = () => {
 
         <div className='container vh-100 d-flex flex-column '>
 
-              <Text > 
-                  <h3 title="hacking">¡Factoría F5 ha sido hackeada...!</h3>
-                  <p> Has intentado ingresar a la página de Factoría F5 pero descubres que ha sido hackeada. Tu misión a partir de ahora será remediar el hackeo y descubrir quién está detrás y con qué intenciones... 
-                  Para ello, te has desplazado a las oficinas centrales de Factoría. El primer paso será reunirte con un equipo de coders que Factoría ha asignado para ayudarte en esta importante misión.
-                  ¡Espera a que llegue todo tu equipo para iniciar la aventura! </p>
-              </Text>
-              
-              <Hour>
-                  <Rotate  src={Hourglass} alt="hour" title="hour" /> 
-              </Hour>
+          <Text >
+            <h3 title="hacking">¡Factoría F5 ha sido hackeada...!</h3>
+            <p> Has intentado ingresar a la página de Factoría F5 pero descubres que ha sido hackeada. Tu misión a partir de ahora será remediar el hackeo y descubrir quién está detrás y con qué intenciones...
+              Para ello, te has desplazado a las oficinas centrales de Factoría. El primer paso será reunirte con un equipo de coders que Factoría ha asignado para ayudarte en esta importante misión.
+              ¡Espera a que llegue todo tu equipo para iniciar la aventura! </p>
+          </Text>
 
-          <p className='d-flex justify-content-center my-4'> {participantsReady? participantsReady.length : "..."} de {participants?.length} partipantes </p>
+          <Hour>
+            <Rotate src={Hourglass} alt="hour" title="hour" />
+          </Hour>
+
+          <p className='d-flex justify-content-center my-4'> {usersReady ? usersReady.ready : "..."} de {usersReady ? usersReady.users : '...'} partipantes </p>
 
           <div className='col-12 '>
-            <Chat getUsers={getUsers} ready={ready}/>
+            <Chat getUsers={getUsers} ready={ready} />
           </div>
         </div>
       </ContainerBody>
